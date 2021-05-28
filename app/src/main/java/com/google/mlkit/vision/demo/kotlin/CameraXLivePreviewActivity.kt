@@ -147,7 +147,6 @@ class CameraXLivePreviewActivity :
 
     val inferenceButton = findViewById<Button>(R.id.inference_button)
     inferenceButton.setOnClickListener {
-      Toast.makeText(applicationContext, "clicked!", Toast.LENGTH_LONG).show()
       if (allPermissionsGranted()) {
         //bindAllCameraUseCases(true)
         bindAnalysisUseCase()
@@ -330,6 +329,7 @@ class CameraXLivePreviewActivity :
         }
         try {
           imageProcessor!!.processImageProxy(imageProxy, graphicOverlay)
+
         } catch (e: MlKitException) {
           Log.e(
             TAG,

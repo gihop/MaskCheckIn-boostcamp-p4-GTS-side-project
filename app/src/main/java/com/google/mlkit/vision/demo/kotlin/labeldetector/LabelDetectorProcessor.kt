@@ -18,15 +18,18 @@ package com.google.mlkit.vision.demo.kotlin.labeldetector
 
 import android.content.Context
 import android.util.Log
+import android.widget.Toast
 import com.google.android.gms.tasks.Task
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.demo.GraphicOverlay
+import com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity
 import com.google.mlkit.vision.demo.kotlin.VisionProcessorBase
 import com.google.mlkit.vision.label.ImageLabel
 import com.google.mlkit.vision.label.ImageLabeler
 import com.google.mlkit.vision.label.ImageLabelerOptionsBase
 import com.google.mlkit.vision.label.ImageLabeling
 import java.io.IOException
+import kotlin.coroutines.coroutineContext
 
 /** Custom InputImage Classifier Demo.  */
 class LabelDetectorProcessor(context: Context, options: ImageLabelerOptionsBase) :
@@ -50,7 +53,7 @@ class LabelDetectorProcessor(context: Context, options: ImageLabelerOptionsBase)
     return imageLabeler.process(image)
   }
 
-  override fun onSuccess(labels: List<ImageLabel>, graphicOverlay: GraphicOverlay) {
+  override fun onSuccess(labels: List<ImageLabel>, graphicOverlay: GraphicOverlay){
     graphicOverlay.add(LabelGraphic(graphicOverlay, labels))
     logExtrasForTesting(labels)
   }

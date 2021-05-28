@@ -38,6 +38,7 @@ import com.google.mlkit.vision.demo.InferenceInfoGraphic
 import com.google.mlkit.vision.demo.ScopedExecutor
 import com.google.mlkit.vision.demo.VisionImageProcessor
 import com.google.mlkit.vision.demo.preference.PreferenceUtils
+import com.google.mlkit.vision.label.ImageLabel
 import java.nio.ByteBuffer
 import java.util.Timer
 import java.util.TimerTask
@@ -168,7 +169,7 @@ abstract class VisionProcessorBase<T>(context: Context) : VisionImageProcessor {
   // -----------------Code for processing live preview frame from CameraX API-----------------------
   @RequiresApi(VERSION_CODES.KITKAT)
   @ExperimentalGetImage
-  override fun processImageProxy(image: ImageProxy, graphicOverlay: GraphicOverlay) {
+  override fun processImageProxy(image: ImageProxy, graphicOverlay: GraphicOverlay){
     val frameStartMs = SystemClock.elapsedRealtime()
     if (isShutdown) {
       return
@@ -244,6 +245,7 @@ abstract class VisionProcessorBase<T>(context: Context) : VisionImageProcessor {
         )
       }
       this@VisionProcessorBase.onSuccess(results, graphicOverlay)
+
       if (!PreferenceUtils.shouldHideDetectionInfo(graphicOverlay.context)) {
         graphicOverlay.add(
           InferenceInfoGraphic(

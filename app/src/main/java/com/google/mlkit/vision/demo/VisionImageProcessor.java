@@ -21,7 +21,10 @@ import android.os.Build.VERSION_CODES;
 import androidx.annotation.RequiresApi;
 import androidx.camera.core.ImageProxy;
 import com.google.mlkit.common.MlKitException;
+import com.google.mlkit.vision.label.ImageLabel;
+
 import java.nio.ByteBuffer;
+import java.util.List;
 
 /** An interface to process the images with different vision detectors and custom image models. */
 public interface VisionImageProcessor {

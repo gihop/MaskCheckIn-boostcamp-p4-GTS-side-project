@@ -19,6 +19,7 @@ package com.google.mlkit.vision.demo.kotlin.labeldetector
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
+import android.util.Log
 import com.google.mlkit.vision.demo.GraphicOverlay
 import com.google.mlkit.vision.demo.GraphicOverlay.Graphic
 import com.google.mlkit.vision.label.ImageLabel
@@ -45,7 +46,18 @@ class LabelGraphic(
   override fun draw(canvas: Canvas) {
     // First try to find maxWidth and totalHeight in order to draw to the center of the screen.
     var maxWidth = 0f
-    val totalHeight = labels.size * 2 * TEXT_SIZE
+    val totalHeight = TEXT_SIZE * 7
+    var incorrectMask: Float = 0F
+    var mask: Float = 0F
+    var normal: Float = 0F
+    for (label in labels) {
+      if(label.text == "normal") normal = label.confidence
+      else if(label.text == "incorrect_mask") incorrectMask = label.confidence
+      else mask = label.confidence
+    }
+
+    val result = if(normal + incorrectMask > mask) WEAR_MASK else AUTHORIZED
+    val resultWidth = textPaint.measureText(result)
     for (label in labels) {
       val line1Width = textPaint.measureText(label.text)
       val line2Width =
@@ -59,6 +71,7 @@ class LabelGraphic(
         )
 
       maxWidth = Math.max(maxWidth, Math.max(line1Width, line2Width))
+      maxWidth = Math.max(maxWidth, Math.max(maxWidth, resultWidth))
     }
 
     val x = Math.max(0f, overlay.width / 2.0f - maxWidth / 2.0f)
@@ -74,6 +87,8 @@ class LabelGraphic(
         labelPaint
       )
     }
+    canvas.drawText(result, x, y + TEXT_SIZE, textPaint)
+    y += TEXT_SIZE
 
     for (label in labels) {
       if (y + TEXT_SIZE * 2 > overlay.height) {
@@ -97,5 +112,7 @@ class LabelGraphic(
   companion object {
     private const val TEXT_SIZE = 70.0f
     private const val LABEL_FORMAT = "%.2f%% confidence (index: %d)"
+    private const val WEAR_MASK = "마스크를 착용해주세요"
+    private const val AUTHORIZED = "인증되었습니다"
   }
 }
