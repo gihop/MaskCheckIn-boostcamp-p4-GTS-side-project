@@ -4,8 +4,6 @@ com/google/mlkit/vision/demo/preference/LivePreviewPreferenceFragment.java
  com.google.mlkit.vision.demo.preference.LivePreviewPreferenceFragment
 com/google/mlkit/vision/demo/preference/PreferenceUtils.java
  com.google.mlkit.vision.demo.preference.PreferenceUtils
-com/google/mlkit/vision/demo/preference/StillImagePreferenceFragment.java
- com.google.mlkit.vision.demo.preference.StillImagePreferenceFragment
 com/google/mlkit/vision/demo/BitmapUtils.java
  com.google.mlkit.vision.demo.BitmapUtils
 com/google/mlkit/vision/demo/BuildConfig.java
@@ -20,8 +18,6 @@ com/google/mlkit/vision/demo/CameraImageGraphic.java
  com.google.mlkit.vision.demo.CameraImageGraphic
 com/google/mlkit/vision/demo/InferenceInfoGraphic.java
  com.google.mlkit.vision.demo.InferenceInfoGraphic
-com/google/mlkit/vision/demo/preference/CameraXSourceDemoPreferenceFragment.java
- com.google.mlkit.vision.demo.preference.CameraXSourceDemoPreferenceFragment
 com/google/mlkit/vision/demo/GraphicOverlay.java
  com.google.mlkit.vision.demo.GraphicOverlay
  com.google.mlkit.vision.demo.GraphicOverlay$Graphic

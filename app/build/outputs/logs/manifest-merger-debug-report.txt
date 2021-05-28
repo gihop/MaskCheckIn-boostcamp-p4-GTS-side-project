@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:2:1-84:12
-INJECTED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:2:1-84:12
-INJECTED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:2:1-84:12
-INJECTED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:2:1-84:12
+ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:2:1-67:12
 MERGED from [androidx.multidex:multidex:2.0.1] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/ce8dd2100ffd5b4eae657f5daec65fe0/multidex-2.0.1/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.mlkit:barcode-scanning:16.1.2] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/cd7714d1e8196432a4d6d89cd12ebf6b/jetified-barcode-scanning-16.1.2/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.mlkit:object-detection:16.2.5] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/e42d3984261e21e9d0f4c5c47ef4b819/jetified-object-detection-16.2.5/AndroidManifest.xml:2:1-17:12
@@ -66,22 +66,22 @@ MERGED from [androidx.exifinterface:exifinterface:1.0.0] /Users/jihopark/.gradle
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/4b7c7d2fea271b9775df9dbec2d1fbdc/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/8ddc9952f727e6b4648fb3647c864837/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0-rc01] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/fa4db84754af4843073ca2c53070619f/jetified-annotation-experimental-1.0.0-rc01/AndroidManifest.xml:17:1-24:12
-INJECTED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:2:1-84:12
-INJECTED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:2:1-84:12
-INJECTED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:2:1-84:12
+INJECTED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:2:1-67:12
 	package
 		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:5:5-43
 		INJECTED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml
-		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:2:1-84:12
+		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:2:1-67:12
 		INJECTED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:4:5-51
 	android:versionCode
 		INJECTED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml
-		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:2:1-84:12
+		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:2:1-67:12
 		INJECTED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:3:5-63
@@ -250,7 +250,7 @@ ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-si
 	android:name
 		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:22:22-62
 application
-ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:24:5-77:19
+ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:24:5-60:19
 MERGED from [com.google.mlkit:object-detection:16.2.5] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/e42d3984261e21e9d0f4c5c47ef4b819/jetified-object-detection-16.2.5/AndroidManifest.xml:7:5-15:19
 MERGED from [com.google.mlkit:object-detection:16.2.5] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/e42d3984261e21e9d0f4c5c47ef4b819/jetified-object-detection-16.2.5/AndroidManifest.xml:7:5-15:19
 MERGED from [com.google.mlkit:object-detection-custom:16.3.2] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/40dc035c4fba38328258b1d3d5a05ff9/jetified-object-detection-custom-16.3.2/AndroidManifest.xml:7:5-15:19
@@ -327,68 +327,46 @@ ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-si
 		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:38:13-49
 	android:name
 		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:37:13-64
-activity#com.google.mlkit.vision.demo.kotlin.ChooserActivity
-ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:40:9-43:20
+activity#com.google.mlkit.vision.demo.kotlin.LivePreviewActivity
+ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:40:9-44:20
 	android:exported
 		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:42:13-36
-	android:name
-		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:41:13-51
-activity#com.google.mlkit.vision.demo.kotlin.LivePreviewActivity
-ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:45:9-49:20
-	android:exported
-		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:47:13-36
 	android:theme
-		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:48:13-44
+		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:43:13-44
 	android:name
-		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:46:13-55
+		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:41:13-55
 activity#com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity
-ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:51:9-59:20
+ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:46:9-54:20
 	android:exported
-		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:53:13-36
+		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:48:13-36
 	android:theme
-		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:54:13-44
+		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:49:13-44
 	android:name
-		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:52:13-62
+		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:47:13-62
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:55:13-58:29
+ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:50:13-53:29
 action#android.intent.action.MAIN
-ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:56:17-68
+ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:51:17-68
 	android:name
-		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:56:25-66
+		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:51:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:57:17-76
+ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:52:17-76
 	android:name
-		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:57:27-74
-activity#com.google.mlkit.vision.demo.kotlin.CameraXSourceDemoActivity
-ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:61:9-65:20
-	android:exported
-		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:63:13-36
-	android:theme
-		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:64:13-44
-	android:name
-		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:62:13-61
-activity#com.google.mlkit.vision.demo.kotlin.StillImageActivity
-ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:67:9-71:20
-	android:exported
-		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:69:13-36
-	android:theme
-		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:70:13-44
-	android:name
-		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:68:13-54
+		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:52:27-74
 activity#com.google.mlkit.vision.demo.preference.SettingsActivity
-ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:73:9-75:39
+ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:56:9-58:39
 	android:exported
-		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:75:13-37
+		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:58:13-37
 	android:name
-		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:74:13-56
+		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:57:13-56
 queries
-ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:78:5-82:15
+ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:61:5-65:15
 intent#action:name:android.media.action.IMAGE_CAPTURE
-ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:79:9-81:18
+ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:62:9-64:18
 action#android.media.action.IMAGE_CAPTURE
-ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:80:13-73
+ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:63:13-73
 	android:name
-		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:80:21-70
+		ADDED from /Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:63:21-70
 service#com.google.mlkit.common.internal.MlKitComponentDiscoveryService
 ADDED from [com.google.mlkit:object-detection:16.2.5] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/e42d3984261e21e9d0f4c5c47ef4b819/jetified-object-detection-16.2.5/AndroidManifest.xml:8:9-14:19
 MERGED from [com.google.mlkit:object-detection-custom:16.3.2] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/40dc035c4fba38328258b1d3d5a05ff9/jetified-object-detection-custom-16.3.2/AndroidManifest.xml:8:9-14:19

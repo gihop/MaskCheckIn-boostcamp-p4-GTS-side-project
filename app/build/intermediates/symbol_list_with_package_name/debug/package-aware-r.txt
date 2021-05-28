@@ -973,7 +973,6 @@ id compatible
 id content
 id contentPanel
 id control
-id control2
 id cos
 id custom
 id customPanel
@@ -984,7 +983,6 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
-id detector
 id dialog_button
 id dimensions
 id direct
@@ -1005,7 +1003,6 @@ id end
 id expand_activities_button
 id expanded_menu
 id facing_switch
-id feature_selector
 id fillCenter
 id fillEnd
 id fillStart
@@ -1032,15 +1029,12 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageView
 id inference_button
 id info
 id invisible
 id italic
-id java_entry_point
 id jumpToEnd
 id jumpToStart
-id kotlin_entry_point
 id layout
 id left
 id light
@@ -1072,7 +1066,6 @@ id percent
 id performance
 id position
 id postLayout
-id preview
 id preview_view
 id progress_circular
 id progress_horizontal
@@ -1083,7 +1076,6 @@ id reverseSawtooth
 id right
 id right_icon
 id right_side
-id root
 id sawtooth
 id screen
 id scrollIndicatorDown
@@ -1100,7 +1092,6 @@ id search_plate
 id search_src_text
 id search_voice_btn
 id select_dialog_listview
-id select_image_button
 id select_images_from_local
 id settings_button
 id settings_container
@@ -1109,7 +1100,6 @@ id showCustom
 id showHome
 id showTitle
 id sin
-id size_selector
 id spacer
 id spinner
 id spline
@@ -1139,7 +1129,6 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id take_photo_using_camera
-id test_activity_list_view
 id text
 id text2
 id textSpacerNoButtons
@@ -1206,12 +1195,8 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_chooser
 layout activity_settings
-layout activity_still_image
 layout activity_vision_camerax_live_preview
-layout activity_vision_cameraxsource_demo
-layout activity_vision_entry_choice
 layout activity_vision_live_preview
 layout custom_dialog
 layout notification_action
