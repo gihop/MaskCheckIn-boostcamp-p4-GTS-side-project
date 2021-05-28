@@ -1,0 +1,4 @@
+#Thu May 27 22:58:01 KST 2021
+base.0=/Users/jihopark/Downloads/mlkit-master/android/vision-quickstart/app/build/intermediates/dex/proguard/minifyProguardWithR8/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
