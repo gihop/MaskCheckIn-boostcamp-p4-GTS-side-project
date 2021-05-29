@@ -49,6 +49,7 @@ import com.google.mlkit.vision.demo.GraphicOverlay
 import com.google.mlkit.vision.demo.R
 import com.google.mlkit.vision.demo.VisionImageProcessor
 import com.google.mlkit.vision.demo.kotlin.labeldetector.LabelDetectorProcessor
+import com.google.mlkit.vision.demo.kotlin.labeldetector.LabelGraphic
 import com.google.mlkit.vision.demo.preference.PreferenceUtils
 import com.google.mlkit.vision.demo.preference.SettingsActivity
 import com.google.mlkit.vision.demo.preference.SettingsActivity.LaunchSource
@@ -138,7 +139,6 @@ class CameraXLivePreviewActivity :
           }
         }
       )
-
     val settingsButton = findViewById<ImageView>(R.id.settings_button)
     settingsButton.setOnClickListener {
       val intent =
@@ -235,7 +235,6 @@ class CameraXLivePreviewActivity :
       // As required by CameraX API, unbinds all use cases before trying to re-bind any of them.
       cameraProvider!!.unbindAll()
       bindPreviewUseCase()
-//      if(clicked) bindAnalysisUseCase()
     }
   }
 

@@ -14,6 +14,11 @@
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
+  <com.google.mlkit.vision.demo.kotlin.labeldetector.FocusView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="#00000000"/>
+
   <com.google.mlkit.vision.demo.GraphicOverlay
       android:id="@+id/graphic_overlay"
       android:layout_width="0dp"
