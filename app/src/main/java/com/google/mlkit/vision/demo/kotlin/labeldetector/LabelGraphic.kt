@@ -19,11 +19,10 @@ package com.google.mlkit.vision.demo.kotlin.labeldetector
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
-import android.util.Log
 import com.google.mlkit.vision.demo.GraphicOverlay
 import com.google.mlkit.vision.demo.GraphicOverlay.Graphic
 import com.google.mlkit.vision.label.ImageLabel
-import java.util.Locale
+import java.util.*
 
 /** Graphic instance for rendering a label within an associated graphic overlay view.  */
 class LabelGraphic(
@@ -32,6 +31,7 @@ class LabelGraphic(
 ) : Graphic(overlay) {
   private val textPaint: Paint = Paint()
   private val labelPaint: Paint
+  private val erasePaint: Paint
 
   init {
     textPaint.color = Color.WHITE
@@ -40,39 +40,40 @@ class LabelGraphic(
     labelPaint.color = Color.BLACK
     labelPaint.style = Paint.Style.FILL
     labelPaint.alpha = 200
+    erasePaint = Paint()
+    erasePaint.color = Color.TRANSPARENT
+    erasePaint.style = Paint.Style.FILL
+    erasePaint.alpha = 200
+  }
+
+  private fun changeLabelText(labelText: String) : String {
+    if(labelText == "normal") return NOT_MASKED
+    else if(labelText == "incorrect_mask") return HALF_MASKED
+    else return MASKED
   }
 
   @Synchronized
   override fun draw(canvas: Canvas) {
     // First try to find maxWidth and totalHeight in order to draw to the center of the screen.
     var maxWidth = 0f
-    val totalHeight = TEXT_SIZE * 7
-    var incorrectMask: Float = 0F
-    var mask: Float = 0F
-    var normal: Float = 0F
+    val totalHeight = TEXT_SIZE * 4
+    var incorrectMask = 0F
+    var mask = 0F
+    var normal = 0F
     for (label in labels) {
       if(label.text == "normal") normal = label.confidence
       else if(label.text == "incorrect_mask") incorrectMask = label.confidence
       else mask = label.confidence
+
+      val lineWidth = textPaint.measureText(changeLabelText(label.text) + " : " +
+              String.format(Locale.US, LABEL_FORMAT, label.confidence * 100))
+
+      maxWidth = Math.max(maxWidth, lineWidth)
     }
 
     val result = if(normal + incorrectMask > mask) WEAR_MASK else AUTHORIZED
     val resultWidth = textPaint.measureText(result)
-    for (label in labels) {
-      val line1Width = textPaint.measureText(label.text)
-      val line2Width =
-        textPaint.measureText(
-          String.format(
-            Locale.US,
-            LABEL_FORMAT,
-            label.confidence * 100,
-            label.index
-          )
-        )
-
-      maxWidth = Math.max(maxWidth, Math.max(line1Width, line2Width))
-      maxWidth = Math.max(maxWidth, Math.max(maxWidth, resultWidth))
-    }
+    maxWidth = Math.max(maxWidth, resultWidth)
 
     val x = Math.max(0f, overlay.width / 2.0f - maxWidth / 2.0f)
     var y = Math.max(200f, overlay.height / 2.0f - totalHeight / 2.0f)
@@ -94,16 +95,10 @@ class LabelGraphic(
       if (y + TEXT_SIZE * 2 > overlay.height) {
         break
       }
-      canvas.drawText(label.text, x, y + TEXT_SIZE, textPaint)
-      y += TEXT_SIZE
       canvas.drawText(
-        String.format(
-          Locale.US,
-          LABEL_FORMAT,
-          label.confidence * 100,
-          label.index
-        ),
-        x, y + TEXT_SIZE, textPaint
+              changeLabelText(label.text) + " : " +
+                      String.format(Locale.US, LABEL_FORMAT, label.confidence * 100),
+                      x, y + TEXT_SIZE, textPaint
       )
       y += TEXT_SIZE
     }
@@ -111,8 +106,11 @@ class LabelGraphic(
 
   companion object {
     private const val TEXT_SIZE = 70.0f
-    private const val LABEL_FORMAT = "%.2f%% confidence (index: %d)"
+    private const val LABEL_FORMAT = "%.2f%%"
     private const val WEAR_MASK = "마스크를 착용해주세요"
     private const val AUTHORIZED = "인증되었습니다"
+    private const val MASKED = "마스크 착용"
+    private const val NOT_MASKED = "마스크 미착용"
+    private const val HALF_MASKED = "코스크 턱스크"
   }
 }
