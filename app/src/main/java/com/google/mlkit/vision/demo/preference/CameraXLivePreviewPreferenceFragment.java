@@ -27,6 +27,8 @@ import android.preference.ListPreference;
 import android.preference.PreferenceCategory;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+
+import android.util.Log;
 import android.util.Size;
 import androidx.annotation.StringRes;
 import androidx.camera.core.CameraSelector;
@@ -65,6 +67,7 @@ public class CameraXLivePreviewPreferenceFragment extends LivePreviewPreferenceF
       entries = new String[outputSizes.length];
       for (int i = 0; i < outputSizes.length; i++) {
         entries[i] = outputSizes[i].toString();
+        Log.i("entriestest", entries[i]);
       }
     } else {
       entries =

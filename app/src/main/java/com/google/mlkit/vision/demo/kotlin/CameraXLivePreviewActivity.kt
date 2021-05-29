@@ -106,6 +106,8 @@ class CameraXLivePreviewActivity :
     val spinner = findViewById<Spinner>(R.id.spinner)
     val options: MutableList<String> = ArrayList()
     options.add(MASK_V1)
+    options.add(MASK_V2)
+    options.add(MASK_V3)
 
     // Creating adapter for spinner
     val dataAdapter =
@@ -280,6 +282,34 @@ class CameraXLivePreviewActivity :
             this, customImageLabelerOptions
           )
         }
+        MASK_V2 -> {
+          Log.i(
+                  TAG,
+                  "Using Mask V1 Detector Processor"
+          )
+          val localClassifier = LocalModel.Builder()
+                  .setAssetFilePath("custom_models/mask_v2.tflite")
+                  .build()
+          val customImageLabelerOptions =
+                  CustomImageLabelerOptions.Builder(localClassifier).build()
+          LabelDetectorProcessor(
+                  this, customImageLabelerOptions
+          )
+        }
+        MASK_V3 -> {
+          Log.i(
+                  TAG,
+                  "Using Mask V1 Detector Processor"
+          )
+          val localClassifier = LocalModel.Builder()
+                  .setAssetFilePath("custom_models/mask_v3.tflite")
+                  .build()
+          val customImageLabelerOptions =
+                  CustomImageLabelerOptions.Builder(localClassifier).build()
+          LabelDetectorProcessor(
+                  this, customImageLabelerOptions
+          )
+        }
         else -> throw IllegalStateException("Invalid model name")
       }
     } catch (e: Exception) {
@@ -405,6 +435,8 @@ class CameraXLivePreviewActivity :
     private const val TAG = "CameraXLivePreview"
     private const val PERMISSION_REQUESTS = 1
     private const val MASK_V1 = "Mask Model Version 1"
+    private const val MASK_V2 = "Mask Model Version 2"
+    private const val MASK_V3 = "Mask Model Version 3"
 
     private const val STATE_SELECTED_MODEL = "selected_model"
 
