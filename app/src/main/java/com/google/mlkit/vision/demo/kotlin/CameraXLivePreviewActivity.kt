@@ -24,6 +24,8 @@ import android.content.pm.PackageManager
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
 import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import android.view.View
@@ -72,6 +74,7 @@ class CameraXLivePreviewActivity :
   private var selectedModel = MASK_V1
   private var lensFacing = CameraSelector.LENS_FACING_BACK
   private var cameraSelector: CameraSelector? = null
+  private var vibrator: Vibrator? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -359,7 +362,9 @@ class CameraXLivePreviewActivity :
         }
         try {
           imageProcessor!!.processImageProxy(imageProxy, graphicOverlay)
-
+          if (VERSION.SDK_INT >= VERSION_CODES.O){
+            vibrateImageDetected()
+          }
         } catch (e: MlKitException) {
           Log.e(
             TAG,
@@ -375,6 +380,12 @@ class CameraXLivePreviewActivity :
       }
     )
     cameraProvider!!.bindToLifecycle( /* lifecycleOwner= */this, cameraSelector!!, analysisUseCase)
+  }
+
+  @RequiresApi(VERSION_CODES.O)
+  private fun vibrateImageDetected(){
+    val vibrator = getSystemService(VIBRATOR_SERVICE) as Vibrator
+    vibrator.vibrate(VibrationEffect.createOneShot(300, 50))
   }
 
   private fun getRequiredPermissions(): Array<String?> {
