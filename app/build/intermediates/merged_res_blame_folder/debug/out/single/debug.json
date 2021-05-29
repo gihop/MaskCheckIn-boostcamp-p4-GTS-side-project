@@ -16,16 +16,16 @@
         "source": "/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/res/drawable-hdpi/ic_switch_camera_white_48dp_inset.png"
     },
     {
-        "merged": "/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_settings_white_24dp.png.flat",
-        "source": "/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/res/drawable-hdpi/ic_settings_white_24dp.png"
+        "merged": "/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     },
     {
         "merged": "/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/build/intermediates/res/merged/debug/layout_toggle_style.xml.flat",
         "source": "/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/res/layout/toggle_style.xml"
     },
     {
-        "merged": "/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+        "merged": "/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_settings_white_24dp.png.flat",
+        "source": "/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/res/drawable-hdpi/ic_settings_white_24dp.png"
     },
     {
         "merged": "/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/build/intermediates/res/merged/debug/layout_activity_settings.xml.flat",
