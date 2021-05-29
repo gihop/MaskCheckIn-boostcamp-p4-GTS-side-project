@@ -27,6 +27,7 @@
         android:key="@string/pref_key_camerax_front_camera_target_resolution"
         android:persistent="true"
         android:title="@string/pref_title_camerax_front_camera_target_resolution"/>
+
   </PreferenceCategory>
 
   <PreferenceCategory android:title="@string/pref_category_info">
