@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 2.1.75
 # min_api: 16
-# pg_map_id: 7d49314
+# pg_map_id: f5e495e
 # common_typos_disable
 $r8$backportedMethods$utility$Objects$2$equals -> a:
     boolean equals(java.lang.Object,java.lang.Object) -> a
@@ -46246,17 +46246,17 @@ com.google.mlkit.vision.demo.kotlin.VisionProcessorBase$requestDetectInImage$2 -
     com.google.mlkit.vision.demo.GraphicOverlay $graphicOverlay -> c
     java.lang.Object invoke(java.lang.Object) -> a
     void invoke(java.lang.Exception) -> b
-com.google.mlkit.vision.demo.kotlin.labeldetector.LabelDetectorProcessor -> com.google.mlkit.vision.demo.kotlin.e.a:
+com.google.mlkit.vision.demo.kotlin.labeldetector.LabelDetectorProcessor -> com.google.mlkit.vision.demo.kotlin.labeldetector.a:
     com.google.mlkit.vision.demo.kotlin.labeldetector.LabelDetectorProcessor$Companion Companion -> s
     com.google.mlkit.vision.label.ImageLabeler imageLabeler -> r
     void onSuccess(java.util.List,com.google.mlkit.vision.demo.GraphicOverlay) -> E
     com.google.android.gms.tasks.Task detectInImage(com.google.mlkit.vision.common.InputImage) -> x
     void onFailure(java.lang.Exception) -> y
     void onSuccess(java.lang.Object,com.google.mlkit.vision.demo.GraphicOverlay) -> z
-com.google.mlkit.vision.demo.kotlin.labeldetector.LabelDetectorProcessor$Companion -> com.google.mlkit.vision.demo.kotlin.e.a$a:
+com.google.mlkit.vision.demo.kotlin.labeldetector.LabelDetectorProcessor$Companion -> com.google.mlkit.vision.demo.kotlin.labeldetector.a$a:
     void access$logExtrasForTesting(com.google.mlkit.vision.demo.kotlin.labeldetector.LabelDetectorProcessor$Companion,java.util.List) -> a
     void logExtrasForTesting(java.util.List) -> b
-com.google.mlkit.vision.demo.kotlin.labeldetector.LabelGraphic -> com.google.mlkit.vision.demo.kotlin.e.b:
+com.google.mlkit.vision.demo.kotlin.labeldetector.LabelGraphic -> com.google.mlkit.vision.demo.kotlin.labeldetector.b:
     java.util.List labels -> f
     com.google.mlkit.vision.demo.GraphicOverlay overlay -> e
     android.graphics.Paint erasePaint -> d

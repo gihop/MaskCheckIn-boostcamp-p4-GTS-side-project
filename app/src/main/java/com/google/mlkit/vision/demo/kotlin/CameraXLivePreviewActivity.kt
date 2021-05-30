@@ -24,6 +24,7 @@ import android.content.pm.PackageManager
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
+import android.os.Handler
 import android.os.VibrationEffect
 import android.os.Vibrator
 import androidx.appcompat.app.AppCompatActivity
@@ -75,7 +76,6 @@ class CameraXLivePreviewActivity :
   private var selectedModel = MASK_V1
   private var lensFacing = CameraSelector.LENS_FACING_BACK
   private var cameraSelector: CameraSelector? = null
-  private var vibrator: Vibrator? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -153,8 +153,14 @@ class CameraXLivePreviewActivity :
     val inferenceButton = findViewById<Button>(R.id.inference_button)
     inferenceButton.setOnClickListener {
       if (allPermissionsGranted()) {
-        //bindAllCameraUseCases(true)
+        graphicOverlay?.clear()
         bindAnalysisUseCase()
+        Thread{
+          Thread.sleep(3000)
+          runOnUiThread {
+            graphicOverlay?.clear()
+          }
+        }.start()
       }
     }
 

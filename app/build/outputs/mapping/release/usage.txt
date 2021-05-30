@@ -9194,6 +9194,11 @@ kotlin.DeepRecursiveScopeImpl
 androidx.camera.camera2.R$drawable
 com.google.android.gms.internal.mlkit_vision_internal_vkp.zzhj:
     private void <init>()
+com.google.mlkit.vision.demo.kotlin.labeldetector.FocusView:
+    public void <init>(android.content.Context)
+    public android.view.View _$_findCachedViewById(int)
+    public void _$_clearFindViewByIdCache()
+    private java.util.HashMap _$_findViewCache
 com.google.android.gms.internal.mlkit_vision_label_custom.zzz:
     public boolean zzd(java.lang.Object,java.lang.Object)
 com.google.android.gms.internal.mlkit_vision_label_custom.zzfb:
