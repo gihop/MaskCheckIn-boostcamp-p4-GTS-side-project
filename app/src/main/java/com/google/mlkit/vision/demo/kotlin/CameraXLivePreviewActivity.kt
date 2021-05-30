@@ -76,6 +76,7 @@ class CameraXLivePreviewActivity :
   private var selectedModel = MASK_V1
   private var lensFacing = CameraSelector.LENS_FACING_BACK
   private var cameraSelector: CameraSelector? = null
+  private var lastThreadID: Long? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -156,9 +157,11 @@ class CameraXLivePreviewActivity :
         graphicOverlay?.clear()
         bindAnalysisUseCase()
         Thread{
+          lastThreadID = Thread.currentThread().id
+          val currentThreadID = Thread.currentThread().id
           Thread.sleep(3000)
           runOnUiThread {
-            graphicOverlay?.clear()
+            if(currentThreadID == lastThreadID) graphicOverlay?.clear()
           }
         }.start()
       }
