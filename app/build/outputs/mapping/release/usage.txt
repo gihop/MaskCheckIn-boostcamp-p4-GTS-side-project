@@ -18176,12 +18176,11 @@ com.google.android.gms.common.api.internal.zaap
 kotlin.reflect.KMutableProperty$Setter
 com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity:
     public static final synthetic androidx.camera.lifecycle.ProcessCameraProvider access$getCameraProvider$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity)
-    public static final synthetic void access$setLensFacing$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity,int)
     public static final synthetic void access$setGraphicOverlay$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity,com.google.mlkit.vision.demo.GraphicOverlay)
+    public static final synthetic void access$setLensFacing$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity,int)
     public static final synthetic void access$setImageProcessor$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity,com.google.mlkit.vision.demo.VisionImageProcessor)
     public android.view.View _$_findCachedViewById(int)
     public void _$_clearFindViewByIdCache()
-    private android.os.Vibrator vibrator
     private java.util.HashMap _$_findViewCache
     private static final java.lang.String TAG
     private static final int PERMISSION_REQUESTS

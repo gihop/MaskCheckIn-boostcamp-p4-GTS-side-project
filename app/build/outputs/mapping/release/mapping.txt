@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 2.1.75
 # min_api: 16
-# pg_map_id: f5e495e
+# pg_map_id: 705dd1a
 # common_typos_disable
 $r8$backportedMethods$utility$Objects$2$equals -> a:
     boolean equals(java.lang.Object,java.lang.Object) -> a
@@ -46119,6 +46119,7 @@ com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity -> com.google.mlk
     boolean needUpdateGraphicOverlayImageSourceInfo -> z
     androidx.camera.core.CameraSelector cameraSelector -> C
     com.google.mlkit.vision.demo.VisionImageProcessor imageProcessor -> y
+    java.lang.Long lastThreadID -> D
     java.lang.String selectedModel -> A
     androidx.camera.core.ImageAnalysis analysisUseCase -> x
     int lensFacing -> B
@@ -46128,19 +46129,21 @@ com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity -> com.google.mlk
     void access$bindAnalysisUseCase(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity) -> H
     com.google.mlkit.vision.demo.GraphicOverlay access$getGraphicOverlay$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity) -> I
     com.google.mlkit.vision.demo.VisionImageProcessor access$getImageProcessor$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity) -> J
-    int access$getLensFacing$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity) -> K
-    boolean access$getNeedUpdateGraphicOverlayImageSourceInfo$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity) -> L
-    void access$setCameraProvider$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity,androidx.camera.lifecycle.ProcessCameraProvider) -> M
-    void access$setNeedUpdateGraphicOverlayImageSourceInfo$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity,boolean) -> N
-    void access$vibrateImageDetected(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity) -> O
-    boolean allPermissionsGranted() -> P
-    void bindAllCameraUseCases(boolean) -> Q
-    void bindAnalysisUseCase() -> R
-    void bindPreviewUseCase() -> S
-    java.lang.String[] getRequiredPermissions() -> T
-    void getRuntimePermissions() -> U
-    boolean isPermissionGranted(android.content.Context,java.lang.String) -> V
-    void vibrateImageDetected() -> W
+    java.lang.Long access$getLastThreadID$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity) -> K
+    int access$getLensFacing$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity) -> L
+    boolean access$getNeedUpdateGraphicOverlayImageSourceInfo$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity) -> M
+    void access$setCameraProvider$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity,androidx.camera.lifecycle.ProcessCameraProvider) -> N
+    void access$setLastThreadID$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity,java.lang.Long) -> O
+    void access$setNeedUpdateGraphicOverlayImageSourceInfo$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity,boolean) -> P
+    void access$vibrateImageDetected(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity) -> Q
+    boolean allPermissionsGranted() -> R
+    void bindAllCameraUseCases(boolean) -> S
+    void bindAnalysisUseCase() -> T
+    void bindPreviewUseCase() -> U
+    java.lang.String[] getRequiredPermissions() -> V
+    void getRuntimePermissions() -> W
+    boolean isPermissionGranted(android.content.Context,java.lang.String) -> X
+    void vibrateImageDetected() -> Y
 com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$bindAnalysisUseCase$1 -> com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$a:
     com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity this$0 -> a
     void analyze(androidx.camera.core.ImageProxy) -> a
@@ -46152,6 +46155,11 @@ com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$onCreate$2 -> com
     com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity this$0 -> b
 com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$onCreate$3 -> com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$d:
     com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity this$0 -> b
+com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$onCreate$3$1 -> com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$d$a:
+    com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$onCreate$3 this$0 -> b
+com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$onCreate$3$1$1 -> com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$d$a$a:
+    com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$onCreate$3$1 this$0 -> b
+    long $currentThreadID -> c
 com.google.mlkit.vision.demo.kotlin.LivePreviewActivity -> com.google.mlkit.vision.demo.kotlin.LivePreviewActivity:
     java.lang.String selectedModel -> w
     com.google.mlkit.vision.demo.CameraSource cameraSource -> t
@@ -46259,11 +46267,12 @@ com.google.mlkit.vision.demo.kotlin.labeldetector.LabelDetectorProcessor$Compani
 com.google.mlkit.vision.demo.kotlin.labeldetector.LabelGraphic -> com.google.mlkit.vision.demo.kotlin.labeldetector.b:
     java.util.List labels -> f
     com.google.mlkit.vision.demo.GraphicOverlay overlay -> e
-    android.graphics.Paint erasePaint -> d
+    android.graphics.Paint focusPaint -> d
     android.graphics.Paint labelPaint -> c
     android.graphics.Paint textPaint -> b
     void draw(android.graphics.Canvas) -> a
-    java.lang.String changeLabelText(java.lang.String) -> d
+    void changeFocusColor(android.graphics.Canvas,boolean) -> d
+    java.lang.String changeLabelText(java.lang.String) -> e
 com.google.mlkit.vision.demo.preference.-$$Lambda$CameraXLivePreviewPreferenceFragment$cPkc7A2YrqQFBBKaxGJJ0EMRyFc -> com.google.mlkit.vision.demo.preference.a:
     android.preference.ListPreference f$1 -> b
     int f$2 -> c

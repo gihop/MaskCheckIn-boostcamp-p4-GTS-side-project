@@ -34,6 +34,7 @@ class LabelGraphic(
   private val textPaint: Paint = Paint()
   private val labelPaint: Paint
   private val focusPaint = Paint()
+  private val dataPaint: Paint
 
   init {
     textPaint.color = Color.parseColor("#2DB400")
@@ -45,12 +46,10 @@ class LabelGraphic(
     labelPaint.isAntiAlias = true
     focusPaint.color = Color.parseColor("#2DB400")
     focusPaint.strokeWidth = overlay.width / 50f
-  }
-
-  private fun changeLabelText(labelText: String) : String {
-    if(labelText == "normal") return NOT_MASKED
-    else if(labelText == "incorrect_mask") return HALF_MASKED
-    else return MASKED
+    dataPaint = Paint()
+    dataPaint.color = Color.WHITE
+    dataPaint.textSize = DATA_TEXT_SIZE
+    dataPaint.setShadowLayer(5.0f, 0f, 0f, Color.BLACK);
   }
 
   private fun changeFocusColor(canvas: Canvas, authorized: Boolean){
@@ -80,7 +79,7 @@ class LabelGraphic(
   override fun draw(canvas: Canvas) {
     // First try to find maxWidth and totalHeight in order to draw to the center of the screen.
     var maxWidth = 0f
-    val totalHeight = TEXT_SIZE * 4
+    val totalHeight = TEXT_SIZE
     var incorrectMask = 0F
     var mask = 0F
     var normal = 0F
@@ -88,10 +87,6 @@ class LabelGraphic(
       if(label.text == "normal") normal = label.confidence
       else if(label.text == "incorrect_mask") incorrectMask = label.confidence
       else mask = label.confidence
-
-      val lineWidth = textPaint.measureText(changeLabelText(label.text) + " : " +
-              String.format(Locale.US, LABEL_FORMAT, label.confidence * 100))
-      maxWidth = Math.max(maxWidth, lineWidth)
     }
 
     val result = if(normal + incorrectMask > mask) WEAR_MASK else AUTHORIZED
@@ -114,29 +109,24 @@ class LabelGraphic(
         labelPaint
       )
     }
-    canvas.drawText(result, x, y + TEXT_SIZE, textPaint)
-    y += TEXT_SIZE
+    canvas.drawText(result, (overlay.width / 2.0f) - (resultWidth / 2.0f), y + TEXT_SIZE - 10f, textPaint)
 
-    for (label in labels) {
-      if (y + TEXT_SIZE * 2 > overlay.height) {
-        break
-      }
+    val dataX = DATA_TEXT_SIZE * 0.5f;
+    val dataY = DATA_TEXT_SIZE * 1.5f;
+    for (i in 0..2) {
       canvas.drawText(
-              changeLabelText(label.text) + " : " +
-                      String.format(Locale.US, LABEL_FORMAT, label.confidence * 100),
-                      x, y + TEXT_SIZE, textPaint
+              labels[i].text + " : " +
+                      String.format(Locale.US, LABEL_FORMAT, labels[i].confidence * 100),
+              dataX, dataY + DATA_TEXT_SIZE*(i+2), dataPaint
       )
-      y += TEXT_SIZE
     }
   }
 
   companion object {
     private const val TEXT_SIZE = 70.0f
+    private const val DATA_TEXT_SIZE = 60.0f
     private const val LABEL_FORMAT = "%.2f%%"
     private const val WEAR_MASK = "마스크를 착용해주세요"
     private const val AUTHORIZED = "인증되었습니다"
-    private const val MASKED = "마스크 착용"
-    private const val NOT_MASKED = "마스크 미착용"
-    private const val HALF_MASKED = "코스크 턱스크"
   }
 }
