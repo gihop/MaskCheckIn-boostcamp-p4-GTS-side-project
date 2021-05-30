@@ -30,9 +30,9 @@
 
   <Button
       android:id="@+id/inference_button"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Button"
+      android:layout_width="60dp"
+      android:layout_height="60dp"
+      android:background="@drawable/custom_botton_shape"
       app:layout_constraintBottom_toTopOf="@+id/control"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="@+id/preview_view" />
