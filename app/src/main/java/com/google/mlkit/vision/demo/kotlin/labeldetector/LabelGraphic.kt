@@ -19,6 +19,8 @@ package com.google.mlkit.vision.demo.kotlin.labeldetector
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
+import android.os.Build
+import androidx.annotation.RequiresApi
 import com.google.mlkit.vision.demo.GraphicOverlay
 import com.google.mlkit.vision.demo.GraphicOverlay.Graphic
 import com.google.mlkit.vision.label.ImageLabel
@@ -31,21 +33,17 @@ class LabelGraphic(
 ) : Graphic(overlay) {
   private val textPaint: Paint = Paint()
   private val labelPaint: Paint
-  private val erasePaint: Paint
   private val focusPaint = Paint()
 
   init {
-    textPaint.color = Color.WHITE
+    textPaint.color = Color.parseColor("#2DB400")
     textPaint.textSize = TEXT_SIZE
+    textPaint.isAntiAlias = true
     labelPaint = Paint()
-    labelPaint.color = Color.BLACK
+    labelPaint.color = Color.WHITE
     labelPaint.style = Paint.Style.FILL
-    labelPaint.alpha = 200
-    erasePaint = Paint()
-    erasePaint.color = Color.TRANSPARENT
-    erasePaint.style = Paint.Style.FILL
-    erasePaint.alpha = 200
-    focusPaint.color = Color.GREEN
+    labelPaint.isAntiAlias = true
+    focusPaint.color = Color.parseColor("#2DB400")
     focusPaint.strokeWidth = overlay.width / 50f
   }
 
@@ -63,7 +61,10 @@ class LabelGraphic(
     val leftX = padding
     val length = padding * 2
     val rightX = overlay.width - padding
-    if(!authorized) focusPaint.color = Color.RED
+    if(!authorized) {
+      focusPaint.color = Color.RED
+      textPaint.color = Color.RED
+    }
     canvas?.drawLine(leftX - halfStrokeWidth, y - x + padding, leftX + length - halfStrokeWidth, y - x + padding, focusPaint)
     canvas?.drawLine(leftX, y - x + padding, leftX, y - x + length + padding, focusPaint)
     canvas?.drawLine(leftX - halfStrokeWidth, y + x - padding, leftX + length - halfStrokeWidth, y + x - padding, focusPaint)
@@ -74,6 +75,7 @@ class LabelGraphic(
     canvas?.drawLine(rightX, y + x - padding, rightX, y + x - length - padding, focusPaint)
   }
 
+  @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
   @Synchronized
   override fun draw(canvas: Canvas) {
     // First try to find maxWidth and totalHeight in order to draw to the center of the screen.
@@ -102,11 +104,13 @@ class LabelGraphic(
 
     if (!labels.isEmpty()) {
       val padding = 20f
-      canvas.drawRect(
+      canvas.drawRoundRect(
         x - padding,
         y - padding,
         x + maxWidth + padding,
         y + totalHeight + padding,
+        30f,
+        30f,
         labelPaint
       )
     }
