@@ -31,22 +31,26 @@ class LabelGraphic(
   private val overlay: GraphicOverlay,
   private val labels: List<ImageLabel>
 ) : Graphic(overlay) {
-  private val textPaint: Paint = Paint()
-  private val labelPaint: Paint
+  private val borderPaint = Paint()
+  private val backgroundPaint = Paint()
+  private val labelPaint =  Paint()
   private val focusPaint = Paint()
-  private val dataPaint: Paint
+  private val dataPaint = Paint()
 
   init {
-    textPaint.color = Color.parseColor("#2DB400")
-    textPaint.textSize = TEXT_SIZE
-    textPaint.isAntiAlias = true
-    labelPaint = Paint()
+    borderPaint.color = Color.GRAY
+    borderPaint.strokeWidth = 5f
+    borderPaint.style = Paint.Style.STROKE
+    borderPaint.isAntiAlias = true
+    borderPaint.setShadowLayer(20.0f, 0f, 0f, Color.BLACK);
+    backgroundPaint.color = Color.parseColor("#2DB400")
+    backgroundPaint.textSize = TEXT_SIZE
+    backgroundPaint.isAntiAlias = true
     labelPaint.color = Color.WHITE
     labelPaint.style = Paint.Style.FILL
     labelPaint.isAntiAlias = true
     focusPaint.color = Color.parseColor("#2DB400")
     focusPaint.strokeWidth = overlay.width / 50f
-    dataPaint = Paint()
     dataPaint.color = Color.WHITE
     dataPaint.textSize = DATA_TEXT_SIZE
     dataPaint.setShadowLayer(5.0f, 0f, 0f, Color.BLACK);
@@ -62,7 +66,7 @@ class LabelGraphic(
     val rightX = overlay.width - padding
     if(!authorized) {
       focusPaint.color = Color.RED
-      textPaint.color = Color.RED
+      backgroundPaint.color = Color.RED
     }
     canvas?.drawLine(leftX - halfStrokeWidth, y - x + padding, leftX + length - halfStrokeWidth, y - x + padding, focusPaint)
     canvas?.drawLine(leftX, y - x + padding, leftX, y - x + length + padding, focusPaint)
@@ -90,7 +94,7 @@ class LabelGraphic(
     }
 
     val result = if(normal + incorrectMask > mask) WEAR_MASK else AUTHORIZED
-    val resultWidth = textPaint.measureText(result)
+    val resultWidth = backgroundPaint.measureText(result)
     maxWidth = Math.max(maxWidth, resultWidth)
     changeFocusColor(canvas, result == AUTHORIZED)
 
@@ -100,16 +104,25 @@ class LabelGraphic(
     if (!labels.isEmpty()) {
       val padding = 20f
       canvas.drawRoundRect(
+              x - padding,
+              y - padding,
+              x + maxWidth + padding,
+              y + totalHeight + padding,
+              20f,
+              20f,
+              borderPaint
+      )
+      canvas.drawRoundRect(
         x - padding,
         y - padding,
         x + maxWidth + padding,
         y + totalHeight + padding,
-        30f,
-        30f,
+        20f,
+        20f,
         labelPaint
       )
     }
-    canvas.drawText(result, (overlay.width / 2.0f) - (resultWidth / 2.0f), y + TEXT_SIZE - 10f, textPaint)
+    canvas.drawText(result, (overlay.width / 2.0f) - (resultWidth / 2.0f), y + TEXT_SIZE - 10f, backgroundPaint)
 
     val dataX = DATA_TEXT_SIZE * 0.5f;
     val dataY = DATA_TEXT_SIZE * 1.5f;
