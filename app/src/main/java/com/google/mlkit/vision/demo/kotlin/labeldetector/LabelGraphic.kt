@@ -32,6 +32,7 @@ class LabelGraphic(
   private val textPaint: Paint = Paint()
   private val labelPaint: Paint
   private val erasePaint: Paint
+  private val focusPaint = Paint()
 
   init {
     textPaint.color = Color.WHITE
@@ -44,12 +45,33 @@ class LabelGraphic(
     erasePaint.color = Color.TRANSPARENT
     erasePaint.style = Paint.Style.FILL
     erasePaint.alpha = 200
+    focusPaint.color = Color.GREEN
+    focusPaint.strokeWidth = overlay.width / 50f
   }
 
   private fun changeLabelText(labelText: String) : String {
     if(labelText == "normal") return NOT_MASKED
     else if(labelText == "incorrect_mask") return HALF_MASKED
     else return MASKED
+  }
+
+  private fun changeFocusColor(canvas: Canvas, authorized: Boolean){
+    val halfStrokeWidth = focusPaint.strokeWidth / 2f
+    val padding = overlay.width / 15f
+    val x = overlay.width / 2.0f
+    val y = overlay.height / 2.0f
+    val leftX = padding
+    val length = padding * 2
+    val rightX = overlay.width - padding
+    if(!authorized) focusPaint.color = Color.RED
+    canvas?.drawLine(leftX - halfStrokeWidth, y - x + padding, leftX + length - halfStrokeWidth, y - x + padding, focusPaint)
+    canvas?.drawLine(leftX, y - x + padding, leftX, y - x + length + padding, focusPaint)
+    canvas?.drawLine(leftX - halfStrokeWidth, y + x - padding, leftX + length - halfStrokeWidth, y + x - padding, focusPaint)
+    canvas?.drawLine(leftX, y + x - padding, leftX, y + x - length - padding, focusPaint)
+    canvas?.drawLine(rightX + halfStrokeWidth, y - x + padding, rightX - length + halfStrokeWidth, y - x + padding, focusPaint)
+    canvas?.drawLine(rightX, y - x + padding, rightX, y - x + length + padding, focusPaint)
+    canvas?.drawLine(rightX + halfStrokeWidth, y + x - padding, rightX - length + halfStrokeWidth, y + x - padding, focusPaint)
+    canvas?.drawLine(rightX, y + x - padding, rightX, y + x - length - padding, focusPaint)
   }
 
   @Synchronized
@@ -67,13 +89,13 @@ class LabelGraphic(
 
       val lineWidth = textPaint.measureText(changeLabelText(label.text) + " : " +
               String.format(Locale.US, LABEL_FORMAT, label.confidence * 100))
-
       maxWidth = Math.max(maxWidth, lineWidth)
     }
 
     val result = if(normal + incorrectMask > mask) WEAR_MASK else AUTHORIZED
     val resultWidth = textPaint.measureText(result)
     maxWidth = Math.max(maxWidth, resultWidth)
+    changeFocusColor(canvas, result == AUTHORIZED)
 
     val x = Math.max(0f, overlay.width / 2.0f - maxWidth / 2.0f)
     var y = Math.max(200f, overlay.height / 2.0f - totalHeight / 2.0f)
