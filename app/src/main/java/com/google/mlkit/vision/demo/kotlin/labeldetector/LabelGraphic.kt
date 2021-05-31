@@ -23,6 +23,7 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import com.google.mlkit.vision.demo.GraphicOverlay
 import com.google.mlkit.vision.demo.GraphicOverlay.Graphic
+import com.google.mlkit.vision.demo.preference.PreferenceUtils
 import com.google.mlkit.vision.label.ImageLabel
 import java.util.*
 
@@ -124,14 +125,16 @@ class LabelGraphic(
     }
     canvas.drawText(result, (overlay.width / 2.0f) - (resultWidth / 2.0f), y + TEXT_SIZE - 10f, backgroundPaint)
 
-    val dataX = DATA_TEXT_SIZE * 0.5f;
-    val dataY = DATA_TEXT_SIZE * 1.5f;
-    for (i in 0..2) {
-      canvas.drawText(
-              labels[i].text + " : " +
-                      String.format(Locale.US, LABEL_FORMAT, labels[i].confidence * 100),
-              dataX, dataY + DATA_TEXT_SIZE*(i+2), dataPaint
-      )
+    if(!PreferenceUtils.shouldHideDetectionInfo(applicationContext)) {
+      val dataX = DATA_TEXT_SIZE * 0.5f;
+      val dataY = DATA_TEXT_SIZE * 1.5f;
+      for (i in 0..2) {
+        canvas.drawText(
+                labels[i].text + " : " +
+                        String.format(Locale.US, LABEL_FORMAT, labels[i].confidence * 100),
+                dataX, dataY + DATA_TEXT_SIZE * (i + 2), dataPaint
+        )
+      }
     }
   }
 
