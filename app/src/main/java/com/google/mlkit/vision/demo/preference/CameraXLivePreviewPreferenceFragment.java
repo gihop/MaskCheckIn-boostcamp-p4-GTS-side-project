@@ -31,6 +31,7 @@ import androidx.annotation.RequiresApi;
 import android.util.Log;
 import android.util.Size;
 import androidx.annotation.StringRes;
+import androidx.appcompat.view.menu.ListMenuPresenter;
 import androidx.camera.core.CameraSelector;
 import com.google.mlkit.vision.demo.R;
 import java.util.Arrays;
@@ -53,6 +54,7 @@ public class CameraXLivePreviewPreferenceFragment extends LivePreviewPreferenceF
         R.string.pref_key_camerax_rear_camera_target_resolution, CameraSelector.LENS_FACING_BACK);
     setUpCameraXTargetAnalysisSizePreference(
         R.string.pref_key_camerax_front_camera_target_resolution, CameraSelector.LENS_FACING_FRONT);
+    setInfoTimer(R.string.pref_key_timer);
   }
 
   private void setUpCameraXTargetAnalysisSizePreference(
@@ -92,6 +94,25 @@ public class CameraXLivePreviewPreferenceFragment extends LivePreviewPreferenceF
           PreferenceUtils.saveString(getActivity(), previewSizePrefKeyId, newStringValue);
           return true;
         });
+  }
+
+  private void setInfoTimer(@StringRes int timerPrefKeyId) {
+    ListPreference pref = (ListPreference) findPreference(getString(timerPrefKeyId));
+    String[] entries = new String[] {
+            "3s",
+            "5s",
+            "10s"
+    };
+    pref.setEntries(entries);
+    pref.setEntryValues(entries);
+    pref.setSummary(pref.getEntry() == null ? "3s" : pref.getEntry());
+    pref.setOnPreferenceChangeListener(
+            (preference, newValue) -> {
+              String newStringValue = (String) newValue;
+              pref.setSummary(newStringValue);
+              PreferenceUtils.saveString(getActivity(), timerPrefKeyId, newStringValue);
+              return true;
+            });
   }
 
   @Nullable

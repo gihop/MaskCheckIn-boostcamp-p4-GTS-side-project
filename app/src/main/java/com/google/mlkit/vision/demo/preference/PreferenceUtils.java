@@ -20,6 +20,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build.VERSION_CODES;
 import android.preference.PreferenceManager;
+import android.util.Log;
+
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.StringRes;
@@ -104,7 +106,14 @@ public class PreferenceUtils {
     SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
     String prefKey =
             context.getString(R.string.pref_key_vibrate);
-    return sharedPreferences.getBoolean(prefKey, false);
+    return sharedPreferences.getBoolean(prefKey, true);
+  }
+
+  public static String getInfoTimer(Context context){
+    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+    String prefKey =
+            context.getString(R.string.pref_key_timer);
+    return sharedPreferences.getString(prefKey, "3s");
   }
 
   public static ObjectDetectorOptions getObjectDetectorOptionsForStillImage(Context context) {

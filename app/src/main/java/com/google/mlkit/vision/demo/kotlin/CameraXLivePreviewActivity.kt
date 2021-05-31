@@ -160,7 +160,8 @@ class CameraXLivePreviewActivity :
         Thread{
           lastThreadID = Thread.currentThread().id
           val currentThreadID = Thread.currentThread().id
-          Thread.sleep(3000)
+          val timer = PreferenceUtils.getInfoTimer(this)
+          Thread.sleep(timer.substring(0, timer.length-1).toLong() * 1000)
           runOnUiThread {
             if(currentThreadID == lastThreadID) graphicOverlay?.clear()
           }
