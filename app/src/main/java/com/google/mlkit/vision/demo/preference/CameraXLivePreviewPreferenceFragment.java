@@ -46,14 +46,14 @@ public class CameraXLivePreviewPreferenceFragment extends LivePreviewPreferenceF
     PreferenceCategory cameraPreference =
         (PreferenceCategory) findPreference(getString(R.string.pref_category_key_camera));
 
-    cameraPreference.removePreference(
-        findPreference(getString(R.string.pref_key_rear_camera_preview_size)));
-    cameraPreference.removePreference(
-        findPreference(getString(R.string.pref_key_front_camera_preview_size)));
-    setUpCameraXTargetAnalysisSizePreference(
-        R.string.pref_key_camerax_rear_camera_target_resolution, CameraSelector.LENS_FACING_BACK);
-    setUpCameraXTargetAnalysisSizePreference(
-        R.string.pref_key_camerax_front_camera_target_resolution, CameraSelector.LENS_FACING_FRONT);
+//    cameraPreference.removePreference(
+//        findPreference(getString(R.string.pref_key_rear_camera_preview_size)));
+//    cameraPreference.removePreference(
+//        findPreference(getString(R.string.pref_key_front_camera_preview_size)));
+//    setUpCameraXTargetAnalysisSizePreference(
+//        R.string.pref_key_camerax_rear_camera_target_resolution, CameraSelector.LENS_FACING_BACK);
+//    setUpCameraXTargetAnalysisSizePreference(
+//        R.string.pref_key_camerax_front_camera_target_resolution, CameraSelector.LENS_FACING_FRONT);
     setInfoTimer(R.string.pref_key_timer);
   }
 
