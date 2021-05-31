@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 2.1.75
 # min_api: 16
-# pg_map_id: 705dd1a
+# pg_map_id: c67afee
 # common_typos_disable
 $r8$backportedMethods$utility$Objects$2$equals -> a:
     boolean equals(java.lang.Object,java.lang.Object) -> a
@@ -46097,12 +46097,11 @@ com.google.mlkit.vision.demo.GraphicOverlay$Graphic -> com.google.mlkit.vision.d
     android.graphics.Matrix getTransformationMatrix() -> b
     void postInvalidate() -> c
 com.google.mlkit.vision.demo.InferenceInfoGraphic -> com.google.mlkit.vision.demo.i:
-    java.lang.Integer framesPerSecond -> f
-    long detectorLatency -> e
+    java.lang.Integer framesPerSecond -> e
     android.graphics.Paint textPaint -> b
-    long frameLatency -> d
-    boolean showLatencyInfo -> g
-    com.google.mlkit.vision.demo.GraphicOverlay overlay -> c
+    boolean showLatencyInfo -> f
+    long detectorLatency -> d
+    long frameLatency -> c
     void draw(android.graphics.Canvas) -> a
 com.google.mlkit.vision.demo.ScopedExecutor -> com.google.mlkit.vision.demo.j:
     java.util.concurrent.atomic.AtomicBoolean shutdown -> c
@@ -46265,14 +46264,15 @@ com.google.mlkit.vision.demo.kotlin.labeldetector.LabelDetectorProcessor$Compani
     void access$logExtrasForTesting(com.google.mlkit.vision.demo.kotlin.labeldetector.LabelDetectorProcessor$Companion,java.util.List) -> a
     void logExtrasForTesting(java.util.List) -> b
 com.google.mlkit.vision.demo.kotlin.labeldetector.LabelGraphic -> com.google.mlkit.vision.demo.kotlin.labeldetector.b:
-    java.util.List labels -> f
-    com.google.mlkit.vision.demo.GraphicOverlay overlay -> e
-    android.graphics.Paint focusPaint -> d
-    android.graphics.Paint labelPaint -> c
-    android.graphics.Paint textPaint -> b
+    android.graphics.Paint dataPaint -> f
+    android.graphics.Paint focusPaint -> e
+    android.graphics.Paint labelPaint -> d
+    android.graphics.Paint backgroundPaint -> c
+    com.google.mlkit.vision.demo.GraphicOverlay overlay -> g
+    android.graphics.Paint borderPaint -> b
+    java.util.List labels -> h
     void draw(android.graphics.Canvas) -> a
     void changeFocusColor(android.graphics.Canvas,boolean) -> d
-    java.lang.String changeLabelText(java.lang.String) -> e
 com.google.mlkit.vision.demo.preference.-$$Lambda$CameraXLivePreviewPreferenceFragment$cPkc7A2YrqQFBBKaxGJJ0EMRyFc -> com.google.mlkit.vision.demo.preference.a:
     android.preference.ListPreference f$1 -> b
     int f$2 -> c

@@ -20,6 +20,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
@@ -370,7 +371,7 @@ class CameraXLivePreviewActivity :
         }
         try {
           imageProcessor!!.processImageProxy(imageProxy, graphicOverlay)
-          if (VERSION.SDK_INT >= VERSION_CODES.O){
+          if (VERSION.SDK_INT >= VERSION_CODES.O && PreferenceUtils.shouldVibration(this)){
             vibrateImageDetected()
           }
         } catch (e: MlKitException) {

@@ -37,4 +37,12 @@
         android:persistent="true"
         android:title="@string/pref_title_info_hide"/>
   </PreferenceCategory>
+
+  <PreferenceCategory android:title="@string/pref_category_vibrate">
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="@string/pref_key_vibrate"
+        android:persistent="true"
+        android:title="@string/pref_title_vibrate"/>
+  </PreferenceCategory>
 </PreferenceScreen>

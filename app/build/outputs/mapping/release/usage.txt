@@ -369,12 +369,10 @@ com.google.android.gms.internal.clearcut.zzai:
 com.google.android.gms.common.zzq
 com.google.mlkit.vision.demo.kotlin.labeldetector.LabelGraphic:
     private static final float TEXT_SIZE
+    private static final float DATA_TEXT_SIZE
     private static final java.lang.String LABEL_FORMAT
     private static final java.lang.String WEAR_MASK
     private static final java.lang.String AUTHORIZED
-    private static final java.lang.String MASKED
-    private static final java.lang.String NOT_MASKED
-    private static final java.lang.String HALF_MASKED
 kotlin.collections.UCollectionsKt
 com.google.common.hash.Funnels$LongFunnel
 com.google.common.collect.Multiset
@@ -22046,6 +22044,8 @@ com.google.android.gms.internal.mlkit_vision_text.zzfm:
     private static final com.google.firebase.encoders.FieldDescriptor zze
     private static final com.google.firebase.encoders.FieldDescriptor zzf
     private static final com.google.firebase.encoders.FieldDescriptor zzg
+com.google.mlkit.vision.demo.InferenceInfoGraphic:
+    private final com.google.mlkit.vision.demo.GraphicOverlay overlay
 com.google.android.gms.internal.mlkit_vision_face_bundled.zzen:
     private static final com.google.firebase.encoders.FieldDescriptor zzb
     private static final com.google.firebase.encoders.FieldDescriptor zzc

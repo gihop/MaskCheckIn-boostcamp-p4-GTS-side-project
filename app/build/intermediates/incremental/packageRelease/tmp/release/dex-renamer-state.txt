@@ -1,4 +1,4 @@
-#Sun May 30 21:34:02 KST 2021
+#Mon May 31 01:28:40 KST 2021
 base.0=/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/build/intermediates/dex/release/minifyReleaseWithR8/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

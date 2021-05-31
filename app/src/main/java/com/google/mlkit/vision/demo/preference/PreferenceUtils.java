@@ -100,6 +100,13 @@ public class PreferenceUtils {
     return sharedPreferences.getBoolean(prefKey, false);
   }
 
+  public static boolean shouldVibration(Context context) {
+    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+    String prefKey =
+            context.getString(R.string.pref_key_vibrate);
+    return sharedPreferences.getBoolean(prefKey, false);
+  }
+
   public static ObjectDetectorOptions getObjectDetectorOptionsForStillImage(Context context) {
     return getObjectDetectorOptions(
         context,
