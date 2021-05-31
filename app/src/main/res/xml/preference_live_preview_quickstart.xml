@@ -45,4 +45,11 @@
         android:persistent="true"
         android:title="@string/pref_title_vibrate"/>
   </PreferenceCategory>
+
+  <PreferenceCategory android:title="@string/pref_category_timer">
+    <ListPreference
+        android:key="@string/pref_key_timer"
+        android:persistent="true"
+        android:title="@string/pref_title_timer"/>
+  </PreferenceCategory>
 </PreferenceScreen>

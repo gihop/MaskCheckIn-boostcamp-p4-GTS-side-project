@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <corners
+                android:radius="100dp"
+                />
+            <solid
+                android:color="#00FFFFFF"
+                />
+            <padding
+                android:left="0dp"
+                android:top="0dp"
+                android:right="0dp"
+                android:bottom="0dp"
+                />
+            <size
+                android:width="100dp"
+                android:height="100dp"
+                />
+            <stroke
+                android:width="1dp"
+                android:color="#80878787"
+                />
+        </shape>
+    </item>
+    <item>
+        <inset
+            android:drawable="@drawable/ic_launcher"
+            android:insetTop="7dp"
+            android:insetLeft="7dp"
+            android:insetBottom="7dp"
+            android:insetRight="7dp"
+            android:visible="true" />
+    </item>
+
+</layer-list>

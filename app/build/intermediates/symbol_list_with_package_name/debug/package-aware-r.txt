@@ -834,6 +834,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable camera_switch_button_shape
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -853,12 +854,13 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
-drawable custom_botton_shape
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ic_launcher
 drawable ic_settings_white_24dp
 drawable ic_switch_camera_white_48dp
 drawable ic_switch_camera_white_48dp_inset
+drawable inference_button_shape
 drawable list_item_background
 drawable logo_mlkit
 drawable notification_action_background
@@ -1214,7 +1216,6 @@ layout spinner_style
 layout support_simple_spinner_dropdown_item
 layout toggle_style
 menu camera_button_menu
-mipmap ic_launcher
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -1282,6 +1283,7 @@ string pref_category_key_camera
 string pref_category_object_detection
 string pref_category_pose_detection
 string pref_category_segmentation
+string pref_category_timer
 string pref_category_title_camera
 string pref_category_vibrate
 string pref_dialog_message_face_detector_min_face_size
@@ -1331,6 +1333,7 @@ string pref_key_still_image_object_detector_enable_classification
 string pref_key_still_image_object_detector_enable_multiple_objects
 string pref_key_still_image_pose_detection_performance_mode
 string pref_key_still_image_pose_detector_show_in_frame_likelihood
+string pref_key_timer
 string pref_key_vibrate
 string pref_screen
 string pref_screen_title_camerax_live_preview
@@ -1359,6 +1362,7 @@ string pref_title_pose_detector_show_in_frame_likelihood
 string pref_title_pose_detector_visualize_z
 string pref_title_rear_camera_preview_size
 string pref_title_segmentation_raw_size_mask
+string pref_title_timer
 string pref_title_vibrate
 string pref_toast_invalid_min_face_size
 string search_menu_title
