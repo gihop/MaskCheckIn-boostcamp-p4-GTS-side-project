@@ -18,8 +18,9 @@ com/google/mlkit/vision/demo/FrameMetadata.java
  com.google.mlkit.vision.demo.FrameMetadata$Builder
 com/google/mlkit/vision/demo/CameraImageGraphic.java
  com.google.mlkit.vision.demo.CameraImageGraphic
-com/google/mlkit/vision/demo/InferenceInfoGraphic.java
- com.google.mlkit.vision.demo.InferenceInfoGraphic
+com/google/mlkit/vision/demo/preference/SettingsActivity.java
+ com.google.mlkit.vision.demo.preference.SettingsActivity
+ com.google.mlkit.vision.demo.preference.SettingsActivity$LaunchSource
 com/google/mlkit/vision/demo/GraphicOverlay.java
  com.google.mlkit.vision.demo.GraphicOverlay
  com.google.mlkit.vision.demo.GraphicOverlay$Graphic
@@ -35,6 +36,5 @@ com/google/mlkit/vision/demo/CameraXViewModel.java
  com.google.mlkit.vision.demo.CameraXViewModel
 com/google/mlkit/vision/demo/preference/CameraXLivePreviewPreferenceFragment.java
  com.google.mlkit.vision.demo.preference.CameraXLivePreviewPreferenceFragment
-com/google/mlkit/vision/demo/preference/SettingsActivity.java
- com.google.mlkit.vision.demo.preference.SettingsActivity
- com.google.mlkit.vision.demo.preference.SettingsActivity$LaunchSource
+com/google/mlkit/vision/demo/InferenceInfoGraphic.java
+ com.google.mlkit.vision.demo.InferenceInfoGraphic

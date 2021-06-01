@@ -19,6 +19,9 @@ package com.google.mlkit.vision.demo;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+
+import com.google.mlkit.vision.demo.preference.PreferenceUtils;
+
 import androidx.annotation.Nullable;
 
 /** Graphic instance for rendering inference info (latency, FPS, resolution) in an overlay view. */
@@ -67,6 +70,7 @@ public class InferenceInfoGraphic extends GraphicOverlay.Graphic {
     if (!showLatencyInfo) {
       return;
     }
+    if (PreferenceUtils.shouldHideDetectionInfo(getApplicationContext())) return;
     // Draw FPS (if valid) and inference latency
     if (framesPerSecond != null) {
       canvas.drawText(

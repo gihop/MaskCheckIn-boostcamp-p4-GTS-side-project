@@ -246,16 +246,16 @@ abstract class VisionProcessorBase<T>(context: Context) : VisionImageProcessor {
       }
       this@VisionProcessorBase.onSuccess(results, graphicOverlay)
 
-      if (!PreferenceUtils.shouldHideDetectionInfo(graphicOverlay.context)) {
-        graphicOverlay.add(
-          InferenceInfoGraphic(
-            graphicOverlay,
-            currentFrameLatencyMs,
-            currentDetectorLatencyMs,
-            if (shouldShowFps) framesPerSecond else null
-          )
+
+      graphicOverlay.add(
+        InferenceInfoGraphic(
+          graphicOverlay,
+          currentFrameLatencyMs,
+          currentDetectorLatencyMs,
+          if (shouldShowFps) framesPerSecond else null
         )
-      }
+      )
+
       graphicOverlay.postInvalidate()
     }
       .addOnFailureListener(executor) { e: Exception ->
