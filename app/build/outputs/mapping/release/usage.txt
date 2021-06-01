@@ -5068,6 +5068,10 @@ com.google.common.collect.RegularContiguousSet$1
 javax.inject.Singleton
 androidx.lifecycle.Transformations$2
 com.google.common.collect.Sets$1$1
+com.google.mlkit.vision.demo.preference.CameraXLivePreviewPreferenceFragment:
+    private void setUpCameraXTargetAnalysisSizePreference(int,int)
+    public static android.hardware.camera2.CameraCharacteristics getCameraCharacteristics(android.content.Context,java.lang.Integer)
+    private synthetic boolean lambda$setUpCameraXTargetAnalysisSizePreference$0(android.preference.ListPreference,int,android.preference.Preference,java.lang.Object)
 kotlin.HashCodeKt
 kotlinx.android.extensions.ContainerOptions
 com.google.mlkit.common.internal.model.zzc
@@ -5097,7 +5101,6 @@ com.google.android.gms.internal.mlkit_vision_pose_common.zzew:
     private void <init>()
 com.google.mlkit.vision.demo.GraphicOverlay$Graphic:
     public float scale(float)
-    public android.content.Context getApplicationContext()
     public boolean isImageFlipped()
     public float translateX(float)
     public float translateY(float)
@@ -13929,7 +13932,6 @@ com.google.common.collect.Maps$UnmodifiableBiMap
 com.google.common.base.CaseFormat$2
 com.google.android.gms.internal.clearcut.zzch:
     public static com.google.android.gms.internal.clearcut.zzch zzbk()
-com.google.mlkit.vision.demo.R$mipmap
 android.support.v4.os.ResultReceiver
 androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 com.google.android.gms.internal.mlkit_vision_barcode_bundled.zzef

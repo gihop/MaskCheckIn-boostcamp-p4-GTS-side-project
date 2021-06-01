@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 2.1.75
 # min_api: 16
-# pg_map_id: c67afee
+# pg_map_id: 19b8e39
 # common_typos_disable
 $r8$backportedMethods$utility$Objects$2$equals -> a:
     boolean equals(java.lang.Object,java.lang.Object) -> a
@@ -46094,8 +46094,9 @@ com.google.mlkit.vision.demo.GraphicOverlay -> com.google.mlkit.vision.demo.Grap
 com.google.mlkit.vision.demo.GraphicOverlay$Graphic -> com.google.mlkit.vision.demo.GraphicOverlay$a:
     com.google.mlkit.vision.demo.GraphicOverlay overlay -> a
     void draw(android.graphics.Canvas) -> a
-    android.graphics.Matrix getTransformationMatrix() -> b
-    void postInvalidate() -> c
+    android.content.Context getApplicationContext() -> b
+    android.graphics.Matrix getTransformationMatrix() -> c
+    void postInvalidate() -> d
 com.google.mlkit.vision.demo.InferenceInfoGraphic -> com.google.mlkit.vision.demo.i:
     java.lang.Integer framesPerSecond -> e
     android.graphics.Paint textPaint -> b
@@ -46272,8 +46273,8 @@ com.google.mlkit.vision.demo.kotlin.labeldetector.LabelGraphic -> com.google.mlk
     android.graphics.Paint borderPaint -> b
     java.util.List labels -> h
     void draw(android.graphics.Canvas) -> a
-    void changeFocusColor(android.graphics.Canvas,boolean) -> d
-com.google.mlkit.vision.demo.preference.-$$Lambda$CameraXLivePreviewPreferenceFragment$cPkc7A2YrqQFBBKaxGJJ0EMRyFc -> com.google.mlkit.vision.demo.preference.a:
+    void changeFocusColor(android.graphics.Canvas,boolean) -> e
+com.google.mlkit.vision.demo.preference.-$$Lambda$CameraXLivePreviewPreferenceFragment$6C2rRygWjDRx3w9zh3NV0vU9-_Q -> com.google.mlkit.vision.demo.preference.a:
     android.preference.ListPreference f$1 -> b
     int f$2 -> c
     com.google.mlkit.vision.demo.preference.CameraXLivePreviewPreferenceFragment f$0 -> a
@@ -46284,10 +46285,9 @@ com.google.mlkit.vision.demo.preference.-$$Lambda$LivePreviewPreferenceFragment$
     int f$2 -> c
 com.google.mlkit.vision.demo.preference.CameraXLivePreviewPreferenceFragment -> com.google.mlkit.vision.demo.preference.c:
     void setUpCameraPreferences() -> c
-    android.hardware.camera2.CameraCharacteristics getCameraCharacteristics(android.content.Context,java.lang.Integer) -> e
-    boolean lambda$setUpCameraXTargetAnalysisSizePreference$0(android.preference.ListPreference,int,android.preference.Preference,java.lang.Object) -> f
-    boolean lambda$setUpCameraXTargetAnalysisSizePreference$0$CameraXLivePreviewPreferenceFragment(android.preference.ListPreference,int,android.preference.Preference,java.lang.Object) -> g
-    void setUpCameraXTargetAnalysisSizePreference(int,int) -> h
+    boolean lambda$setInfoTimer$1(android.preference.ListPreference,int,android.preference.Preference,java.lang.Object) -> e
+    boolean lambda$setInfoTimer$1$CameraXLivePreviewPreferenceFragment(android.preference.ListPreference,int,android.preference.Preference,java.lang.Object) -> f
+    void setInfoTimer(int) -> g
 com.google.mlkit.vision.demo.preference.LivePreviewPreferenceFragment -> com.google.mlkit.vision.demo.preference.d:
     boolean lambda$setUpCameraPreviewSizePreference$0(android.preference.ListPreference,int,java.util.Map,android.preference.Preference,java.lang.Object) -> a
     boolean lambda$setUpCameraPreviewSizePreference$0$LivePreviewPreferenceFragment(android.preference.ListPreference,int,java.util.Map,android.preference.Preference,java.lang.Object) -> b
@@ -46296,9 +46296,11 @@ com.google.mlkit.vision.demo.preference.LivePreviewPreferenceFragment -> com.goo
 com.google.mlkit.vision.demo.preference.PreferenceUtils -> com.google.mlkit.vision.demo.preference.e:
     com.google.mlkit.vision.demo.CameraSource$SizePair getCameraPreviewSizePair(android.content.Context,int) -> a
     android.util.Size getCameraXTargetResolution(android.content.Context,int) -> b
-    boolean isCameraLiveViewportEnabled(android.content.Context) -> c
-    void saveString(android.content.Context,int,java.lang.String) -> d
-    boolean shouldHideDetectionInfo(android.content.Context) -> e
+    java.lang.String getInfoTimer(android.content.Context) -> c
+    boolean isCameraLiveViewportEnabled(android.content.Context) -> d
+    void saveString(android.content.Context,int,java.lang.String) -> e
+    boolean shouldHideDetectionInfo(android.content.Context) -> f
+    boolean shouldVibration(android.content.Context) -> g
 com.google.mlkit.vision.demo.preference.SettingsActivity$LaunchSource -> com.google.mlkit.vision.demo.preference.SettingsActivity$a:
     com.google.mlkit.vision.demo.preference.SettingsActivity$LaunchSource CAMERAX_LIVE_PREVIEW -> e
     com.google.mlkit.vision.demo.preference.SettingsActivity$LaunchSource LIVE_PREVIEW -> d
