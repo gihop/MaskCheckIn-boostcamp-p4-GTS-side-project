@@ -88,9 +88,11 @@ class LabelGraphic(
     var incorrectMask = 0F
     var mask = 0F
     var normal = 0F
+    var background = 0F
     for (label in labels) {
       if(label.text == "normal") normal = label.confidence
       else if(label.text == "incorrect_mask") incorrectMask = label.confidence
+      else if(label.text == "background") background = label.confidence
       else mask = label.confidence
     }
 
@@ -128,7 +130,7 @@ class LabelGraphic(
     if(!PreferenceUtils.shouldHideDetectionInfo(applicationContext)) {
       val dataX = DATA_TEXT_SIZE * 0.5f;
       val dataY = DATA_TEXT_SIZE * 1.5f;
-      for (i in 0..2) {
+      for (i in labels.indices) {
         canvas.drawText(
                 labels[i].text + " : " +
                         String.format(Locale.US, LABEL_FORMAT, labels[i].confidence * 100),
