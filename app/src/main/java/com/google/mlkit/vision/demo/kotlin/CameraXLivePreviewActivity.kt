@@ -116,6 +116,7 @@ class CameraXLivePreviewActivity :
     options.add(MASK_V3)
     options.add(MASK_V4)
     options.add(MASK_V5)
+    options.add(MASK_V6)
 
     // Creating adapter for spinner
     val dataAdapter =
@@ -342,10 +343,24 @@ class CameraXLivePreviewActivity :
         MASK_V5 -> {
           Log.i(
                   TAG,
-                  "Using Mask V4 Detector Processor"
+                  "Using Mask V5 Detector Processor"
           )
           val localClassifier = LocalModel.Builder()
                   .setAssetFilePath("custom_models/mask_v5.tflite")
+                  .build()
+          val customImageLabelerOptions =
+                  CustomImageLabelerOptions.Builder(localClassifier).build()
+          LabelDetectorProcessor(
+                  this, customImageLabelerOptions
+          )
+        }
+        MASK_V6 -> {
+          Log.i(
+                  TAG,
+                  "Using Mask V6 Detector Processor"
+          )
+          val localClassifier = LocalModel.Builder()
+                  .setAssetFilePath("custom_models/mask_v6.tflite")
                   .build()
           val customImageLabelerOptions =
                   CustomImageLabelerOptions.Builder(localClassifier).build()
@@ -489,7 +504,8 @@ class CameraXLivePreviewActivity :
     private const val MASK_V2 = "Mask Model Version 2"
     private const val MASK_V3 = "Mask Model Version 3"
     private const val MASK_V4 = "Mask Model Version 4"
-    private const val MASK_V5 = "Mask Background Model"
+    private const val MASK_V5 = "Mask Model V5(Background)"
+    private const val MASK_V6 = "Mask Model V6(Background)"
 
     private const val STATE_SELECTED_MODEL = "selected_model"
 

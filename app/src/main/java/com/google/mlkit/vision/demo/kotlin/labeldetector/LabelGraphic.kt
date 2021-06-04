@@ -20,6 +20,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.os.Build
+import android.util.Log
 import androidx.annotation.RequiresApi
 import com.google.mlkit.vision.demo.GraphicOverlay
 import com.google.mlkit.vision.demo.GraphicOverlay.Graphic
@@ -131,6 +132,7 @@ class LabelGraphic(
       val dataX = DATA_TEXT_SIZE * 0.5f;
       val dataY = DATA_TEXT_SIZE * 1.5f;
       for (i in labels.indices) {
+        Log.i("label test", labels[i].text)
         canvas.drawText(
                 labels[i].text + " : " +
                         String.format(Locale.US, LABEL_FORMAT, labels[i].confidence * 100),
