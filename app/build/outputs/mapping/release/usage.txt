@@ -15777,6 +15777,7 @@ com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity:
     private static final java.lang.String MASK_V3
     private static final java.lang.String MASK_V4
     private static final java.lang.String MASK_V5
+    private static final java.lang.String MASK_V6
     private static final java.lang.String STATE_SELECTED_MODEL
 com.google.android.gms.internal.clearcut.zzge$zzq
 com.google.common.io.Closer$Suppressor

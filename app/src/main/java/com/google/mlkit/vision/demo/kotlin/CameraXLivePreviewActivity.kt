@@ -22,6 +22,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
+import android.graphics.Rect
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
@@ -30,6 +31,7 @@ import android.os.VibrationEffect
 import android.os.Vibrator
 import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
+import android.util.Size
 import android.view.View
 import android.widget.*
 import android.widget.AdapterView.OnItemSelectedListener
@@ -386,7 +388,7 @@ class CameraXLivePreviewActivity :
     }
 
     val builder = ImageAnalysis.Builder()
-    val targetResolution = PreferenceUtils.getCameraXTargetResolution(this, lensFacing)
+    var targetResolution = PreferenceUtils.getCameraXTargetResolution(this, lensFacing)
     if (targetResolution != null) {
       builder.setTargetResolution(targetResolution)
     }

@@ -67,7 +67,6 @@ public class BitmapUtils {
     return null;
   }
 
-  /** Converts a YUV_420_888 image from CameraX API to a bitmap. */
   @RequiresApi(VERSION_CODES.KITKAT)
   @Nullable
   @ExperimentalGetImage
@@ -81,7 +80,24 @@ public class BitmapUtils {
 
     ByteBuffer nv21Buffer =
         yuv420ThreePlanesToNV21(image.getImage().getPlanes(), image.getWidth(), image.getHeight());
-    return getBitmap(nv21Buffer, frameMetadata);
+    return Bitmap.createBitmap(getBitmap(nv21Buffer, frameMetadata), 0, (image.getWidth()/2) - (image.getHeight()/2), image.getHeight(), image.getHeight());
+//    return getBitmap(nv21Buffer, frameMetadata);
+  }
+
+  @RequiresApi(VERSION_CODES.KITKAT)
+  @Nullable
+  @ExperimentalGetImage
+  public static Bitmap getInputBitmap(ImageProxy image) {
+    FrameMetadata frameMetadata =
+            new FrameMetadata.Builder()
+                    .setWidth(image.getWidth())
+                    .setHeight(image.getHeight())
+                    .setRotation(image.getImageInfo().getRotationDegrees())
+                    .build();
+
+    ByteBuffer nv21Buffer =
+            yuv420ThreePlanesToNV21(image.getImage().getPlanes(), image.getWidth(), image.getHeight());
+    return Bitmap.createBitmap(getBitmap(nv21Buffer, frameMetadata), 0, (image.getWidth()/2) - (image.getHeight()/2), image.getHeight(), image.getHeight());
   }
 
   /** Rotates a bitmap if it is converted from a bytebuffer. */

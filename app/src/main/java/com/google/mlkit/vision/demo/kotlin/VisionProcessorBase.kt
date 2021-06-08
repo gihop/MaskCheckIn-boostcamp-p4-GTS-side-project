@@ -19,6 +19,7 @@ package com.google.mlkit.vision.demo.kotlin
 import android.app.ActivityManager
 import android.content.Context
 import android.graphics.Bitmap
+import android.graphics.Rect
 import android.os.Build.VERSION_CODES
 import android.os.SystemClock
 import androidx.annotation.RequiresApi
@@ -178,12 +179,14 @@ abstract class VisionProcessorBase<T>(context: Context) : VisionImageProcessor {
     if (!PreferenceUtils.isCameraLiveViewportEnabled(graphicOverlay.context)) {
       bitmap = BitmapUtils.getBitmap(image)
     }
+
+    val inputBitmap = BitmapUtils.getInputBitmap(image)
     requestDetectInImage(
-      InputImage.fromMediaImage(image.image!!, image.imageInfo.rotationDegrees),
-      graphicOverlay, /* originalCameraImage= */
-      bitmap, /* shouldShowFps= */
-      true,
-      frameStartMs
+            InputImage.fromBitmap(inputBitmap, image.imageInfo.rotationDegrees),
+            graphicOverlay, /* originalCameraImage= */
+            bitmap, /* shouldShowFps= */
+            true,
+            frameStartMs
     )
       // When the image is from CameraX analysis use case, must call image.close() on received
       // images when finished using them. Otherwise, new images may not be received or the camera
