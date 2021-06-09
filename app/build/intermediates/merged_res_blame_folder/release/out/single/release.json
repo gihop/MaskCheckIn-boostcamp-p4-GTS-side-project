@@ -28,10 +28,6 @@
         "source": "/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/res/drawable-mdpi/ic_launcher.png"
     },
     {
-        "merged": "/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/build/intermediates/res/merged/release/menu_camera_button_menu.xml.flat",
-        "source": "/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/res/menu/camera_button_menu.xml"
-    },
-    {
         "merged": "/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/build/intermediates/res/merged/release/drawable-xxhdpi_ic_settings_white_24dp.png.flat",
         "source": "/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/res/drawable-xxhdpi/ic_settings_white_24dp.png"
     },

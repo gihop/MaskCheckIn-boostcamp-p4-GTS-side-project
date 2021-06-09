@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 2.1.75
 # min_api: 16
-# pg_map_id: d803743
+# pg_map_id: 7b66a66
 # common_typos_disable
 $r8$backportedMethods$utility$Objects$2$equals -> a:
     boolean equals(java.lang.Object,java.lang.Object) -> a
@@ -29485,8 +29485,8 @@ com.google.mlkit.vision.common.InputImage -> c.a.d.b.a.a:
     int zzd -> d
     int zze -> e
     java.nio.ByteBuffer zzb -> b
-    com.google.mlkit.vision.common.InputImage fromByteBuffer(java.nio.ByteBuffer,int,int,int,int) -> a
-    com.google.mlkit.vision.common.InputImage fromMediaImage(android.media.Image,int) -> b
+    com.google.mlkit.vision.common.InputImage fromBitmap(android.graphics.Bitmap,int) -> a
+    com.google.mlkit.vision.common.InputImage fromByteBuffer(java.nio.ByteBuffer,int,int,int,int) -> b
     android.graphics.Bitmap getBitmapInternal() -> c
     java.nio.ByteBuffer getByteBuffer() -> d
     int getFormat() -> e
@@ -29500,13 +29500,11 @@ com.google.mlkit.vision.common.internal.CommonConvertUtils -> com.google.mlkit.v
 com.google.mlkit.vision.common.internal.ImageConvertUtils -> com.google.mlkit.vision.common.internal.b:
     com.google.mlkit.vision.common.internal.ImageConvertUtils zza -> a
     java.nio.ByteBuffer bufferWithBackingArray(java.nio.ByteBuffer) -> a
-    android.graphics.Bitmap convertJpegToUpRightBitmap(android.media.Image,int) -> b
-    java.nio.ByteBuffer convertToNv21Buffer(com.google.mlkit.vision.common.InputImage,boolean) -> c
-    com.google.mlkit.vision.common.internal.ImageConvertUtils getInstance() -> d
-    java.nio.ByteBuffer yuv420ThreePlanesToNV21(android.media.Image$Plane[],int,int) -> e
-    java.nio.ByteBuffer yv12ToNv21Buffer(java.nio.ByteBuffer,boolean) -> f
-    android.graphics.Bitmap zzb(android.graphics.Bitmap,int,int,int) -> g
-    void zzc(android.media.Image$Plane,int,int,byte[],int,int) -> h
+    java.nio.ByteBuffer convertToNv21Buffer(com.google.mlkit.vision.common.InputImage,boolean) -> b
+    com.google.mlkit.vision.common.internal.ImageConvertUtils getInstance() -> c
+    java.nio.ByteBuffer yuv420ThreePlanesToNV21(android.media.Image$Plane[],int,int) -> d
+    java.nio.ByteBuffer yv12ToNv21Buffer(java.nio.ByteBuffer,boolean) -> e
+    void zzc(android.media.Image$Plane,int,int,byte[],int,int) -> f
 com.google.mlkit.vision.common.internal.ImageUtils -> com.google.mlkit.vision.common.internal.c:
     com.google.mlkit.vision.common.internal.ImageUtils zzb -> a
     com.google.mlkit.vision.common.internal.ImageUtils getInstance() -> a
@@ -29559,7 +29557,6 @@ com.google.mlkit.vision.common.internal.zzd -> com.google.mlkit.vision.common.in
     java.lang.Object create(com.google.firebase.components.ComponentContainer) -> a
 com.google.mlkit.vision.common.internal.zze -> com.google.mlkit.vision.common.internal.j:
 com.google.mlkit.vision.common.zzb -> c.a.d.b.a.b:
-    android.media.Image zza -> a
     android.media.Image$Plane[] zzb() -> a
 com.google.mlkit.vision.demo.-$$Lambda$CameraXViewModel$sBBc2dTXuCf6dj_SpKQjKKNXIRc -> com.google.mlkit.vision.demo.a:
     com.google.mlkit.vision.demo.CameraXViewModel f$0 -> b
@@ -29573,9 +29570,10 @@ com.google.mlkit.vision.demo.BitmapUtils -> com.google.mlkit.vision.demo.d:
     boolean areUVPlanesNV21(android.media.Image$Plane[],int,int) -> a
     android.graphics.Bitmap getBitmap(androidx.camera.core.ImageProxy) -> b
     android.graphics.Bitmap getBitmap(java.nio.ByteBuffer,com.google.mlkit.vision.demo.FrameMetadata) -> c
-    android.graphics.Bitmap rotateBitmap(android.graphics.Bitmap,int,boolean,boolean) -> d
-    void unpackPlane(android.media.Image$Plane,int,int,byte[],int,int) -> e
-    java.nio.ByteBuffer yuv420ThreePlanesToNV21(android.media.Image$Plane[],int,int) -> f
+    android.graphics.Bitmap getInputBitmap(androidx.camera.core.ImageProxy) -> d
+    android.graphics.Bitmap rotateBitmap(android.graphics.Bitmap,int,boolean,boolean) -> e
+    void unpackPlane(android.media.Image$Plane,int,int,byte[],int,int) -> f
+    java.nio.ByteBuffer yuv420ThreePlanesToNV21(android.media.Image$Plane[],int,int) -> g
 com.google.mlkit.vision.demo.CameraImageGraphic -> com.google.mlkit.vision.demo.e:
     android.graphics.Bitmap bitmap -> b
     void draw(android.graphics.Canvas) -> a
@@ -29713,31 +29711,28 @@ com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity -> com.google.mlk
     boolean needUpdateGraphicOverlayImageSourceInfo -> z
     androidx.camera.core.CameraSelector cameraSelector -> C
     com.google.mlkit.vision.demo.VisionImageProcessor imageProcessor -> y
-    java.lang.Long lastThreadID -> D
     java.lang.String selectedModel -> A
     androidx.camera.core.ImageAnalysis analysisUseCase -> x
     int lensFacing -> B
     androidx.camera.view.PreviewView previewView -> t
     boolean access$allPermissionsGranted(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity) -> F
-    void access$bindAllCameraUseCases(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity,boolean) -> G
+    void access$bindAllCameraUseCases(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity) -> G
     void access$bindAnalysisUseCase(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity) -> H
     com.google.mlkit.vision.demo.GraphicOverlay access$getGraphicOverlay$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity) -> I
     com.google.mlkit.vision.demo.VisionImageProcessor access$getImageProcessor$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity) -> J
-    java.lang.Long access$getLastThreadID$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity) -> K
-    int access$getLensFacing$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity) -> L
-    boolean access$getNeedUpdateGraphicOverlayImageSourceInfo$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity) -> M
-    void access$setCameraProvider$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity,androidx.camera.lifecycle.ProcessCameraProvider) -> N
-    void access$setLastThreadID$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity,java.lang.Long) -> O
-    void access$setNeedUpdateGraphicOverlayImageSourceInfo$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity,boolean) -> P
-    void access$vibrateImageDetected(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity) -> Q
-    boolean allPermissionsGranted() -> R
-    void bindAllCameraUseCases(boolean) -> S
-    void bindAnalysisUseCase() -> T
-    void bindPreviewUseCase() -> U
-    java.lang.String[] getRequiredPermissions() -> V
-    void getRuntimePermissions() -> W
-    boolean isPermissionGranted(android.content.Context,java.lang.String) -> X
-    void vibrateImageDetected() -> Y
+    int access$getLensFacing$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity) -> K
+    boolean access$getNeedUpdateGraphicOverlayImageSourceInfo$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity) -> L
+    void access$setCameraProvider$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity,androidx.camera.lifecycle.ProcessCameraProvider) -> M
+    void access$setNeedUpdateGraphicOverlayImageSourceInfo$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity,boolean) -> N
+    void access$startAnalysis(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity) -> O
+    boolean allPermissionsGranted() -> P
+    void bindAllCameraUseCases() -> Q
+    void bindAnalysisUseCase() -> R
+    void bindPreviewUseCase() -> S
+    java.lang.String[] getRequiredPermissions() -> T
+    void getRuntimePermissions() -> U
+    boolean isPermissionGranted(android.content.Context,java.lang.String) -> V
+    void startAnalysis() -> W
 com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$bindAnalysisUseCase$1 -> com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$a:
     com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity this$0 -> a
     void analyze(androidx.camera.core.ImageProxy) -> a
@@ -29747,13 +29742,10 @@ com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$onCreate$1 -> com
     void onChanged(androidx.camera.lifecycle.ProcessCameraProvider) -> b
 com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$onCreate$2 -> com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$c:
     com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity this$0 -> b
-com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$onCreate$3 -> com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$d:
+com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$startAnalysis$1 -> com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$d:
     com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity this$0 -> b
-com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$onCreate$3$1 -> com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$d$a:
-    com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$onCreate$3 this$0 -> b
-com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$onCreate$3$1$1 -> com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$d$a$a:
-    com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$onCreate$3$1 this$0 -> b
-    long $currentThreadID -> c
+com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$startAnalysis$1$1 -> com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$d$a:
+    com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity$startAnalysis$1 this$0 -> b
 com.google.mlkit.vision.demo.kotlin.LivePreviewActivity -> com.google.mlkit.vision.demo.kotlin.LivePreviewActivity:
     java.lang.String selectedModel -> w
     com.google.mlkit.vision.demo.CameraSource cameraSource -> t
@@ -29868,33 +29860,26 @@ com.google.mlkit.vision.demo.kotlin.labeldetector.LabelGraphic -> com.google.mlk
     java.util.List labels -> h
     void draw(android.graphics.Canvas) -> a
     void changeFocusColor(android.graphics.Canvas,boolean) -> e
-com.google.mlkit.vision.demo.preference.-$$Lambda$CameraXLivePreviewPreferenceFragment$6C2rRygWjDRx3w9zh3NV0vU9-_Q -> com.google.mlkit.vision.demo.preference.a:
-    android.preference.ListPreference f$1 -> b
-    int f$2 -> c
-    com.google.mlkit.vision.demo.preference.CameraXLivePreviewPreferenceFragment f$0 -> a
-com.google.mlkit.vision.demo.preference.-$$Lambda$LivePreviewPreferenceFragment$xLfvOyljS6H44yJM7_Qna8u7h9s -> com.google.mlkit.vision.demo.preference.b:
+com.google.mlkit.vision.demo.preference.-$$Lambda$LivePreviewPreferenceFragment$xLfvOyljS6H44yJM7_Qna8u7h9s -> com.google.mlkit.vision.demo.preference.a:
     java.util.Map f$3 -> d
     android.preference.ListPreference f$1 -> b
     com.google.mlkit.vision.demo.preference.LivePreviewPreferenceFragment f$0 -> a
     int f$2 -> c
-com.google.mlkit.vision.demo.preference.CameraXLivePreviewPreferenceFragment -> com.google.mlkit.vision.demo.preference.c:
+com.google.mlkit.vision.demo.preference.CameraXLivePreviewPreferenceFragment -> com.google.mlkit.vision.demo.preference.b:
     void setUpCameraPreferences() -> c
-    boolean lambda$setInfoTimer$1(android.preference.ListPreference,int,android.preference.Preference,java.lang.Object) -> e
-    boolean lambda$setInfoTimer$1$CameraXLivePreviewPreferenceFragment(android.preference.ListPreference,int,android.preference.Preference,java.lang.Object) -> f
-    void setInfoTimer(int) -> g
-com.google.mlkit.vision.demo.preference.LivePreviewPreferenceFragment -> com.google.mlkit.vision.demo.preference.d:
+com.google.mlkit.vision.demo.preference.LivePreviewPreferenceFragment -> com.google.mlkit.vision.demo.preference.c:
     boolean lambda$setUpCameraPreviewSizePreference$0(android.preference.ListPreference,int,java.util.Map,android.preference.Preference,java.lang.Object) -> a
     boolean lambda$setUpCameraPreviewSizePreference$0$LivePreviewPreferenceFragment(android.preference.ListPreference,int,java.util.Map,android.preference.Preference,java.lang.Object) -> b
     void setUpCameraPreferences() -> c
     void setUpCameraPreviewSizePreference(int,int,int) -> d
-com.google.mlkit.vision.demo.preference.PreferenceUtils -> com.google.mlkit.vision.demo.preference.e:
+com.google.mlkit.vision.demo.preference.PreferenceUtils -> com.google.mlkit.vision.demo.preference.d:
     com.google.mlkit.vision.demo.CameraSource$SizePair getCameraPreviewSizePair(android.content.Context,int) -> a
     android.util.Size getCameraXTargetResolution(android.content.Context,int) -> b
-    java.lang.String getInfoTimer(android.content.Context) -> c
+    java.lang.String getInferenceResult(android.content.Context) -> c
     boolean isCameraLiveViewportEnabled(android.content.Context) -> d
     void saveString(android.content.Context,int,java.lang.String) -> e
-    boolean shouldHideDetectionInfo(android.content.Context) -> f
-    boolean shouldVibration(android.content.Context) -> g
+    void setInferenceResult(android.content.Context,java.lang.String) -> f
+    boolean shouldHideDetectionInfo(android.content.Context) -> g
 com.google.mlkit.vision.demo.preference.SettingsActivity$LaunchSource -> com.google.mlkit.vision.demo.preference.SettingsActivity$a:
     com.google.mlkit.vision.demo.preference.SettingsActivity$LaunchSource CAMERAX_LIVE_PREVIEW -> e
     com.google.mlkit.vision.demo.preference.SettingsActivity$LaunchSource LIVE_PREVIEW -> d

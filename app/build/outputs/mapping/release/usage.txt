@@ -571,11 +571,14 @@ com.google.android.gms.common.zzq
 com.google.common.net.UrlEscapers
 kotlin.collections.ArraysKt___ArraysJvmKt$asList$4
 com.google.mlkit.vision.demo.kotlin.labeldetector.LabelGraphic:
+    private int test
     private static final float TEXT_SIZE
     private static final float DATA_TEXT_SIZE
     private static final java.lang.String LABEL_FORMAT
     private static final java.lang.String WEAR_MASK
     private static final java.lang.String AUTHORIZED
+    private static final java.lang.String DETECTION_SUCCESS
+    private static final java.lang.String DETECTION_FAILED
 com.google.common.collect.ImmutableEnumMap$1
 com.google.android.gms.internal.mlkit_vision_internal_vkp.zzaac:
     private void <init>()
@@ -4247,6 +4250,7 @@ com.google.mlkit.vision.demo.InferenceInfoGraphic:
     public void <init>(com.google.mlkit.vision.demo.GraphicOverlay)
     private static final int TEXT_COLOR
     private static final float TEXT_SIZE
+    private static final java.lang.String DETECTION_FAILED
 com.google.android.gms.internal.mlkit_vision_internal_vkp.zznp:
     private void <init>()
 com.google.common.collect.StandardTable$Column$EntrySet
@@ -6588,6 +6592,7 @@ androidx.appcompat.view.menu.MenuHelper
 com.google.mlkit.vision.demo.kotlin.VisionProcessorBase:
     public static final synthetic void access$setActivityManager$p(com.google.mlkit.vision.demo.kotlin.VisionProcessorBase,android.app.ActivityManager)
     public void processBitmap(android.graphics.Bitmap,com.google.mlkit.vision.demo.GraphicOverlay)
+    private int test
     public static final java.lang.String MANUAL_TESTING_LOG
     private static final java.lang.String TAG
 com.google.common.collect.Collections2$OrderedPermutationIterator
@@ -7619,7 +7624,9 @@ androidx.appcompat.widget.AppCompatDrawableManager:
     private static final java.lang.String TAG
     private static final boolean DEBUG
 com.google.mlkit.vision.common.zzb:
+    void <init>(android.media.Image)
     final android.media.Image zza()
+    private final android.media.Image zza
 com.google.mlkit.vision.demo.preference.PreferenceUtils:
     public static boolean shouldShowPoseDetectionInFrameLikelihoodLivePreview(android.content.Context)
     public static boolean shouldShowPoseDetectionInFrameLikelihoodStillImage(android.content.Context)
@@ -8549,8 +8556,9 @@ com.google.android.gms.internal.mlkit_vision_internal_vkp.zzct:
 kotlin.ranges.LongProgressionIterator
 com.google.mlkit.vision.common.InputImage:
     public static com.google.mlkit.vision.common.InputImage fromByteArray(byte[],int,int,int,int)
-    public static com.google.mlkit.vision.common.InputImage fromBitmap(android.graphics.Bitmap,int)
+    public static com.google.mlkit.vision.common.InputImage fromMediaImage(android.media.Image,int)
     public static com.google.mlkit.vision.common.InputImage fromFilePath(android.content.Context,android.net.Uri)
+    private void <init>(android.media.Image,int,int,int)
     public android.media.Image getMediaImage()
     public static final int IMAGE_FORMAT_NV21
     public static final int IMAGE_FORMAT_YV12
@@ -9516,7 +9524,6 @@ androidx.camera.core.impl.CameraInfoInternal:
 androidx.drawerlayout.widget.DrawerLayout
 com.google.common.collect.BaseImmutableMultimap
 androidx.constraintlayout.motion.widget.KeyCycleOscillator$TranslationZset
-com.google.mlkit.vision.demo.R$menu
 com.google.common.collect.Iterables$4
 com.google.android.play.core.splitinstall.o
 com.google.android.gms.internal.mlkit_vision_camera.zzdt
@@ -12852,9 +12859,11 @@ com.google.common.primitives.Floats$FloatConverter
 com.google.mlkit.vision.common.internal.ImageConvertUtils:
     public static android.graphics.Bitmap yv12ToBitmap(java.nio.ByteBuffer,int,int,int)
     private static byte[] zza(byte[],int,int)
+    private static android.graphics.Bitmap zzb(android.graphics.Bitmap,int,int,int)
     public android.graphics.Bitmap getUpRightBitmap(com.google.mlkit.vision.common.InputImage)
     public android.graphics.Bitmap convertToUpRightBitmap(com.google.mlkit.vision.common.InputImage)
     public java.nio.ByteBuffer cloneByteBuffer(java.nio.ByteBuffer)
+    public android.graphics.Bitmap convertJpegToUpRightBitmap(android.media.Image,int)
     public byte[] byteBufferToByteArray(java.nio.ByteBuffer)
     public android.graphics.Bitmap nv21ToBitmap(java.nio.ByteBuffer,int,int,int)
 com.google.mlkit.vision.demo.CameraSource:
@@ -15769,16 +15778,14 @@ com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity:
     public static final synthetic void access$setImageProcessor$p(com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity,com.google.mlkit.vision.demo.VisionImageProcessor)
     public android.view.View _$_findCachedViewById(int)
     public void _$_clearFindViewByIdCache()
+    private java.lang.Long lastThreadID
     private java.util.HashMap _$_findViewCache
     private static final java.lang.String TAG
     private static final int PERMISSION_REQUESTS
-    private static final java.lang.String MASK_V1
-    private static final java.lang.String MASK_V2
-    private static final java.lang.String MASK_V3
-    private static final java.lang.String MASK_V4
-    private static final java.lang.String MASK_V5
     private static final java.lang.String MASK_V6
     private static final java.lang.String STATE_SELECTED_MODEL
+    private static final java.lang.String DETECTING
+    private static final java.lang.String DETECTION_SUCCESS
 com.google.android.gms.internal.clearcut.zzge$zzq
 com.google.common.io.Closer$Suppressor
 androidx.annotation.InspectableProperty$ValueType
