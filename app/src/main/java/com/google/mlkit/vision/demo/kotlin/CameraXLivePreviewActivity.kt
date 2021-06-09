@@ -149,21 +149,6 @@ class CameraXLivePreviewActivity :
       startActivity(intent)
     }
 
-    val inferenceButton = findViewById<Button>(R.id.inference_button)
-    inferenceButton.setOnClickListener {
-      if (allPermissionsGranted()) {
-        graphicOverlay?.clear()
-        bindAnalysisUseCase()
-        Thread{
-          lastThreadID = Thread.currentThread().id
-          val currentThreadID = Thread.currentThread().id
-          runOnUiThread {
-            if(currentThreadID == lastThreadID) graphicOverlay?.clear()
-          }
-        }.start()
-      }
-    }
-
     if (!allPermissionsGranted()) {
       getRuntimePermissions()
     }
