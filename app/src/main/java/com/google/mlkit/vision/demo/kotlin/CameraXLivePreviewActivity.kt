@@ -157,8 +157,6 @@ class CameraXLivePreviewActivity :
         Thread{
           lastThreadID = Thread.currentThread().id
           val currentThreadID = Thread.currentThread().id
-          val timer = PreferenceUtils.getInfoTimer(this)
-          Thread.sleep(timer.substring(0, timer.length-1).toLong() * 1000)
           runOnUiThread {
             if(currentThreadID == lastThreadID) graphicOverlay?.clear()
           }
@@ -367,9 +365,6 @@ class CameraXLivePreviewActivity :
         }
         try {
           imageProcessor!!.processImageProxy(imageProxy, graphicOverlay)
-          if (VERSION.SDK_INT >= VERSION_CODES.O && PreferenceUtils.shouldVibration(this)){
-            vibrateImageDetected()
-          }
         } catch (e: MlKitException) {
           Log.e(
             TAG,
@@ -385,12 +380,6 @@ class CameraXLivePreviewActivity :
       }
     )
     cameraProvider!!.bindToLifecycle( /* lifecycleOwner= */this, cameraSelector!!, analysisUseCase)
-  }
-
-  @RequiresApi(VERSION_CODES.O)
-  private fun vibrateImageDetected(){
-    val vibrator = getSystemService(VIBRATOR_SERVICE) as Vibrator
-    vibrator.vibrate(VibrationEffect.createOneShot(300, 50))
   }
 
   private fun getRequiredPermissions(): Array<String?> {

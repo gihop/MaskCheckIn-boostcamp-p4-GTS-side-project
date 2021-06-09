@@ -11,26 +11,12 @@
         android:title="@string/pref_title_info_hide"/>
   </PreferenceCategory>
 
-  <PreferenceCategory android:title="@string/pref_category_vibrate">
-    <SwitchPreference
-        android:defaultValue="false"
-        android:key="@string/pref_key_vibrate"
-        android:persistent="true"
-        android:title="@string/pref_title_vibrate"/>
-  </PreferenceCategory>
-
-  <PreferenceCategory android:title="@string/pref_category_timer">
-    <ListPreference
-        android:key="@string/pref_key_timer"
-        android:persistent="true"
-        android:title="@string/pref_title_timer"/>
-  </PreferenceCategory>
-
   <PreferenceCategory>
     <Preference
         android:defaultValue="null"
         android:key="@string/pref_key_inference"
         android:persistent="true"
-        android:visibility="gone" />
+        android:visibility="gone"
+        android:selectable="false"/>
   </PreferenceCategory>
 </PreferenceScreen>

@@ -100,20 +100,6 @@ public class PreferenceUtils {
     return sharedPreferences.getBoolean(prefKey, false);
   }
 
-  public static boolean shouldVibration(Context context) {
-    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-    String prefKey =
-            context.getString(R.string.pref_key_vibrate);
-    return sharedPreferences.getBoolean(prefKey, false);
-  }
-
-  public static String getInfoTimer(Context context){
-    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-    String prefKey =
-            context.getString(R.string.pref_key_timer);
-    return sharedPreferences.getString(prefKey, "3s");
-  }
-
   public static String getInferenceResult(Context context){
     SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
     String prefKey =

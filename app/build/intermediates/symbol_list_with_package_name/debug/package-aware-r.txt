@@ -1095,7 +1095,6 @@ id search_plate
 id search_src_text
 id search_voice_btn
 id select_dialog_listview
-id select_images_from_local
 id settings_button
 id settings_container
 id shortcut
@@ -1131,7 +1130,6 @@ id tag_screen_reader_focusable
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
-id take_photo_using_camera
 id text
 id text2
 id textSpacerNoButtons
@@ -1215,7 +1213,6 @@ layout settings_style
 layout spinner_style
 layout support_simple_spinner_dropdown_item
 layout toggle_style
-menu camera_button_menu
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -1287,9 +1284,7 @@ string pref_category_key_camera
 string pref_category_object_detection
 string pref_category_pose_detection
 string pref_category_segmentation
-string pref_category_timer
 string pref_category_title_camera
-string pref_category_vibrate
 string pref_dialog_message_face_detector_min_face_size
 string pref_entries_face_detector_classification_mode_all_classifications
 string pref_entries_face_detector_classification_mode_no_classifications
@@ -1338,8 +1333,6 @@ string pref_key_still_image_object_detector_enable_classification
 string pref_key_still_image_object_detector_enable_multiple_objects
 string pref_key_still_image_pose_detection_performance_mode
 string pref_key_still_image_pose_detector_show_in_frame_likelihood
-string pref_key_timer
-string pref_key_vibrate
 string pref_screen
 string pref_screen_title_camerax_live_preview
 string pref_screen_title_cameraxsource_demo
@@ -1368,8 +1361,6 @@ string pref_title_pose_detector_show_in_frame_likelihood
 string pref_title_pose_detector_visualize_z
 string pref_title_rear_camera_preview_size
 string pref_title_segmentation_raw_size_mask
-string pref_title_timer
-string pref_title_vibrate
 string pref_toast_invalid_min_face_size
 string search_menu_title
 string select_image
