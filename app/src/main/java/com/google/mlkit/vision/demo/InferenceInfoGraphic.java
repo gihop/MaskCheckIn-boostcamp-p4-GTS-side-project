@@ -35,6 +35,8 @@ public class InferenceInfoGraphic extends GraphicOverlay.Graphic {
   private final long frameLatency;
   private final long detectorLatency;
 
+  private static final String DETECTION_FAILED = "Detection Failed";
+
   // Only valid when a stream of input images is being processed. Null for single image mode.
   @Nullable private final Integer framesPerSecond;
   private boolean showLatencyInfo = true;
@@ -71,6 +73,7 @@ public class InferenceInfoGraphic extends GraphicOverlay.Graphic {
       return;
     }
     if (PreferenceUtils.shouldHideDetectionInfo(getApplicationContext())) return;
+    if (PreferenceUtils.getInferenceResult(getApplicationContext()) == DETECTION_FAILED) return;
     // Draw FPS (if valid) and inference latency
     if (framesPerSecond != null) {
       canvas.drawText(

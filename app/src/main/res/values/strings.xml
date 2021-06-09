@@ -18,6 +18,9 @@
     <string name="menu_item_settings" translatable="false">Settings</string>
     <string name="select_image" translatable="false">Select image</string>
     <string name="custom_object_detection" translatable="false">Custom Object Detector</string>
+    <string name="detecting" translatable="false">Detecting</string>
+    <string name="detection_failed" translatable="false">Detection Failed</string>
+    <string name="detection_success" translatable="false">Detection Success</string>
 
     <!-- Settings related strings. -->
     <string name="pref_screen" translatable="false">ps</string>
@@ -147,4 +150,9 @@
     <string name="pref_key_timer" translatable="false">pt</string>
     <string name="pref_title_timer" translatable="false">Info Timer</string>
     <string name="pref_category_timer" translatable="false">Timer</string>
+
+    <!-- Strings for inference result. -->
+    <string name="pref_key_inference" translatable="false">pir</string>
+    <string name="pref_title_inference" translatable="false">Inference Result Timer</string>
+    <string name="pref_category_inference" translatable="false">Inference</string>
 </resources>

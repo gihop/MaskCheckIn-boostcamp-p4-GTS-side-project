@@ -27,6 +27,7 @@ import com.google.mlkit.vision.demo.GraphicOverlay.Graphic
 import com.google.mlkit.vision.demo.preference.PreferenceUtils
 import com.google.mlkit.vision.label.ImageLabel
 import java.util.*
+import kotlin.math.max
 
 /** Graphic instance for rendering a label within an associated graphic overlay view.  */
 class LabelGraphic(
@@ -38,7 +39,7 @@ class LabelGraphic(
   private val labelPaint =  Paint()
   private val focusPaint = Paint()
   private val dataPaint = Paint()
-
+  private var test = 0
   init {
     borderPaint.color = Color.GRAY
     borderPaint.strokeWidth = 5f
@@ -86,26 +87,31 @@ class LabelGraphic(
     // First try to find maxWidth and totalHeight in order to draw to the center of the screen.
     var maxWidth = 0f
     val totalHeight = TEXT_SIZE
-    var incorrectMask = 0F
     var mask = 0F
     var normal = 0F
-    var background = 0F
-    for (label in labels) {
-      if(label.text == "normal") normal = label.confidence
-      else if(label.text == "incorrect_mask") incorrectMask = label.confidence
-      else if(label.text == "background") background = label.confidence
-      else mask = label.confidence
+
+    if(labels[0].text == "background") {
+      PreferenceUtils.setInferenceResult(applicationContext, DETECTION_FAILED)
+      return
     }
 
-    val result = if(normal + incorrectMask > mask) WEAR_MASK else AUTHORIZED
+    for (label in labels) {
+      when (label.text) {
+          "normal" -> normal = label.confidence
+          "mask" -> mask = label.confidence
+      }
+    }
+
+    PreferenceUtils.setInferenceResult(applicationContext, DETECTION_SUCCESS)
+    val result = if(normal > mask) WEAR_MASK else AUTHORIZED
     val resultWidth = backgroundPaint.measureText(result)
-    maxWidth = Math.max(maxWidth, resultWidth)
+    maxWidth = max(maxWidth, resultWidth)
     changeFocusColor(canvas, result == AUTHORIZED)
 
-    val x = Math.max(0f, overlay.width / 2.0f - maxWidth / 2.0f)
-    var y = Math.max(200f, overlay.height / 2.0f - totalHeight / 2.0f)
+    val x = max(0f, overlay.width / 2.0f - maxWidth / 2.0f)
+    var y = max(200f, overlay.height / 2.0f - totalHeight / 2.0f)
 
-    if (!labels.isEmpty()) {
+    if (labels.isNotEmpty()) {
       val padding = 20f
       canvas.drawRoundRect(
               x - padding,
@@ -132,7 +138,6 @@ class LabelGraphic(
       val dataX = DATA_TEXT_SIZE * 0.5f;
       val dataY = DATA_TEXT_SIZE * 1.5f;
       for (i in labels.indices) {
-        Log.i("label test", labels[i].text)
         canvas.drawText(
                 labels[i].text + " : " +
                         String.format(Locale.US, LABEL_FORMAT, labels[i].confidence * 100),
@@ -148,5 +153,7 @@ class LabelGraphic(
     private const val LABEL_FORMAT = "%.2f%%"
     private const val WEAR_MASK = "마스크를 착용해주세요"
     private const val AUTHORIZED = "인증되었습니다"
+    private const val DETECTION_SUCCESS = "Detection Success"
+    private const val DETECTION_FAILED = "Detection Failed"
   }
 }

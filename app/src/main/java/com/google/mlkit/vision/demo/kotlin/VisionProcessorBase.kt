@@ -79,6 +79,7 @@ abstract class VisionProcessorBase<T>(context: Context) : VisionImageProcessor {
   private var frameProcessedInOneSecondInterval = 0
   private var framesPerSecond = 0
 
+  private var test = 0
   // To keep the latest images and its metadata.
   @GuardedBy("this")
   private var latestImage: ByteBuffer? = null
@@ -170,10 +171,9 @@ abstract class VisionProcessorBase<T>(context: Context) : VisionImageProcessor {
   // -----------------Code for processing live preview frame from CameraX API-----------------------
   @RequiresApi(VERSION_CODES.KITKAT)
   @ExperimentalGetImage
-  override fun processImageProxy(image: ImageProxy, graphicOverlay: GraphicOverlay){
+  override fun processImageProxy(image: ImageProxy, graphicOverlay: GraphicOverlay) {
     val frameStartMs = SystemClock.elapsedRealtime()
     if (isShutdown) {
-      return
     }
     var bitmap: Bitmap? = null
     if (!PreferenceUtils.isCameraLiveViewportEnabled(graphicOverlay.context)) {
@@ -248,7 +248,6 @@ abstract class VisionProcessorBase<T>(context: Context) : VisionImageProcessor {
         )
       }
       this@VisionProcessorBase.onSuccess(results, graphicOverlay)
-
 
       graphicOverlay.add(
         InferenceInfoGraphic(

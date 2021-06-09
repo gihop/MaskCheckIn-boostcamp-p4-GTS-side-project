@@ -20,7 +20,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build.VERSION_CODES;
 import android.preference.PreferenceManager;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -28,7 +27,6 @@ import androidx.annotation.StringRes;
 import androidx.camera.core.CameraSelector;
 import com.google.android.gms.common.images.Size;
 import com.google.common.base.Preconditions;
-import com.google.mlkit.common.model.LocalModel;
 import com.google.mlkit.vision.demo.CameraSource;
 import com.google.mlkit.vision.demo.CameraSource.SizePair;
 import com.google.mlkit.vision.demo.R;
@@ -106,7 +104,7 @@ public class PreferenceUtils {
     SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
     String prefKey =
             context.getString(R.string.pref_key_vibrate);
-    return sharedPreferences.getBoolean(prefKey, true);
+    return sharedPreferences.getBoolean(prefKey, false);
   }
 
   public static String getInfoTimer(Context context){
@@ -114,6 +112,23 @@ public class PreferenceUtils {
     String prefKey =
             context.getString(R.string.pref_key_timer);
     return sharedPreferences.getString(prefKey, "3s");
+  }
+
+  public static String getInferenceResult(Context context){
+    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+    String prefKey =
+            context.getString(R.string.pref_key_inference);
+
+    return sharedPreferences.getString(prefKey, context.getString(R.string.detecting));
+  }
+
+  public static void setInferenceResult(Context context, String detected){
+    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+    String prefKey =
+            context.getString(R.string.pref_key_inference);
+    SharedPreferences.Editor editor = sharedPreferences.edit();
+    editor.putString(prefKey, detected);
+    editor.commit();
   }
 
 //  public static ObjectDetectorOptions getObjectDetectorOptionsForStillImage(Context context) {
