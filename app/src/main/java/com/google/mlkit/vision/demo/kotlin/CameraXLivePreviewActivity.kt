@@ -109,6 +109,8 @@ class CameraXLivePreviewActivity :
     val spinner = findViewById<Spinner>(R.id.spinner)
     val options: MutableList<String> = ArrayList()
     options.add(MASK_V6)
+    options.add(MASK_V7)
+    options.add(MASK_V8)
 
     // Creating adapter for spinner
     val dataAdapter =
@@ -301,6 +303,34 @@ class CameraXLivePreviewActivity :
                   this, customImageLabelerOptions
           )
         }
+        MASK_V7 -> {
+          Log.i(
+                  TAG,
+                  "Using Mask V7 Detector Processor"
+          )
+          val localClassifier = LocalModel.Builder()
+                  .setAssetFilePath("custom_models/mask_v7.tflite")
+                  .build()
+          val customImageLabelerOptions =
+                  CustomImageLabelerOptions.Builder(localClassifier).build()
+          LabelDetectorProcessor(
+                  this, customImageLabelerOptions
+          )
+        }
+        MASK_V8 -> {
+          Log.i(
+                  TAG,
+                  "Using Mask V8 Detector Processor"
+          )
+          val localClassifier = LocalModel.Builder()
+                  .setAssetFilePath("custom_models/mask_v8.tflite")
+                  .build()
+          val customImageLabelerOptions =
+                  CustomImageLabelerOptions.Builder(localClassifier).build()
+          LabelDetectorProcessor(
+                  this, customImageLabelerOptions
+          )
+        }
         else -> throw IllegalStateException("Invalid model name")
       }
     } catch (e: Exception) {
@@ -425,6 +455,8 @@ class CameraXLivePreviewActivity :
     private const val TAG = "CameraXLivePreview"
     private const val PERMISSION_REQUESTS = 1
     private const val MASK_V6 = "Mask Model V6(Background)"
+    private const val MASK_V7 = "Mask Model V7(norm O)"
+    private const val MASK_V8 = "Mask Model V8(norm X)"
     private const val STATE_SELECTED_MODEL = "selected_model"
     private const val DETECTING = "Detecting"
     private const val DETECTION_SUCCESS = "Detection Success"

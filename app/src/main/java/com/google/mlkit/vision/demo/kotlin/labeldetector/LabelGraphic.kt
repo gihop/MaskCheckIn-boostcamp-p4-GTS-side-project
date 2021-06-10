@@ -89,6 +89,7 @@ class LabelGraphic(
     val totalHeight = TEXT_SIZE
     var mask = 0F
     var incorrect_mask = 0F
+    var no_mask = 0F
 
     if(labels[0].text == "background") {
       PreferenceUtils.setInferenceResult(applicationContext, DETECTION_FAILED)
@@ -99,11 +100,17 @@ class LabelGraphic(
       when (label.text) {
           "incorrect_mask" -> incorrect_mask = label.confidence
           "mask" -> mask = label.confidence
+          "no_mask" -> no_mask = label.confidence
       }
     }
 
     PreferenceUtils.setInferenceResult(applicationContext, DETECTION_SUCCESS)
-    val result = if(mask < incorrect_mask) WEAR_MASK else AUTHORIZED
+//    val result = if(mask < incorrect_mask) WEAR_MASK else AUTHORIZED
+    val result = if(no_mask > 0){
+      if(no_mask > mask) WEAR_MASK else AUTHORIZED
+    } else {
+      if(incorrect_mask > mask) WEAR_MASK else AUTHORIZED
+    }
     val resultWidth = backgroundPaint.measureText(result)
     maxWidth = max(maxWidth, resultWidth)
     changeFocusColor(canvas, result == AUTHORIZED)
