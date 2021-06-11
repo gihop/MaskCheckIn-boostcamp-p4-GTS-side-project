@@ -26,7 +26,7 @@
     </item>
     <item>
         <inset
-            android:drawable="@drawable/ic_launcher"
+            android:drawable="@drawable/ic_switch_camera"
             android:insetTop="7dp"
             android:insetLeft="7dp"
             android:insetBottom="7dp"

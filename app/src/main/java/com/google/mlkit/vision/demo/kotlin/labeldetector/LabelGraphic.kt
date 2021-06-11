@@ -24,6 +24,7 @@ import android.util.Log
 import androidx.annotation.RequiresApi
 import com.google.mlkit.vision.demo.GraphicOverlay
 import com.google.mlkit.vision.demo.GraphicOverlay.Graphic
+import com.google.mlkit.vision.demo.R
 import com.google.mlkit.vision.demo.preference.PreferenceUtils
 import com.google.mlkit.vision.label.ImageLabel
 import java.util.*
@@ -96,24 +97,18 @@ class LabelGraphic(
       return
     }
 
-    for (label in labels) {
-      when (label.text) {
-          "incorrect_mask" -> incorrect_mask = label.confidence
-          "mask" -> mask = label.confidence
-          "no_mask" -> no_mask = label.confidence
-      }
+    var result = applicationContext.getString(R.string.authorized)
+    if(labels[0].text == "mask") {
+      PreferenceUtils.setInferenceResult(applicationContext, DETECTION_SUCCESS_MASK)
+    }
+    else{
+      PreferenceUtils.setInferenceResult(applicationContext, DETECTION_SUCCESS_NO_MASK)
+      result = applicationContext.getString(R.string.wear_a_mask)
     }
 
-    PreferenceUtils.setInferenceResult(applicationContext, DETECTION_SUCCESS)
-//    val result = if(mask < incorrect_mask) WEAR_MASK else AUTHORIZED
-    val result = if(no_mask > 0){
-      if(no_mask > mask) WEAR_MASK else AUTHORIZED
-    } else {
-      if(incorrect_mask > mask) WEAR_MASK else AUTHORIZED
-    }
     val resultWidth = backgroundPaint.measureText(result)
     maxWidth = max(maxWidth, resultWidth)
-    changeFocusColor(canvas, result == AUTHORIZED)
+    changeFocusColor(canvas, result == "Authorized" || result == "인증되었습니다")
 
     val x = max(0f, overlay.width / 2.0f - maxWidth / 2.0f)
     var y = max(200f, overlay.height / 2.0f - totalHeight / 2.0f)
@@ -158,9 +153,8 @@ class LabelGraphic(
     private const val TEXT_SIZE = 70.0f
     private const val DATA_TEXT_SIZE = 60.0f
     private const val LABEL_FORMAT = "%.2f%%"
-    private const val WEAR_MASK = "마스크를 착용해주세요"
-    private const val AUTHORIZED = "인증되었습니다"
-    private const val DETECTION_SUCCESS = "Detection Success"
+    private const val DETECTION_SUCCESS_MASK = "Detection Success Mask"
+    private const val DETECTION_SUCCESS_NO_MASK = "Detection Success No Mask"
     private const val DETECTION_FAILED = "Detection Failed"
   }
 }

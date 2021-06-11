@@ -858,8 +858,7 @@ drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_launcher
 drawable ic_settings_white_24dp
-drawable ic_switch_camera_white_48dp
-drawable ic_switch_camera_white_48dp_inset
+drawable ic_switch_camera
 drawable inference_button_shape
 drawable list_item_background
 drawable logo_mlkit
@@ -1241,6 +1240,7 @@ string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string androidx_camera_default_config_provider
 string app_name
+string authorized
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
 string common_google_play_services_enable_title
@@ -1367,6 +1367,7 @@ string start_over
 string status_bar_notification_info_overflow
 string toggle_turn_off
 string toggle_turn_on
+string wear_a_mask
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

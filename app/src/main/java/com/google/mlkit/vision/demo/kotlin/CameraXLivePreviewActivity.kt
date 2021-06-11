@@ -26,6 +26,7 @@ import android.os.Build.VERSION_CODES
 import android.os.Bundle
 import android.os.VibrationEffect
 import android.os.Vibrator
+import android.speech.tts.TextToSpeech
 import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import android.view.View
@@ -53,7 +54,7 @@ import com.google.mlkit.vision.demo.preference.PreferenceUtils
 import com.google.mlkit.vision.demo.preference.SettingsActivity
 import com.google.mlkit.vision.demo.preference.SettingsActivity.LaunchSource
 import com.google.mlkit.vision.label.custom.CustomImageLabelerOptions
-import java.util.ArrayList
+import java.util.*
 
 /** Live preview demo app for ML Kit APIs using CameraX.  */
 @KeepName
@@ -62,7 +63,8 @@ class CameraXLivePreviewActivity :
   AppCompatActivity(),
   ActivityCompat.OnRequestPermissionsResultCallback,
   OnItemSelectedListener,
-  CompoundButton.OnCheckedChangeListener {
+  CompoundButton.OnCheckedChangeListener,
+  TextToSpeech.OnInitListener{
 
   private var previewView: PreviewView? = null
   private var graphicOverlay: GraphicOverlay? = null
@@ -74,6 +76,8 @@ class CameraXLivePreviewActivity :
   private var selectedModel = MASK_V6
   private var lensFacing = CameraSelector.LENS_FACING_BACK
   private var cameraSelector: CameraSelector? = null
+  private var tts: TextToSpeech? = null
+  private var stopped: Boolean = false
   private var lastThreadID: Long? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -136,7 +140,10 @@ class CameraXLivePreviewActivity :
           if (allPermissionsGranted()) {
             graphicOverlay?.clear()
             bindAllCameraUseCases()
-            startAnalysis()
+            if(stopped){
+              stopped = false
+              startAnalysis()
+            }
           }
         }
       )
@@ -151,10 +158,13 @@ class CameraXLivePreviewActivity :
       startActivity(intent)
     }
 
+    tts = TextToSpeech(this, this)
+
     if (!allPermissionsGranted()) {
       getRuntimePermissions()
     }
   }
+
 
   override fun onSaveInstanceState(bundle: Bundle) {
     super.onSaveInstanceState(bundle)
@@ -191,7 +201,7 @@ class CameraXLivePreviewActivity :
         lensFacing = newLensFacing
         cameraSelector = newCameraSelector
         bindAllCameraUseCases()
-        startAnalysis()
+//        startAnalysis()
         return
       }
     } catch (e: CameraInfoUnavailableException) {
@@ -207,12 +217,13 @@ class CameraXLivePreviewActivity :
   override fun onResume() {
     super.onResume()
     bindAllCameraUseCases()
+    stopped = false
     startAnalysis()
   }
 
   override fun onPause() {
     super.onPause()
-
+    stopped = true
     imageProcessor?.run {
       this.stop()
     }
@@ -227,7 +238,8 @@ class CameraXLivePreviewActivity :
 
   private fun startAnalysis(){
     Thread {
-      while(true) {
+      lastThreadID = Thread.currentThread().id
+      while(!stopped && Thread.currentThread().id == lastThreadID) {
         PreferenceUtils.setInferenceResult(this, DETECTING)
         graphicOverlay?.clear()
         runOnUiThread {
@@ -240,12 +252,31 @@ class CameraXLivePreviewActivity :
           detected = PreferenceUtils.getInferenceResult(this)
         }
 
-        if(detected == DETECTION_SUCCESS){
-          Thread.sleep(2000)
-          PreferenceUtils.setInferenceResult(this, DETECTING)
+        if(detected == DETECTION_SUCCESS_MASK){
+          tts!!.speak(getString(R.string.authorized), TextToSpeech.QUEUE_FLUSH, null, "")
         }
+        else if(detected == DETECTION_SUCCESS_NO_MASK){
+          tts!!.speak(getString(R.string.wear_a_mask), TextToSpeech.QUEUE_FLUSH, null, "")
+        }
+        Thread.sleep(2000)
+        PreferenceUtils.setInferenceResult(this, DETECTING)
       }
     }.start()
+  }
+
+  override fun onInit(status: Int) {
+    if (status == TextToSpeech.SUCCESS) {
+      // set US English as language for tts
+      val result = tts!!.setLanguage(Locale.getDefault())
+
+      if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+        Log.e("TTS","The Language specified is not supported!")
+      } else {
+        // do nothing
+      }
+    } else {
+      Log.e("TTS", "Initilization Failed!")
+    }
   }
 
   private fun bindAllCameraUseCases() {
@@ -460,6 +491,8 @@ class CameraXLivePreviewActivity :
     private const val STATE_SELECTED_MODEL = "selected_model"
     private const val DETECTING = "Detecting"
     private const val DETECTION_SUCCESS = "Detection Success"
+    private const val DETECTION_SUCCESS_MASK = "Detection Success Mask"
+    private const val DETECTION_SUCCESS_NO_MASK = "Detection Success No Mask"
 
     private fun isPermissionGranted(
       context: Context,
