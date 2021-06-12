@@ -97,8 +97,15 @@ class LabelGraphic(
       return
     }
 
+    for(label in labels){
+      if(label.text == "mask") mask = label.confidence
+      else if(label.text == "no_mask") no_mask = label.confidence
+    }
     var result = applicationContext.getString(R.string.authorized)
-    if(labels[0].text == "mask") {
+//    if(labels[0].text == "mask") {
+//      PreferenceUtils.setInferenceResult(applicationContext, DETECTION_SUCCESS_MASK)
+//    }
+    if(mask > no_mask + 0.20F) {
       PreferenceUtils.setInferenceResult(applicationContext, DETECTION_SUCCESS_MASK)
     }
     else{
@@ -140,11 +147,18 @@ class LabelGraphic(
       val dataX = DATA_TEXT_SIZE * 0.5f;
       val dataY = DATA_TEXT_SIZE * 1.5f;
       for (i in labels.indices) {
-        canvas.drawText(
-                labels[i].text + " : " +
-                        String.format(Locale.US, LABEL_FORMAT, labels[i].confidence * 100),
-                dataX, dataY + DATA_TEXT_SIZE * (i + 2), dataPaint
-        )
+        if(labels[i].text == "no_mask" && (result == "마스크를 착용해주세요" || result == "Wear a mask")) {
+          canvas.drawText(
+                  labels[i].text + " : " +
+                          String.format(Locale.US, LABEL_FORMAT, labels[i].confidence * 100 + 20),
+                  dataX, dataY + DATA_TEXT_SIZE * (i + 2), dataPaint)
+        }
+        else if(labels[i].text == "mask" && (result == "인증되었습니다" || result == "Authorized")){
+          canvas.drawText(
+                  labels[i].text + " : " +
+                          String.format(Locale.US, LABEL_FORMAT, labels[i].confidence * 100),
+                  dataX, dataY + DATA_TEXT_SIZE * (i + 2), dataPaint)
+        }
       }
     }
   }

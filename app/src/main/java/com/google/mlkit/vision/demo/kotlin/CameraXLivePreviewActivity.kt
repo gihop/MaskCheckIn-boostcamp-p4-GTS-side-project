@@ -54,6 +54,7 @@ import com.google.mlkit.vision.demo.preference.PreferenceUtils
 import com.google.mlkit.vision.demo.preference.SettingsActivity
 import com.google.mlkit.vision.demo.preference.SettingsActivity.LaunchSource
 import com.google.mlkit.vision.label.custom.CustomImageLabelerOptions
+import kotlinx.coroutines.*
 import java.util.*
 
 /** Live preview demo app for ML Kit APIs using CameraX.  */
@@ -115,6 +116,9 @@ class CameraXLivePreviewActivity :
     options.add(MASK_V6)
     options.add(MASK_V7)
     options.add(MASK_V8)
+    options.add(MASK_V9)
+    options.add(MASK_V10)
+    options.add(MASK_V11)
 
     // Creating adapter for spinner
     val dataAdapter =
@@ -201,7 +205,6 @@ class CameraXLivePreviewActivity :
         lensFacing = newLensFacing
         cameraSelector = newCameraSelector
         bindAllCameraUseCases()
-//        startAnalysis()
         return
       }
     } catch (e: CameraInfoUnavailableException) {
@@ -240,9 +243,10 @@ class CameraXLivePreviewActivity :
     Thread {
       lastThreadID = Thread.currentThread().id
       while(!stopped && Thread.currentThread().id == lastThreadID) {
-        PreferenceUtils.setInferenceResult(this, DETECTING)
-        graphicOverlay?.clear()
+        Log.i("testtest", "testtest")
         runOnUiThread {
+          PreferenceUtils.setInferenceResult(this, DETECTING)
+          graphicOverlay?.clear()
           bindAnalysisUseCase()
         }
         Thread.sleep(2000)
@@ -263,6 +267,52 @@ class CameraXLivePreviewActivity :
       }
     }.start()
   }
+
+//  private fun startAnalysis(){
+//    GlobalScope.launch(Dispatchers.IO){
+//      while(true) {
+//        PreferenceUtils.setInferenceResult(applicationContext, DETECTING)
+//
+//        val job = async(Dispatchers.Main) {
+//          graphicOverlay?.clear()
+//          bindAllCameraUseCases()
+//          bindAnalysisUseCase()
+//        }
+//        job.await()
+//        var detected: String = PreferenceUtils.getInferenceResult(applicationContext)
+//        Log.i("testtest", detected.toString())
+//        if (detected == DETECTION_SUCCESS_MASK) {
+//          tts!!.speak(getString(R.string.authorized), TextToSpeech.QUEUE_FLUSH, null, "")
+//        } else if (detected == DETECTION_SUCCESS_NO_MASK) {
+//          tts!!.speak(getString(R.string.wear_a_mask), TextToSpeech.QUEUE_FLUSH, null, "")
+//        }
+//        delay(2000)
+//        PreferenceUtils.setInferenceResult(applicationContext, DETECTING)
+//      }
+//
+////    lastThreadID = Thread.currentThread().id
+////    while(!stopped && Thread.currentThread().id == lastThreadID) {
+////
+////
+////      runOnUiThread {
+////
+////      }
+////      Thread.sleep(2000)
+////      var detected: String = PreferenceUtils.getInferenceResult(this)
+////      while (detected == DETECTING) {
+////        Thread.sleep(1000)
+////        detected = PreferenceUtils.getInferenceResult(this)
+////      }
+////
+////      if (detected == DETECTION_SUCCESS_MASK) {
+////        tts!!.speak(getString(R.string.authorized), TextToSpeech.QUEUE_FLUSH, null, "")
+////      } else if (detected == DETECTION_SUCCESS_NO_MASK) {
+////        tts!!.speak(getString(R.string.wear_a_mask), TextToSpeech.QUEUE_FLUSH, null, "")
+////      }
+////      Thread.sleep(2000)
+////      PreferenceUtils.setInferenceResult(this, DETECTING)
+//    }
+//  }
 
   override fun onInit(status: Int) {
     if (status == TextToSpeech.SUCCESS) {
@@ -355,6 +405,48 @@ class CameraXLivePreviewActivity :
           )
           val localClassifier = LocalModel.Builder()
                   .setAssetFilePath("custom_models/mask_v8.tflite")
+                  .build()
+          val customImageLabelerOptions =
+                  CustomImageLabelerOptions.Builder(localClassifier).build()
+          LabelDetectorProcessor(
+                  this, customImageLabelerOptions
+          )
+        }
+        MASK_V9 -> {
+          Log.i(
+                  TAG,
+                  "Using Mask V9 Detector Processor"
+          )
+          val localClassifier = LocalModel.Builder()
+                  .setAssetFilePath("custom_models/model_efficientnet_lite0.tflite")
+                  .build()
+          val customImageLabelerOptions =
+                  CustomImageLabelerOptions.Builder(localClassifier).build()
+          LabelDetectorProcessor(
+                  this, customImageLabelerOptions
+          )
+        }
+        MASK_V10 -> {
+          Log.i(
+                  TAG,
+                  "Using Mask V10 Detector Processor"
+          )
+          val localClassifier = LocalModel.Builder()
+                  .setAssetFilePath("custom_models/model_mobilenet_v1_025_224.tflite")
+                  .build()
+          val customImageLabelerOptions =
+                  CustomImageLabelerOptions.Builder(localClassifier).build()
+          LabelDetectorProcessor(
+                  this, customImageLabelerOptions
+          )
+        }
+        MASK_V11 -> {
+          Log.i(
+                  TAG,
+                  "Using Mask V11 Detector Processor"
+          )
+          val localClassifier = LocalModel.Builder()
+                  .setAssetFilePath("custom_models/model_mobilenet_v3_small_075_224.tflite")
                   .build()
           val customImageLabelerOptions =
                   CustomImageLabelerOptions.Builder(localClassifier).build()
@@ -488,6 +580,9 @@ class CameraXLivePreviewActivity :
     private const val MASK_V6 = "Mask Model V6(Background)"
     private const val MASK_V7 = "Mask Model V7(norm O)"
     private const val MASK_V8 = "Mask Model V8(norm X)"
+    private const val MASK_V9 = "V9 effi lite0"
+    private const val MASK_V10 = "V10 mob v1 025"
+    private const val MASK_V11 = "V11 mov v3 small 075"
     private const val STATE_SELECTED_MODEL = "selected_model"
     private const val DETECTING = "Detecting"
     private const val DETECTION_SUCCESS = "Detection Success"
