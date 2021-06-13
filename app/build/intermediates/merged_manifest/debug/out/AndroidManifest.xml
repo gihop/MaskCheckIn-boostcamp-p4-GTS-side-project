@@ -63,6 +63,7 @@
         <activity
             android:name="com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -72,7 +73,8 @@
         </activity>
         <activity
             android:name="com.google.mlkit.vision.demo.preference.SettingsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
 
         <service
             android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService"

@@ -75,13 +75,9 @@ public class InferenceInfoGraphic extends GraphicOverlay.Graphic {
     if (PreferenceUtils.shouldHideDetectionInfo(getApplicationContext())) return;
     if (PreferenceUtils.getInferenceResult(getApplicationContext()) == DETECTION_FAILED) return;
     // Draw FPS (if valid) and inference latency
-    if (framesPerSecond != null) {
-      canvas.drawText(
-          "FPS: " + framesPerSecond + ", Frame latency: " + frameLatency + " ms",
-          x, y, textPaint);
-    } else {
-      canvas.drawText("Frame latency: " + frameLatency + " ms", x, y, textPaint);
-    }
+    canvas.drawText(
+        "Frame latency: " + frameLatency + " ms",
+        x, y, textPaint);
     canvas.drawText(
         "Detector latency: " + detectorLatency + " ms", x, y + TEXT_SIZE, textPaint);
   }
