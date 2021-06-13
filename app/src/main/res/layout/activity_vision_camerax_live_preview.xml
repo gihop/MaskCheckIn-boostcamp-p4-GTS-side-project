@@ -42,6 +42,7 @@
       android:checked="false"
       android:textOff=""
       android:textOn=""
+      android:visibility="invisible"
       app:layout_constraintBottom_toBottomOf="@+id/preview_view"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="@+id/preview_view" />
