@@ -69,7 +69,7 @@ class CameraXLivePreviewActivity :
   private var imageProcessor: VisionImageProcessor? = null
   private var needUpdateGraphicOverlayImageSourceInfo = false
   private var selectedModel = MASK_V8
-  private var lensFacing = CameraSelector.LENS_FACING_BACK
+  private var lensFacing = CameraSelector.LENS_FACING_FRONT
   private var cameraSelector: CameraSelector? = null
   private var tts: TextToSpeech? = null
   private var stopped: Boolean = false
@@ -193,6 +193,7 @@ class CameraXLivePreviewActivity :
   override fun onPause() {
     super.onPause()
     stopped = true
+    graphicOverlay?.clear()
     imageProcessor?.run {
       this.stop()
     }
@@ -210,39 +211,41 @@ class CameraXLivePreviewActivity :
     settingButton?.isEnabled = enabled
   }
 
-  @Synchronized
   private fun startAnalysis(){
     Thread {
       lastThreadID = Thread.currentThread().id
       while(!stopped && Thread.currentThread().id == lastThreadID) {
         PreferenceUtils.setInferenceResult(this, DETECTING)
         var analysisSuccess = false
+        graphicOverlay?.clear()
         runOnUiThread {
           analysisSuccess = bindAnalysisUseCase()
         }
+
         Thread.sleep(2000)
+
+        if(stopped || Thread.currentThread().id != lastThreadID) break
         var detected: String = PreferenceUtils.getInferenceResult(this)
-        var sleeps = 0F
 
         while(detected == DETECTING && !stopped && analysisSuccess && Thread.currentThread().id == lastThreadID){
-          sleeps += 1000F
           Thread.sleep(1000)
           detected = PreferenceUtils.getInferenceResult(this)
-          if(sleeps >= 5000F) break
         }
-        if(sleeps >= 5000F) break
 
-        if(detected == DETECTION_SUCCESS_MASK){
-          tts!!.speak(getString(R.string.authorized), TextToSpeech.QUEUE_FLUSH, null, "")
-        }
-        else if(detected == DETECTION_SUCCESS_NO_MASK){
-          tts!!.speak(getString(R.string.wear_a_mask), TextToSpeech.QUEUE_FLUSH, null, "")
+        if(stopped || Thread.currentThread().id != lastThreadID) break
+        if(Thread.currentThread().id == lastThreadID) {
+          if (detected == DETECTION_SUCCESS_MASK) {
+            tts!!.speak(getString(R.string.authorized), TextToSpeech.QUEUE_FLUSH, null, "")
+          } else if (detected == DETECTION_SUCCESS_NO_MASK) {
+            tts!!.speak(getString(R.string.wear_a_mask), TextToSpeech.QUEUE_FLUSH, null, "")
+          }
         }
         Thread.sleep(2000)
-        PreferenceUtils.setInferenceResult(this, DETECTING)
 
+        if(stopped || Thread.currentThread().id != lastThreadID) break
+        if(Thread.currentThread().id == lastThreadID) PreferenceUtils.setInferenceResult(this, DETECTING)
+        graphicOverlay?.clear()
         runOnUiThread {
-          graphicOverlay?.clear()
           changeButtonsEnabled(true)
         }
       }
