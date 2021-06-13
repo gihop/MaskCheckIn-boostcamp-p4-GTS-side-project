@@ -24,14 +24,10 @@ import android.content.pm.PackageManager
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
-import android.os.VibrationEffect
-import android.os.Vibrator
 import android.speech.tts.TextToSpeech
 import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
-import android.view.View
 import android.widget.*
-import android.widget.AdapterView.OnItemSelectedListener
 import androidx.annotation.RequiresApi
 import androidx.camera.core.CameraInfoUnavailableException
 import androidx.camera.core.CameraSelector
@@ -54,7 +50,6 @@ import com.google.mlkit.vision.demo.preference.PreferenceUtils
 import com.google.mlkit.vision.demo.preference.SettingsActivity
 import com.google.mlkit.vision.demo.preference.SettingsActivity.LaunchSource
 import com.google.mlkit.vision.label.custom.CustomImageLabelerOptions
-import kotlinx.coroutines.*
 import java.util.*
 
 /** Live preview demo app for ML Kit APIs using CameraX.  */
@@ -63,7 +58,6 @@ import java.util.*
 class CameraXLivePreviewActivity :
   AppCompatActivity(),
   ActivityCompat.OnRequestPermissionsResultCallback,
-  OnItemSelectedListener,
   CompoundButton.OnCheckedChangeListener,
   TextToSpeech.OnInitListener{
 
@@ -74,12 +68,14 @@ class CameraXLivePreviewActivity :
   private var analysisUseCase: ImageAnalysis? = null
   private var imageProcessor: VisionImageProcessor? = null
   private var needUpdateGraphicOverlayImageSourceInfo = false
-  private var selectedModel = MASK_V6
+  private var selectedModel = MASK_V8
   private var lensFacing = CameraSelector.LENS_FACING_BACK
   private var cameraSelector: CameraSelector? = null
   private var tts: TextToSpeech? = null
   private var stopped: Boolean = false
   private var lastThreadID: Long? = null
+  private var cameraSwitchButton: ToggleButton? = null
+  private var settingButton: ImageView? = null
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -98,11 +94,14 @@ class CameraXLivePreviewActivity :
       selectedModel =
         savedInstanceState.getString(
           STATE_SELECTED_MODEL,
-          MASK_V6
+          MASK_V8
         )
     }
+    selectedModel = MASK_V8
     cameraSelector = CameraSelector.Builder().requireLensFacing(lensFacing).build()
     setContentView(R.layout.activity_vision_camerax_live_preview)
+    cameraSwitchButton = findViewById(R.id.facing_switch)
+    settingButton = findViewById(R.id.settings_button)
     previewView = findViewById(R.id.preview_view)
     if (previewView == null) {
       Log.d(TAG, "previewView is null")
@@ -111,26 +110,7 @@ class CameraXLivePreviewActivity :
     if (graphicOverlay == null) {
       Log.d(TAG, "graphicOverlay is null")
     }
-    val spinner = findViewById<Spinner>(R.id.spinner)
-    val options: MutableList<String> = ArrayList()
-    options.add(MASK_V6)
-    options.add(MASK_V7)
-    options.add(MASK_V8)
-    options.add(MASK_V9)
-    options.add(MASK_V10)
-    options.add(MASK_V11)
-
-    // Creating adapter for spinner
-    val dataAdapter =
-      ArrayAdapter(this, R.layout.spinner_style, options)
-    // Drop down layout style - list view with radio button
-    dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-    // attaching data adapter to spinner
-    spinner.adapter = dataAdapter
-    spinner.onItemSelectedListener = this
-    val facingSwitch =
-      findViewById<ToggleButton>(R.id.facing_switch)
-    facingSwitch.setOnCheckedChangeListener(this)
+    cameraSwitchButton?.setOnCheckedChangeListener(this)
     ViewModelProvider(
       this,
       ViewModelProvider.AndroidViewModelFactory.getInstance(application)
@@ -143,16 +123,13 @@ class CameraXLivePreviewActivity :
           cameraProvider = provider
           if (allPermissionsGranted()) {
             graphicOverlay?.clear()
+            stopped = false
             bindAllCameraUseCases()
-            if(stopped){
-              stopped = false
-              startAnalysis()
-            }
           }
         }
       )
-    val settingsButton = findViewById<ImageView>(R.id.settings_button)
-    settingsButton.setOnClickListener {
+    settingButton = findViewById(R.id.settings_button)
+    settingButton?.setOnClickListener {
       val intent =
         Intent(applicationContext, SettingsActivity::class.java)
       intent.putExtra(
@@ -169,26 +146,13 @@ class CameraXLivePreviewActivity :
     }
   }
 
-
   override fun onSaveInstanceState(bundle: Bundle) {
     super.onSaveInstanceState(bundle)
     bundle.putString(STATE_SELECTED_MODEL, selectedModel)
   }
 
-  @Synchronized
-  override fun onItemSelected(parent: AdapterView<*>?, view: View?, pos: Int, id: Long) {
-    // An item was selected. You can retrieve the selected item using
-    // parent.getItemAtPosition(pos)
-    selectedModel = parent?.getItemAtPosition(pos).toString()
-    Log.d(TAG, "Selected model: $selectedModel")
-    bindAnalysisUseCase()
-  }
-
-  override fun onNothingSelected(parent: AdapterView<*>?) {
-    // Do nothing.
-  }
-
   override fun onCheckedChanged(buttonView: CompoundButton, isChecked: Boolean) {
+    changeButtonsEnabled(false)
     if (cameraProvider == null) {
       return
     }
@@ -204,6 +168,7 @@ class CameraXLivePreviewActivity :
         Log.d(TAG, "Set facing to " + newLensFacing)
         lensFacing = newLensFacing
         cameraSelector = newCameraSelector
+        graphicOverlay?.clear()
         bindAllCameraUseCases()
         return
       }
@@ -219,9 +184,10 @@ class CameraXLivePreviewActivity :
 
   override fun onResume() {
     super.onResume()
-    bindAllCameraUseCases()
+    graphicOverlay?.clear()
+    changeButtonsEnabled(false)
     stopped = false
-    startAnalysis()
+    bindAllCameraUseCases()
   }
 
   override fun onPause() {
@@ -239,22 +205,32 @@ class CameraXLivePreviewActivity :
     }
   }
 
+  private fun changeButtonsEnabled(enabled: Boolean){
+    cameraSwitchButton?.isEnabled = enabled
+    settingButton?.isEnabled = enabled
+  }
+
+  @Synchronized
   private fun startAnalysis(){
     Thread {
       lastThreadID = Thread.currentThread().id
       while(!stopped && Thread.currentThread().id == lastThreadID) {
-        Log.i("testtest", "testtest")
+        PreferenceUtils.setInferenceResult(this, DETECTING)
+        var analysisSuccess = false
         runOnUiThread {
-          PreferenceUtils.setInferenceResult(this, DETECTING)
-          graphicOverlay?.clear()
-          bindAnalysisUseCase()
+          analysisSuccess = bindAnalysisUseCase()
         }
         Thread.sleep(2000)
         var detected: String = PreferenceUtils.getInferenceResult(this)
-        while(detected == DETECTING){
+        var sleeps = 0F
+
+        while(detected == DETECTING && !stopped && analysisSuccess && Thread.currentThread().id == lastThreadID){
+          sleeps += 1000F
           Thread.sleep(1000)
           detected = PreferenceUtils.getInferenceResult(this)
+          if(sleeps >= 5000F) break
         }
+        if(sleeps >= 5000F) break
 
         if(detected == DETECTION_SUCCESS_MASK){
           tts!!.speak(getString(R.string.authorized), TextToSpeech.QUEUE_FLUSH, null, "")
@@ -264,55 +240,14 @@ class CameraXLivePreviewActivity :
         }
         Thread.sleep(2000)
         PreferenceUtils.setInferenceResult(this, DETECTING)
+
+        runOnUiThread {
+          graphicOverlay?.clear()
+          changeButtonsEnabled(true)
+        }
       }
     }.start()
   }
-
-//  private fun startAnalysis(){
-//    GlobalScope.launch(Dispatchers.IO){
-//      while(true) {
-//        PreferenceUtils.setInferenceResult(applicationContext, DETECTING)
-//
-//        val job = async(Dispatchers.Main) {
-//          graphicOverlay?.clear()
-//          bindAllCameraUseCases()
-//          bindAnalysisUseCase()
-//        }
-//        job.await()
-//        var detected: String = PreferenceUtils.getInferenceResult(applicationContext)
-//        Log.i("testtest", detected.toString())
-//        if (detected == DETECTION_SUCCESS_MASK) {
-//          tts!!.speak(getString(R.string.authorized), TextToSpeech.QUEUE_FLUSH, null, "")
-//        } else if (detected == DETECTION_SUCCESS_NO_MASK) {
-//          tts!!.speak(getString(R.string.wear_a_mask), TextToSpeech.QUEUE_FLUSH, null, "")
-//        }
-//        delay(2000)
-//        PreferenceUtils.setInferenceResult(applicationContext, DETECTING)
-//      }
-//
-////    lastThreadID = Thread.currentThread().id
-////    while(!stopped && Thread.currentThread().id == lastThreadID) {
-////
-////
-////      runOnUiThread {
-////
-////      }
-////      Thread.sleep(2000)
-////      var detected: String = PreferenceUtils.getInferenceResult(this)
-////      while (detected == DETECTING) {
-////        Thread.sleep(1000)
-////        detected = PreferenceUtils.getInferenceResult(this)
-////      }
-////
-////      if (detected == DETECTION_SUCCESS_MASK) {
-////        tts!!.speak(getString(R.string.authorized), TextToSpeech.QUEUE_FLUSH, null, "")
-////      } else if (detected == DETECTION_SUCCESS_NO_MASK) {
-////        tts!!.speak(getString(R.string.wear_a_mask), TextToSpeech.QUEUE_FLUSH, null, "")
-////      }
-////      Thread.sleep(2000)
-////      PreferenceUtils.setInferenceResult(this, DETECTING)
-//    }
-//  }
 
   override fun onInit(status: Int) {
     if (status == TextToSpeech.SUCCESS) {
@@ -334,7 +269,7 @@ class CameraXLivePreviewActivity :
       // As required by CameraX API, unbinds all use cases before trying to re-bind any of them.
       cameraProvider!!.unbindAll()
       bindPreviewUseCase()
-//      bindAnalysisUseCase()
+      startAnalysis()
     }
   }
 
@@ -358,9 +293,9 @@ class CameraXLivePreviewActivity :
     cameraProvider!!.bindToLifecycle(/* lifecycleOwner= */this, cameraSelector!!, previewUseCase)
   }
 
-  private fun bindAnalysisUseCase() {
+  private fun bindAnalysisUseCase(): Boolean {
     if (cameraProvider == null) {
-      return
+      return false
     }
     if (analysisUseCase != null) {
       cameraProvider!!.unbind(analysisUseCase)
@@ -370,34 +305,6 @@ class CameraXLivePreviewActivity :
     }
     imageProcessor = try {
       when (selectedModel) {
-        MASK_V6 -> {
-          Log.i(
-                  TAG,
-                  "Using Mask V6 Detector Processor"
-          )
-          val localClassifier = LocalModel.Builder()
-                  .setAssetFilePath("custom_models/mask_v6.tflite")
-                  .build()
-          val customImageLabelerOptions =
-                  CustomImageLabelerOptions.Builder(localClassifier).build()
-          LabelDetectorProcessor(
-                  this, customImageLabelerOptions
-          )
-        }
-        MASK_V7 -> {
-          Log.i(
-                  TAG,
-                  "Using Mask V7 Detector Processor"
-          )
-          val localClassifier = LocalModel.Builder()
-                  .setAssetFilePath("custom_models/mask_v7.tflite")
-                  .build()
-          val customImageLabelerOptions =
-                  CustomImageLabelerOptions.Builder(localClassifier).build()
-          LabelDetectorProcessor(
-                  this, customImageLabelerOptions
-          )
-        }
         MASK_V8 -> {
           Log.i(
                   TAG,
@@ -405,48 +312,6 @@ class CameraXLivePreviewActivity :
           )
           val localClassifier = LocalModel.Builder()
                   .setAssetFilePath("custom_models/mask_v8.tflite")
-                  .build()
-          val customImageLabelerOptions =
-                  CustomImageLabelerOptions.Builder(localClassifier).build()
-          LabelDetectorProcessor(
-                  this, customImageLabelerOptions
-          )
-        }
-        MASK_V9 -> {
-          Log.i(
-                  TAG,
-                  "Using Mask V9 Detector Processor"
-          )
-          val localClassifier = LocalModel.Builder()
-                  .setAssetFilePath("custom_models/model_efficientnet_lite0.tflite")
-                  .build()
-          val customImageLabelerOptions =
-                  CustomImageLabelerOptions.Builder(localClassifier).build()
-          LabelDetectorProcessor(
-                  this, customImageLabelerOptions
-          )
-        }
-        MASK_V10 -> {
-          Log.i(
-                  TAG,
-                  "Using Mask V10 Detector Processor"
-          )
-          val localClassifier = LocalModel.Builder()
-                  .setAssetFilePath("custom_models/model_mobilenet_v1_025_224.tflite")
-                  .build()
-          val customImageLabelerOptions =
-                  CustomImageLabelerOptions.Builder(localClassifier).build()
-          LabelDetectorProcessor(
-                  this, customImageLabelerOptions
-          )
-        }
-        MASK_V11 -> {
-          Log.i(
-                  TAG,
-                  "Using Mask V11 Detector Processor"
-          )
-          val localClassifier = LocalModel.Builder()
-                  .setAssetFilePath("custom_models/model_mobilenet_v3_small_075_224.tflite")
                   .build()
           val customImageLabelerOptions =
                   CustomImageLabelerOptions.Builder(localClassifier).build()
@@ -468,7 +333,7 @@ class CameraXLivePreviewActivity :
         Toast.LENGTH_LONG
       )
         .show()
-      return
+      return false
     }
 
     val builder = ImageAnalysis.Builder()
@@ -518,6 +383,7 @@ class CameraXLivePreviewActivity :
       }
     )
     cameraProvider!!.bindToLifecycle( /* lifecycleOwner= */this, cameraSelector!!, analysisUseCase)
+    return true
   }
 
   private fun getRequiredPermissions(): Array<String?> {
@@ -577,15 +443,9 @@ class CameraXLivePreviewActivity :
   companion object {
     private const val TAG = "CameraXLivePreview"
     private const val PERMISSION_REQUESTS = 1
-    private const val MASK_V6 = "Mask Model V6(Background)"
-    private const val MASK_V7 = "Mask Model V7(norm O)"
     private const val MASK_V8 = "Mask Model V8(norm X)"
-    private const val MASK_V9 = "V9 effi lite0"
-    private const val MASK_V10 = "V10 mob v1 025"
-    private const val MASK_V11 = "V11 mov v3 small 075"
     private const val STATE_SELECTED_MODEL = "selected_model"
     private const val DETECTING = "Detecting"
-    private const val DETECTION_SUCCESS = "Detection Success"
     private const val DETECTION_SUCCESS_MASK = "Detection Success Mask"
     private const val DETECTION_SUCCESS_NO_MASK = "Detection Success No Mask"
 

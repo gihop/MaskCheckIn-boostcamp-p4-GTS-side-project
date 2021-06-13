@@ -53,7 +53,6 @@ import java.util.ArrayList
 class LivePreviewActivity :
   AppCompatActivity(),
   ActivityCompat.OnRequestPermissionsResultCallback,
-  OnItemSelectedListener,
   CompoundButton.OnCheckedChangeListener {
 
   private var cameraSource: CameraSource? = null
@@ -80,16 +79,6 @@ class LivePreviewActivity :
     val options: MutableList<String> = ArrayList()
     options.add(MASK_V1)
 
-    // Creating adapter for spinner
-    val dataAdapter =
-      ArrayAdapter(this, R.layout.spinner_style, options)
-
-    // Drop down layout style - list view with radio button
-    dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-    // attaching data adapter to spinner
-    spinner.adapter = dataAdapter
-    spinner.onItemSelectedListener = this
-
     val facingSwitch = findViewById<ToggleButton>(R.id.facing_switch)
     facingSwitch.setOnCheckedChangeListener(this)
 
@@ -105,30 +94,6 @@ class LivePreviewActivity :
     } else {
       runtimePermissions
     }
-  }
-
-  @Synchronized
-  override fun onItemSelected(
-    parent: AdapterView<*>?,
-    view: View?,
-    pos: Int,
-    id: Long
-  ) {
-    // An item was selected. You can retrieve the selected item using
-    // parent.getItemAtPosition(pos)
-    selectedModel = parent?.getItemAtPosition(pos).toString()
-    Log.d(TAG, "Selected model: $selectedModel")
-    preview?.stop()
-    if (allPermissionsGranted()) {
-      createCameraSource(selectedModel)
-      startCameraSource()
-    } else {
-      runtimePermissions
-    }
-  }
-
-  override fun onNothingSelected(parent: AdapterView<*>?) {
-    // Do nothing.
   }
 
   override fun onCheckedChanged(buttonView: CompoundButton, isChecked: Boolean) {

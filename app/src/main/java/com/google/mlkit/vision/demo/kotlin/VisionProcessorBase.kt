@@ -19,7 +19,6 @@ package com.google.mlkit.vision.demo.kotlin
 import android.app.ActivityManager
 import android.content.Context
 import android.graphics.Bitmap
-import android.graphics.Rect
 import android.os.Build.VERSION_CODES
 import android.os.SystemClock
 import androidx.annotation.RequiresApi
@@ -39,7 +38,6 @@ import com.google.mlkit.vision.demo.InferenceInfoGraphic
 import com.google.mlkit.vision.demo.ScopedExecutor
 import com.google.mlkit.vision.demo.VisionImageProcessor
 import com.google.mlkit.vision.demo.preference.PreferenceUtils
-import com.google.mlkit.vision.label.ImageLabel
 import java.nio.ByteBuffer
 import java.util.Timer
 import java.util.TimerTask
@@ -191,7 +189,6 @@ abstract class VisionProcessorBase<T>(context: Context) : VisionImageProcessor {
       // When the image is from CameraX analysis use case, must call image.close() on received
       // images when finished using them. Otherwise, new images may not be received or the camera
       // may stall.
-//      .addOnCompleteListener { image.close() }
   }
 
   // -----------------Common processing logic-------------------------------------------------------

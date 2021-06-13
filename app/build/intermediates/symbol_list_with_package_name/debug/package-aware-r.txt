@@ -861,7 +861,6 @@ drawable ic_settings_white_24dp
 drawable ic_switch_camera
 drawable inference_button_shape
 drawable list_item_background
-drawable logo_mlkit
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -1012,6 +1011,7 @@ id fitCenter
 id fitEnd
 id fitStart
 id flip
+id focusView
 id forever
 id front
 id gone
@@ -1208,7 +1208,6 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout settings_style
-layout spinner_style
 layout support_simple_spinner_dropdown_item
 layout toggle_style
 string abc_action_bar_home_description

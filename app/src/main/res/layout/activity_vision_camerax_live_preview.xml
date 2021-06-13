@@ -12,12 +12,15 @@
       android:layout_width="match_parent"
       android:layout_height="0dp"
       app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
   <com.google.mlkit.vision.demo.kotlin.labeldetector.FocusView
+      android:id="@+id/focusView"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:background="#00000000"/>
+      android:background="#00000000" />
 
   <com.google.mlkit.vision.demo.GraphicOverlay
       android:id="@+id/graphic_overlay"
@@ -42,24 +45,6 @@
       app:layout_constraintBottom_toBottomOf="@+id/preview_view"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="@+id/preview_view" />
-
-  <LinearLayout
-      android:id="@id/control"
-      android:layout_width="match_parent"
-      android:layout_height="60dp"
-      android:background="#00000000"
-      android:orientation="horizontal"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toStartOf="@+id/facing_switch">
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_weight="1" />
-
-  </LinearLayout>
 
   <include
       android:id="@+id/settings_button"

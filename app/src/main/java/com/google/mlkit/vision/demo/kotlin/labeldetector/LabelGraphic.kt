@@ -20,7 +20,6 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.os.Build
-import android.util.Log
 import androidx.annotation.RequiresApi
 import com.google.mlkit.vision.demo.GraphicOverlay
 import com.google.mlkit.vision.demo.GraphicOverlay.Graphic
@@ -102,10 +101,7 @@ class LabelGraphic(
       else if(label.text == "no_mask") no_mask = label.confidence
     }
     var result = applicationContext.getString(R.string.authorized)
-//    if(labels[0].text == "mask") {
-//      PreferenceUtils.setInferenceResult(applicationContext, DETECTION_SUCCESS_MASK)
-//    }
-    if(mask > no_mask + 0.20F) {
+    if(mask > no_mask + 0.2F) {
       PreferenceUtils.setInferenceResult(applicationContext, DETECTION_SUCCESS_MASK)
     }
     else{
@@ -150,14 +146,14 @@ class LabelGraphic(
         if(labels[i].text == "no_mask" && (result == "마스크를 착용해주세요" || result == "Wear a mask")) {
           canvas.drawText(
                   labels[i].text + " : " +
-                          String.format(Locale.US, LABEL_FORMAT, labels[i].confidence * 100 + 20),
-                  dataX, dataY + DATA_TEXT_SIZE * (i + 2), dataPaint)
+                          String.format(Locale.US, LABEL_FORMAT, labels[i].confidence * 100),
+                  dataX, dataY + DATA_TEXT_SIZE * 2, dataPaint)
         }
         else if(labels[i].text == "mask" && (result == "인증되었습니다" || result == "Authorized")){
           canvas.drawText(
                   labels[i].text + " : " +
                           String.format(Locale.US, LABEL_FORMAT, labels[i].confidence * 100),
-                  dataX, dataY + DATA_TEXT_SIZE * (i + 2), dataPaint)
+                  dataX, dataY + DATA_TEXT_SIZE * 2, dataPaint)
         }
       }
     }
