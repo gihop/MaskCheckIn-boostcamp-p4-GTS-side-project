@@ -39,13 +39,13 @@
             android:value="barcode,face,ocr,ica"/>
 
         <activity
-            android:name=".kotlin.LivePreviewActivity"
+            android:name="com.jihopark.mlkit.vision.demo.kotlin.LivePreviewActivity"
             android:exported="true"
             android:theme="@style/AppTheme">
         </activity>
 
         <activity
-            android:name=".kotlin.CameraXLivePreviewActivity"
+            android:name="com.jihopark.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity"
             android:exported="true"
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait">
@@ -56,7 +56,7 @@
         </activity>
 
         <activity
-            android:name=".preference.SettingsActivity"
+            android:name="com.jihopark.mlkit.vision.demo.preference.SettingsActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
 

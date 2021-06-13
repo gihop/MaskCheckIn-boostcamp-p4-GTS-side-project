@@ -6,16 +6,16 @@ android {
     compileSdkVersion 30
 
     defaultConfig {
-        applicationId "com.google.mlkit.vision.demo"
+        applicationId "com.jihopark.mlkit.vision.demo"
         minSdkVersion 16
         multiDexEnabled true
         targetSdkVersion 30
 
-        versionCode 11
-        versionName "1.11"
+        versionCode 12
+        versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
-        setProperty("archivesBaseName", "vision-quickstart")
+        setProperty("archivesBaseName", "mask-checkin")
     }
     buildTypes {
         proguard {
@@ -34,6 +34,14 @@ android {
         debug {
             minifyEnabled false
             proguardFiles 'proguard-rules.pro'
+        }
+        splits {
+            abi {
+                enable true
+                reset()
+                include "x86", "armeabi-v7a", "arm64-v8a", "x86_64"
+                universalApk false
+            }
         }
     }
 

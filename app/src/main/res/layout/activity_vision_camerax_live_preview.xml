@@ -16,13 +16,13 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
-  <com.google.mlkit.vision.demo.kotlin.labeldetector.FocusView
+  <com.jihopark.mlkit.vision.demo.kotlin.labeldetector.FocusView
       android:id="@+id/focusView"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:background="#00000000" />
 
-  <com.google.mlkit.vision.demo.GraphicOverlay
+  <com.jihopark.mlkit.vision.demo.GraphicOverlay
       android:id="@+id/graphic_overlay"
       android:layout_width="0dp"
       android:layout_height="0dp"

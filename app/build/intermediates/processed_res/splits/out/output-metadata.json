@@ -1,0 +1,59 @@
+{
+  "version": 2,
+  "artifactType": {
+    "type": "PROCESSED_RES",
+    "kind": "Directory"
+  },
+  "applicationId": "com.jihopark.mlkit.vision.demo",
+  "variantName": "processSplitsResources",
+  "elements": [
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "x86_64"
+        }
+      ],
+      "versionCode": 12,
+      "versionName": "1.0",
+      "outputFile": "resources-x86_64Splits.ap_"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "x86"
+        }
+      ],
+      "versionCode": 12,
+      "versionName": "1.0",
+      "outputFile": "resources-x86Splits.ap_"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "armeabi-v7a"
+        }
+      ],
+      "versionCode": 12,
+      "versionName": "1.0",
+      "outputFile": "resources-armeabi-v7aSplits.ap_"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "arm64-v8a"
+        }
+      ],
+      "versionCode": 12,
+      "versionName": "1.0",
+      "outputFile": "resources-arm64-v8aSplits.ap_"
+    }
+  ]
+}

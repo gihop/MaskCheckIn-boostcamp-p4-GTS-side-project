@@ -1,9 +1,9 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.google.mlkit.vision.demo"
+3    package="com.jihopark.mlkit.vision.demo"
 4    android:installLocation="auto"
-5    android:versionCode="11"
-6    android:versionName="1.11" >
+5    android:versionCode="12"
+6    android:versionName="1.0" >
 7    <!--
 8 CameraX libraries require minSdkVersion 21, while this quickstart app
 9    supports low to 16. Needs to use overrideLibrary to make the merger tool
@@ -92,8 +92,8 @@
 57
 58        <activity
 58-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:41:9-45:20
-59            android:name="com.google.mlkit.vision.demo.kotlin.LivePreviewActivity"
-59-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:42:13-55
+59            android:name="com.jihopark.mlkit.vision.demo.kotlin.LivePreviewActivity"
+59-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:42:13-85
 60            android:exported="true"
 60-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:43:13-36
 61            android:theme="@style/AppTheme" >
@@ -101,8 +101,8 @@
 62        </activity>
 63        <activity
 63-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:47:9-56:20
-64            android:name="com.google.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity"
-64-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:48:13-62
+64            android:name="com.jihopark.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity"
+64-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:48:13-92
 65            android:exported="true"
 65-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:49:13-36
 66            android:screenOrientation="portrait"
@@ -122,8 +122,8 @@
 73        </activity>
 74        <activity
 74-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:58:9-61:51
-75            android:name="com.google.mlkit.vision.demo.preference.SettingsActivity"
-75-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:59:13-56
+75            android:name="com.jihopark.mlkit.vision.demo.preference.SettingsActivity"
+75-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:59:13-86
 76            android:exported="false"
 76-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:60:13-37
 77            android:screenOrientation="portrait" />
@@ -179,7 +179,7 @@
 103-->[com.google.mlkit:common:17.2.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/7a5561941ceac3031de383afdc0597e6/jetified-common-17.2.0/AndroidManifest.xml:9:9-13:38
 104            android:name="com.google.mlkit.common.internal.MlKitInitProvider"
 104-->[com.google.mlkit:common:17.2.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/7a5561941ceac3031de383afdc0597e6/jetified-common-17.2.0/AndroidManifest.xml:10:13-78
-105            android:authorities="com.google.mlkit.vision.demo.mlkitinitprovider"
+105            android:authorities="com.jihopark.mlkit.vision.demo.mlkitinitprovider"
 105-->[com.google.mlkit:common:17.2.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/7a5561941ceac3031de383afdc0597e6/jetified-common-17.2.0/AndroidManifest.xml:11:13-69
 106            android:exported="false"
 106-->[com.google.mlkit:common:17.2.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/7a5561941ceac3031de383afdc0597e6/jetified-common-17.2.0/AndroidManifest.xml:12:13-37
