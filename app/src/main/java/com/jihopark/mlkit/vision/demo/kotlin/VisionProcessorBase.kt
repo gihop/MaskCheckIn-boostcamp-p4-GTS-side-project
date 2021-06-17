@@ -180,7 +180,7 @@ abstract class VisionProcessorBase<T>(context: Context) : VisionImageProcessor {
 
     val inputBitmap = BitmapUtils.getInputBitmap(image)
     requestDetectInImage(
-            InputImage.fromBitmap(inputBitmap, image.imageInfo.rotationDegrees),
+            InputImage.fromBitmap(inputBitmap, 0),
             graphicOverlay, /* originalCameraImage= */
             bitmap, /* shouldShowFps= */
             true,

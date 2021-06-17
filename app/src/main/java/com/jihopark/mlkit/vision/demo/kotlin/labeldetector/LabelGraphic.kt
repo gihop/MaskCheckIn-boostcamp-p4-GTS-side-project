@@ -101,7 +101,7 @@ class LabelGraphic(
       else if(label.text == "no_mask") no_mask = label.confidence
     }
     var result = applicationContext.getString(R.string.authorized)
-    if(mask > no_mask + 0.2F) {
+    if(mask > no_mask) {
       PreferenceUtils.setInferenceResult(applicationContext, DETECTION_SUCCESS_MASK)
     }
     else{
