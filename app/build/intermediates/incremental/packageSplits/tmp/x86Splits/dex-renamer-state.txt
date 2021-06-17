@@ -1,4 +1,4 @@
-#Mon Jun 14 00:05:39 KST 2021
+#Mon Jun 14 01:53:50 KST 2021
 base.1=/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/build/intermediates/dex/splits/mergeDexSplits/classes2.dex
 path.1=classes2.dex
 base.0=/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/build/intermediates/dex/splits/mergeDexSplits/classes.dex

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">마스크 체크인</string>
+    <string name="authorized" translatable="false">인증되었습니다</string>
+    <string name="wear_a_mask" translatable="false">마스크를 착용해주세요</string>
+</resources>
