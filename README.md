@@ -12,7 +12,7 @@
 | efficientnet_lite0     | 약 220ms    | 5mb       | 4.7M      | O      |
 | mobilenet_v1_025       | 약 80ms     | 0.7mb     | 0.47M     | O      |
 | mobilenet_v3_small_075 | 약 100ms    | 2.3mb     | 2.4M      | O      |
-| **GTSNet**             | **약 50ms** | **0.6mb** | **0.15M** | **X**  |
+| **GTSNet(Ours)**       | **약 50ms** | **0.6mb** | **0.15M** | **X**  |
 
 ### 시연 영상
 
