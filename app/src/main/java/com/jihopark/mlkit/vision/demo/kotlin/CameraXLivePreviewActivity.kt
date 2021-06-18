@@ -311,10 +311,10 @@ class CameraXLivePreviewActivity :
         MASK_V8 -> {
           Log.i(
                   TAG,
-                  "Using Mask V8 Detector Processor"
+                  "Using Mask Final Detector Processor"
           )
           val localClassifier = LocalModel.Builder()
-                  .setAssetFilePath("custom_models/mask_v8.tflite")
+                  .setAssetFilePath("custom_models/mask_model_final.tflite")
                   .build()
           val customImageLabelerOptions =
                   CustomImageLabelerOptions.Builder(localClassifier).build()

@@ -20,6 +20,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.os.Build
+import android.util.Log
 import androidx.annotation.RequiresApi
 import com.jihopark.mlkit.vision.demo.GraphicOverlay
 import com.jihopark.mlkit.vision.demo.GraphicOverlay.Graphic
@@ -39,7 +40,6 @@ class LabelGraphic(
   private val labelPaint =  Paint()
   private val focusPaint = Paint()
   private val dataPaint = Paint()
-  private var test = 0
   init {
     borderPaint.color = Color.GRAY
     borderPaint.strokeWidth = 5f
@@ -88,20 +88,22 @@ class LabelGraphic(
     var maxWidth = 0f
     val totalHeight = TEXT_SIZE
     var mask = 0F
-    var incorrect_mask = 0F
+    var background = 0F
     var no_mask = 0F
 
-    if(labels[0].text == "background") {
+    for(label in labels){
+      if(label.text == "mask") mask = label.confidence
+      else if(label.text == "no mask") no_mask = label.confidence
+      else background = label.confidence
+    }
+
+    if(background >= 0.9F) {
       PreferenceUtils.setInferenceResult(applicationContext, DETECTION_FAILED)
       return
     }
 
-    for(label in labels){
-      if(label.text == "mask") mask = label.confidence
-      else if(label.text == "no_mask") no_mask = label.confidence
-    }
     var result = applicationContext.getString(R.string.authorized)
-    if(mask > no_mask) {
+    if(mask + 0.1F > no_mask) {
       PreferenceUtils.setInferenceResult(applicationContext, DETECTION_SUCCESS_MASK)
     }
     else{

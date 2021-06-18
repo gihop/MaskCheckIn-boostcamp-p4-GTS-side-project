@@ -22,255 +22,246 @@
 18-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:17:5-59
 18-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:17:19-57
 19
-20    <uses-permission android:name="android.permission.INTERNET" />
-20-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:19:5-66
-20-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:19:22-64
-21    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-21-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:20:5-80
-21-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:20:22-78
-22    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-22-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:21:5-79
-22-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:21:22-77
-23    <uses-permission android:name="android.permission.CAMERA" />
-23-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:22:5-64
-23-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:22:22-62
-24    <uses-permission android:name="android.permission.VIBRATE" />
-24-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:23:5-66
-24-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:23:22-63
-25
-26    <queries>
-26-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:64:5-68:15
-27        <intent>
-27-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:65:9-67:18
-28            <action android:name="android.media.action.IMAGE_CAPTURE" />
-28-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:66:13-73
-28-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:66:21-70
-29        </intent>
-30    </queries>
-31
-32    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
-33    <!-- <uses-sdk android:minSdkVersion="14"/> -->
-34    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Permission will be merged into the manifest of the hosting app. -->
-34-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/b0b07d668fb05669fea93be346cdaca2/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:25:5-79
-34-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/b0b07d668fb05669fea93be346cdaca2/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:25:22-76
-35    <!-- Is required to launch foreground extraction service for targetSdkVersion 28+. -->
-36    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-36-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:8:3-74
-36-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:8:20-72
-37
-38    <application
-38-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:25:5-63:19
-39        android:name="androidx.multidex.MultiDexApplication"
-39-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:26:9-61
-40        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-40-->[androidx.core:core:1.3.1] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/9ce39da31d83914ee9b08fa3e90e05b5/core-1.3.1/AndroidManifest.xml:24:18-86
-41        android:icon="@drawable/ic_launcher"
-41-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:27:9-45
-42        android:label="@string/app_name"
-42-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:28:9-41
-43        android:theme="@style/Theme.AppCompat" >
-43-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:29:9-47
-44        <meta-data
-44-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:31:9-33:68
-45            android:name="com.google.android.gms.version"
-45-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:32:13-58
-46            android:value="@integer/google_play_services_version" />
-46-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:33:13-66
-47
-48        <!--
-49          Optional: Add it to automatically download ML model to device after
-50          your app is installed.
-51        -->
-52        <meta-data
-52-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:37:9-39:51
-53            android:name="com.google.mlkit.vision.DEPENDENCIES"
-53-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:38:13-64
-54            android:value="barcode,face,ocr,ica" />
-54-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:39:13-49
-55
-56        <activity
-56-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:41:9-45:20
-57            android:name="com.jihopark.mlkit.vision.demo.kotlin.LivePreviewActivity"
-57-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:42:13-85
-58            android:exported="true"
-58-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:43:13-36
-59            android:theme="@style/AppTheme" >
-59-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:44:13-44
-60        </activity>
-61        <activity
-61-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:47:9-56:20
-62            android:name="com.jihopark.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity"
-62-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:48:13-92
-63            android:exported="true"
-63-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:49:13-36
-64            android:screenOrientation="portrait"
-64-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:51:13-49
-65            android:theme="@style/AppTheme" >
-65-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:50:13-44
-66            <intent-filter>
-66-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:52:13-55:29
-67                <action android:name="android.intent.action.MAIN" />
-67-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:53:17-68
-67-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:53:25-66
-68
-69                <category android:name="android.intent.category.LAUNCHER" />
-69-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:54:17-76
-69-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:54:27-74
-70            </intent-filter>
-71        </activity>
-72        <activity
-72-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:58:9-61:51
-73            android:name="com.jihopark.mlkit.vision.demo.preference.SettingsActivity"
-73-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:59:13-86
-74            android:exported="false"
-74-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:60:13-37
-75            android:screenOrientation="portrait" />
-75-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:61:13-49
-76
-77        <service
-77-->[com.google.mlkit:image-labeling:17.0.4] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/11d3f4e039587d60427df57aaf42cf49/jetified-image-labeling-17.0.4/AndroidManifest.xml:8:9-14:19
-78            android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService"
-78-->[com.google.mlkit:image-labeling:17.0.4] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/11d3f4e039587d60427df57aaf42cf49/jetified-image-labeling-17.0.4/AndroidManifest.xml:9:13-91
-79            android:directBootAware="true"
-79-->[com.google.mlkit:common:17.2.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/7a5561941ceac3031de383afdc0597e6/jetified-common-17.2.0/AndroidManifest.xml:17:13-43
-80            android:exported="false" >
-80-->[com.google.mlkit:image-labeling:17.0.4] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/11d3f4e039587d60427df57aaf42cf49/jetified-image-labeling-17.0.4/AndroidManifest.xml:10:13-37
+20    <uses-permission android:name="android.permission.CAMERA" />
+20-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:19:5-64
+20-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:19:22-62
+21
+22    <queries>
+22-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:60:5-64:15
+23        <intent>
+23-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:61:9-63:18
+24            <action android:name="android.media.action.IMAGE_CAPTURE" />
+24-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:62:13-73
+24-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:62:21-70
+25        </intent>
+26    </queries>
+27
+28    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+29    <!-- <uses-sdk android:minSdkVersion="14"/> -->
+30    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+30-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/b0b07d668fb05669fea93be346cdaca2/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:25:5-79
+30-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/b0b07d668fb05669fea93be346cdaca2/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:25:22-76
+31    <uses-permission android:name="android.permission.INTERNET" /> <!-- Permission will be merged into the manifest of the hosting app. -->
+31-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/b0b07d668fb05669fea93be346cdaca2/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:26:5-67
+31-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/b0b07d668fb05669fea93be346cdaca2/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:26:22-64
+32    <!-- Is required to launch foreground extraction service for targetSdkVersion 28+. -->
+33    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+33-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:8:3-74
+33-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:8:20-72
+34
+35    <application
+35-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:21:5-59:19
+36        android:name="androidx.multidex.MultiDexApplication"
+36-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:22:9-61
+37        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+37-->[androidx.core:core:1.3.1] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/9ce39da31d83914ee9b08fa3e90e05b5/core-1.3.1/AndroidManifest.xml:24:18-86
+38        android:icon="@drawable/ic_launcher"
+38-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:23:9-45
+39        android:label="@string/app_name"
+39-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:24:9-41
+40        android:theme="@style/Theme.AppCompat" >
+40-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:25:9-47
+41        <meta-data
+41-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:27:9-29:68
+42            android:name="com.google.android.gms.version"
+42-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:28:13-58
+43            android:value="@integer/google_play_services_version" />
+43-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:29:13-66
+44
+45        <!--
+46          Optional: Add it to automatically download ML model to device after
+47          your app is installed.
+48        -->
+49        <meta-data
+49-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:33:9-35:51
+50            android:name="com.google.mlkit.vision.DEPENDENCIES"
+50-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:34:13-64
+51            android:value="barcode,face,ocr,ica" />
+51-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:35:13-49
+52
+53        <activity
+53-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:37:9-41:20
+54            android:name="com.jihopark.mlkit.vision.demo.kotlin.LivePreviewActivity"
+54-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:38:13-85
+55            android:exported="true"
+55-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:39:13-36
+56            android:theme="@style/AppTheme" >
+56-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:40:13-44
+57        </activity>
+58        <activity
+58-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:43:9-52:20
+59            android:name="com.jihopark.mlkit.vision.demo.kotlin.CameraXLivePreviewActivity"
+59-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:44:13-92
+60            android:exported="true"
+60-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:45:13-36
+61            android:screenOrientation="portrait"
+61-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:47:13-49
+62            android:theme="@style/AppTheme" >
+62-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:46:13-44
+63            <intent-filter>
+63-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:48:13-51:29
+64                <action android:name="android.intent.action.MAIN" />
+64-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:49:17-68
+64-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:49:25-66
+65
+66                <category android:name="android.intent.category.LAUNCHER" />
+66-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:50:17-76
+66-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:50:27-74
+67            </intent-filter>
+68        </activity>
+69        <activity
+69-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:54:9-57:51
+70            android:name="com.jihopark.mlkit.vision.demo.preference.SettingsActivity"
+70-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:55:13-86
+71            android:exported="false"
+71-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:56:13-37
+72            android:screenOrientation="portrait" />
+72-->/Users/jihopark/Desktop/부캠/stage4/MaskCheckIn-boostcamp-p4-GTS-side-project/app/src/main/AndroidManifest.xml:57:13-49
+73
+74        <service
+74-->[com.google.mlkit:image-labeling:17.0.4] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/11d3f4e039587d60427df57aaf42cf49/jetified-image-labeling-17.0.4/AndroidManifest.xml:8:9-14:19
+75            android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService"
+75-->[com.google.mlkit:image-labeling:17.0.4] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/11d3f4e039587d60427df57aaf42cf49/jetified-image-labeling-17.0.4/AndroidManifest.xml:9:13-91
+76            android:directBootAware="true"
+76-->[com.google.mlkit:common:17.2.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/7a5561941ceac3031de383afdc0597e6/jetified-common-17.2.0/AndroidManifest.xml:17:13-43
+77            android:exported="false" >
+77-->[com.google.mlkit:image-labeling:17.0.4] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/11d3f4e039587d60427df57aaf42cf49/jetified-image-labeling-17.0.4/AndroidManifest.xml:10:13-37
+78            <meta-data
+78-->[com.google.mlkit:image-labeling:17.0.4] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/11d3f4e039587d60427df57aaf42cf49/jetified-image-labeling-17.0.4/AndroidManifest.xml:11:13-13:85
+79                android:name="com.google.firebase.components:com.google.mlkit.vision.label.defaults.internal.BundledLabelRegistrar"
+79-->[com.google.mlkit:image-labeling:17.0.4] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/11d3f4e039587d60427df57aaf42cf49/jetified-image-labeling-17.0.4/AndroidManifest.xml:12:17-132
+80                android:value="com.google.firebase.components.ComponentRegistrar" />
+80-->[com.google.mlkit:image-labeling:17.0.4] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/11d3f4e039587d60427df57aaf42cf49/jetified-image-labeling-17.0.4/AndroidManifest.xml:13:17-82
 81            <meta-data
-81-->[com.google.mlkit:image-labeling:17.0.4] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/11d3f4e039587d60427df57aaf42cf49/jetified-image-labeling-17.0.4/AndroidManifest.xml:11:13-13:85
-82                android:name="com.google.firebase.components:com.google.mlkit.vision.label.defaults.internal.BundledLabelRegistrar"
-82-->[com.google.mlkit:image-labeling:17.0.4] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/11d3f4e039587d60427df57aaf42cf49/jetified-image-labeling-17.0.4/AndroidManifest.xml:12:17-132
+81-->[com.google.mlkit:image-labeling-custom:16.3.1] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/2844c5ed8848eea63649d4b29e249237/jetified-image-labeling-custom-16.3.1/AndroidManifest.xml:11:13-13:85
+82                android:name="com.google.firebase.components:com.google.mlkit.vision.label.custom.internal.CustomLabelRegistrar"
+82-->[com.google.mlkit:image-labeling-custom:16.3.1] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/2844c5ed8848eea63649d4b29e249237/jetified-image-labeling-custom-16.3.1/AndroidManifest.xml:12:17-129
 83                android:value="com.google.firebase.components.ComponentRegistrar" />
-83-->[com.google.mlkit:image-labeling:17.0.4] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/11d3f4e039587d60427df57aaf42cf49/jetified-image-labeling-17.0.4/AndroidManifest.xml:13:17-82
+83-->[com.google.mlkit:image-labeling-custom:16.3.1] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/2844c5ed8848eea63649d4b29e249237/jetified-image-labeling-custom-16.3.1/AndroidManifest.xml:13:17-82
 84            <meta-data
-84-->[com.google.mlkit:image-labeling-custom:16.3.1] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/2844c5ed8848eea63649d4b29e249237/jetified-image-labeling-custom-16.3.1/AndroidManifest.xml:11:13-13:85
-85                android:name="com.google.firebase.components:com.google.mlkit.vision.label.custom.internal.CustomLabelRegistrar"
-85-->[com.google.mlkit:image-labeling-custom:16.3.1] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/2844c5ed8848eea63649d4b29e249237/jetified-image-labeling-custom-16.3.1/AndroidManifest.xml:12:17-129
+84-->[com.google.mlkit:playstore-dynamic-feature-support:16.0.0-beta1] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/a17b1e616539edd6f9ab302f41f129a0/jetified-playstore-dynamic-feature-support-16.0.0-beta1/AndroidManifest.xml:12:13-14:85
+85                android:name="com.google.firebase.components:com.google.mlkit.dynamic.DynamicLoadingRegistrar"
+85-->[com.google.mlkit:playstore-dynamic-feature-support:16.0.0-beta1] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/a17b1e616539edd6f9ab302f41f129a0/jetified-playstore-dynamic-feature-support-16.0.0-beta1/AndroidManifest.xml:13:17-111
 86                android:value="com.google.firebase.components.ComponentRegistrar" />
-86-->[com.google.mlkit:image-labeling-custom:16.3.1] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/2844c5ed8848eea63649d4b29e249237/jetified-image-labeling-custom-16.3.1/AndroidManifest.xml:13:17-82
+86-->[com.google.mlkit:playstore-dynamic-feature-support:16.0.0-beta1] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/a17b1e616539edd6f9ab302f41f129a0/jetified-playstore-dynamic-feature-support-16.0.0-beta1/AndroidManifest.xml:14:17-82
 87            <meta-data
-87-->[com.google.mlkit:playstore-dynamic-feature-support:16.0.0-beta1] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/a17b1e616539edd6f9ab302f41f129a0/jetified-playstore-dynamic-feature-support-16.0.0-beta1/AndroidManifest.xml:12:13-14:85
-88                android:name="com.google.firebase.components:com.google.mlkit.dynamic.DynamicLoadingRegistrar"
-88-->[com.google.mlkit:playstore-dynamic-feature-support:16.0.0-beta1] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/a17b1e616539edd6f9ab302f41f129a0/jetified-playstore-dynamic-feature-support-16.0.0-beta1/AndroidManifest.xml:13:17-111
+87-->[com.google.mlkit:vision-internal-vkp:18.0.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/940c315202dea925c4bebc8e9e61b8c8/jetified-vision-internal-vkp-18.0.0/AndroidManifest.xml:11:13-13:85
+88                android:name="com.google.firebase.components:com.google.mlkit.vision.vkp.VkpRegistrar"
+88-->[com.google.mlkit:vision-internal-vkp:18.0.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/940c315202dea925c4bebc8e9e61b8c8/jetified-vision-internal-vkp-18.0.0/AndroidManifest.xml:12:17-103
 89                android:value="com.google.firebase.components.ComponentRegistrar" />
-89-->[com.google.mlkit:playstore-dynamic-feature-support:16.0.0-beta1] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/a17b1e616539edd6f9ab302f41f129a0/jetified-playstore-dynamic-feature-support-16.0.0-beta1/AndroidManifest.xml:14:17-82
+89-->[com.google.mlkit:vision-internal-vkp:18.0.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/940c315202dea925c4bebc8e9e61b8c8/jetified-vision-internal-vkp-18.0.0/AndroidManifest.xml:13:17-82
 90            <meta-data
-90-->[com.google.mlkit:vision-internal-vkp:18.0.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/940c315202dea925c4bebc8e9e61b8c8/jetified-vision-internal-vkp-18.0.0/AndroidManifest.xml:11:13-13:85
-91                android:name="com.google.firebase.components:com.google.mlkit.vision.vkp.VkpRegistrar"
-91-->[com.google.mlkit:vision-internal-vkp:18.0.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/940c315202dea925c4bebc8e9e61b8c8/jetified-vision-internal-vkp-18.0.0/AndroidManifest.xml:12:17-103
+90-->[com.google.mlkit:vision-common:16.4.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/a1641b39659a2027f66cce07bef20e94/jetified-vision-common-16.4.0/AndroidManifest.xml:12:13-14:85
+91                android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar"
+91-->[com.google.mlkit:vision-common:16.4.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/a1641b39659a2027f66cce07bef20e94/jetified-vision-common-16.4.0/AndroidManifest.xml:13:17-124
 92                android:value="com.google.firebase.components.ComponentRegistrar" />
-92-->[com.google.mlkit:vision-internal-vkp:18.0.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/940c315202dea925c4bebc8e9e61b8c8/jetified-vision-internal-vkp-18.0.0/AndroidManifest.xml:13:17-82
+92-->[com.google.mlkit:vision-common:16.4.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/a1641b39659a2027f66cce07bef20e94/jetified-vision-common-16.4.0/AndroidManifest.xml:14:17-82
 93            <meta-data
-93-->[com.google.mlkit:vision-common:16.4.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/a1641b39659a2027f66cce07bef20e94/jetified-vision-common-16.4.0/AndroidManifest.xml:12:13-14:85
-94                android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar"
-94-->[com.google.mlkit:vision-common:16.4.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/a1641b39659a2027f66cce07bef20e94/jetified-vision-common-16.4.0/AndroidManifest.xml:13:17-124
+93-->[com.google.mlkit:common:17.2.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/7a5561941ceac3031de383afdc0597e6/jetified-common-17.2.0/AndroidManifest.xml:20:13-22:85
+94                android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar"
+94-->[com.google.mlkit:common:17.2.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/7a5561941ceac3031de383afdc0597e6/jetified-common-17.2.0/AndroidManifest.xml:21:17-120
 95                android:value="com.google.firebase.components.ComponentRegistrar" />
-95-->[com.google.mlkit:vision-common:16.4.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/a1641b39659a2027f66cce07bef20e94/jetified-vision-common-16.4.0/AndroidManifest.xml:14:17-82
-96            <meta-data
-96-->[com.google.mlkit:common:17.2.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/7a5561941ceac3031de383afdc0597e6/jetified-common-17.2.0/AndroidManifest.xml:20:13-22:85
-97                android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar"
-97-->[com.google.mlkit:common:17.2.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/7a5561941ceac3031de383afdc0597e6/jetified-common-17.2.0/AndroidManifest.xml:21:17-120
-98                android:value="com.google.firebase.components.ComponentRegistrar" />
-98-->[com.google.mlkit:common:17.2.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/7a5561941ceac3031de383afdc0597e6/jetified-common-17.2.0/AndroidManifest.xml:22:17-82
-99        </service>
-100
-101        <provider
-101-->[com.google.mlkit:common:17.2.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/7a5561941ceac3031de383afdc0597e6/jetified-common-17.2.0/AndroidManifest.xml:9:9-13:38
-102            android:name="com.google.mlkit.common.internal.MlKitInitProvider"
-102-->[com.google.mlkit:common:17.2.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/7a5561941ceac3031de383afdc0597e6/jetified-common-17.2.0/AndroidManifest.xml:10:13-78
-103            android:authorities="com.jihopark.mlkit.vision.demo.mlkitinitprovider"
-103-->[com.google.mlkit:common:17.2.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/7a5561941ceac3031de383afdc0597e6/jetified-common-17.2.0/AndroidManifest.xml:11:13-69
-104            android:exported="false"
-104-->[com.google.mlkit:common:17.2.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/7a5561941ceac3031de383afdc0597e6/jetified-common-17.2.0/AndroidManifest.xml:12:13-37
-105            android:initOrder="99" />
-105-->[com.google.mlkit:common:17.2.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/7a5561941ceac3031de383afdc0597e6/jetified-common-17.2.0/AndroidManifest.xml:13:13-35
-106
-107        <activity
-107-->[com.google.android.gms:play-services-base:17.6.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/eb3695de7646208bc64e4426ddd573a3/jetified-play-services-base-17.6.0/AndroidManifest.xml:23:9-26:75
-108            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-108-->[com.google.android.gms:play-services-base:17.6.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/eb3695de7646208bc64e4426ddd573a3/jetified-play-services-base-17.6.0/AndroidManifest.xml:24:13-79
-109            android:exported="false"
-109-->[com.google.android.gms:play-services-base:17.6.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/eb3695de7646208bc64e4426ddd573a3/jetified-play-services-base-17.6.0/AndroidManifest.xml:25:13-37
-110            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-110-->[com.google.android.gms:play-services-base:17.6.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/eb3695de7646208bc64e4426ddd573a3/jetified-play-services-base-17.6.0/AndroidManifest.xml:26:13-72
-111
-112        <service
-112-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/b0b07d668fb05669fea93be346cdaca2/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:29:9-35:19
-113            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
-113-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/b0b07d668fb05669fea93be346cdaca2/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:30:13-103
-114            android:exported="false" >
-114-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/b0b07d668fb05669fea93be346cdaca2/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:31:13-37
-115            <meta-data
-115-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/b0b07d668fb05669fea93be346cdaca2/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:32:13-34:39
-116                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
-116-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/b0b07d668fb05669fea93be346cdaca2/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:33:17-94
-117                android:value="cct" />
-117-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/b0b07d668fb05669fea93be346cdaca2/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:34:17-36
-118        </service>
-119        <service
-119-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/0b67044ceabbcacea62e90fd6e1fc6a0/jetified-transport-runtime-2.2.6/AndroidManifest.xml:26:9-30:19
-120            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
-120-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/0b67044ceabbcacea62e90fd6e1fc6a0/jetified-transport-runtime-2.2.6/AndroidManifest.xml:27:13-117
-121            android:exported="false"
-121-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/0b67044ceabbcacea62e90fd6e1fc6a0/jetified-transport-runtime-2.2.6/AndroidManifest.xml:28:13-37
-122            android:permission="android.permission.BIND_JOB_SERVICE" >
-122-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/0b67044ceabbcacea62e90fd6e1fc6a0/jetified-transport-runtime-2.2.6/AndroidManifest.xml:29:13-69
-123        </service>
-124
-125        <receiver
-125-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/0b67044ceabbcacea62e90fd6e1fc6a0/jetified-transport-runtime-2.2.6/AndroidManifest.xml:32:9-34:40
-126            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
-126-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/0b67044ceabbcacea62e90fd6e1fc6a0/jetified-transport-runtime-2.2.6/AndroidManifest.xml:33:13-132
-127            android:exported="false" /> <!-- The activities will be merged into the manifest of the hosting app. -->
-127-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/0b67044ceabbcacea62e90fd6e1fc6a0/jetified-transport-runtime-2.2.6/AndroidManifest.xml:34:13-37
-128        <activity
-128-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:12:5-271
-129            android:name="com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity"
-129-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:12:15-102
-130            android:enabled="false"
-130-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:12:103-126
-131            android:exported="false"
-131-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:12:127-151
-132            android:launchMode="singleInstance"
-132-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:12:204-239
-133            android:process=":playcore_missing_splits_activity"
-133-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:12:152-203
-134            android:stateNotNeeded="true" />
-134-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:12:240-269
-135        <activity
-135-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:13:5-226
-136            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
-136-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:13:15-95
-137            android:enabled="false"
-137-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:13:96-119
-138            android:exported="false"
-138-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:13:120-144
-139            android:stateNotNeeded="true"
-139-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:13:145-174
-140            android:theme="@style/Theme.PlayCore.Transparent" /> <!-- The services will be merged into the manifest of the hosting app. -->
-140-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:13:175-224
-141        <service
-141-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:16:5-18:15
-142            android:name="com.google.android.play.core.assetpacks.AssetPackExtractionService"
-142-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:16:14-95
-143            android:enabled="false"
-143-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:16:96-119
-144            android:exported="true" >
-144-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:16:120-143
-145            <meta-data
-145-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:17:7-108
-146                android:name="com.google.android.play.core.assetpacks.versionCode"
-146-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:17:18-84
-147                android:value="11000" />
-147-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:17:85-106
-148        </service>
-149        <service
-149-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:19:5-147
-150            android:name="com.google.android.play.core.assetpacks.ExtractionForegroundService"
-150-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:19:14-96
-151            android:enabled="false"
-151-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:19:97-120
-152            android:exported="false" />
-152-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:19:121-145
-153    </application>
-154
-155</manifest>
+95-->[com.google.mlkit:common:17.2.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/7a5561941ceac3031de383afdc0597e6/jetified-common-17.2.0/AndroidManifest.xml:22:17-82
+96        </service>
+97
+98        <provider
+98-->[com.google.mlkit:common:17.2.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/7a5561941ceac3031de383afdc0597e6/jetified-common-17.2.0/AndroidManifest.xml:9:9-13:38
+99            android:name="com.google.mlkit.common.internal.MlKitInitProvider"
+99-->[com.google.mlkit:common:17.2.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/7a5561941ceac3031de383afdc0597e6/jetified-common-17.2.0/AndroidManifest.xml:10:13-78
+100            android:authorities="com.jihopark.mlkit.vision.demo.mlkitinitprovider"
+100-->[com.google.mlkit:common:17.2.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/7a5561941ceac3031de383afdc0597e6/jetified-common-17.2.0/AndroidManifest.xml:11:13-69
+101            android:exported="false"
+101-->[com.google.mlkit:common:17.2.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/7a5561941ceac3031de383afdc0597e6/jetified-common-17.2.0/AndroidManifest.xml:12:13-37
+102            android:initOrder="99" />
+102-->[com.google.mlkit:common:17.2.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/7a5561941ceac3031de383afdc0597e6/jetified-common-17.2.0/AndroidManifest.xml:13:13-35
+103
+104        <activity
+104-->[com.google.android.gms:play-services-base:17.6.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/eb3695de7646208bc64e4426ddd573a3/jetified-play-services-base-17.6.0/AndroidManifest.xml:23:9-26:75
+105            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+105-->[com.google.android.gms:play-services-base:17.6.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/eb3695de7646208bc64e4426ddd573a3/jetified-play-services-base-17.6.0/AndroidManifest.xml:24:13-79
+106            android:exported="false"
+106-->[com.google.android.gms:play-services-base:17.6.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/eb3695de7646208bc64e4426ddd573a3/jetified-play-services-base-17.6.0/AndroidManifest.xml:25:13-37
+107            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+107-->[com.google.android.gms:play-services-base:17.6.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/eb3695de7646208bc64e4426ddd573a3/jetified-play-services-base-17.6.0/AndroidManifest.xml:26:13-72
+108
+109        <service
+109-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/b0b07d668fb05669fea93be346cdaca2/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:29:9-35:19
+110            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+110-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/b0b07d668fb05669fea93be346cdaca2/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:30:13-103
+111            android:exported="false" >
+111-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/b0b07d668fb05669fea93be346cdaca2/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:31:13-37
+112            <meta-data
+112-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/b0b07d668fb05669fea93be346cdaca2/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:32:13-34:39
+113                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+113-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/b0b07d668fb05669fea93be346cdaca2/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:33:17-94
+114                android:value="cct" />
+114-->[com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/b0b07d668fb05669fea93be346cdaca2/jetified-transport-backend-cct-2.3.3/AndroidManifest.xml:34:17-36
+115        </service>
+116        <service
+116-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/0b67044ceabbcacea62e90fd6e1fc6a0/jetified-transport-runtime-2.2.6/AndroidManifest.xml:26:9-30:19
+117            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+117-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/0b67044ceabbcacea62e90fd6e1fc6a0/jetified-transport-runtime-2.2.6/AndroidManifest.xml:27:13-117
+118            android:exported="false"
+118-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/0b67044ceabbcacea62e90fd6e1fc6a0/jetified-transport-runtime-2.2.6/AndroidManifest.xml:28:13-37
+119            android:permission="android.permission.BIND_JOB_SERVICE" >
+119-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/0b67044ceabbcacea62e90fd6e1fc6a0/jetified-transport-runtime-2.2.6/AndroidManifest.xml:29:13-69
+120        </service>
+121
+122        <receiver
+122-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/0b67044ceabbcacea62e90fd6e1fc6a0/jetified-transport-runtime-2.2.6/AndroidManifest.xml:32:9-34:40
+123            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+123-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/0b67044ceabbcacea62e90fd6e1fc6a0/jetified-transport-runtime-2.2.6/AndroidManifest.xml:33:13-132
+124            android:exported="false" /> <!-- The activities will be merged into the manifest of the hosting app. -->
+124-->[com.google.android.datatransport:transport-runtime:2.2.6] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/0b67044ceabbcacea62e90fd6e1fc6a0/jetified-transport-runtime-2.2.6/AndroidManifest.xml:34:13-37
+125        <activity
+125-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:12:5-271
+126            android:name="com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity"
+126-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:12:15-102
+127            android:enabled="false"
+127-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:12:103-126
+128            android:exported="false"
+128-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:12:127-151
+129            android:launchMode="singleInstance"
+129-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:12:204-239
+130            android:process=":playcore_missing_splits_activity"
+130-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:12:152-203
+131            android:stateNotNeeded="true" />
+131-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:12:240-269
+132        <activity
+132-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:13:5-226
+133            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+133-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:13:15-95
+134            android:enabled="false"
+134-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:13:96-119
+135            android:exported="false"
+135-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:13:120-144
+136            android:stateNotNeeded="true"
+136-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:13:145-174
+137            android:theme="@style/Theme.PlayCore.Transparent" /> <!-- The services will be merged into the manifest of the hosting app. -->
+137-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:13:175-224
+138        <service
+138-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:16:5-18:15
+139            android:name="com.google.android.play.core.assetpacks.AssetPackExtractionService"
+139-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:16:14-95
+140            android:enabled="false"
+140-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:16:96-119
+141            android:exported="true" >
+141-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:16:120-143
+142            <meta-data
+142-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:17:7-108
+143                android:name="com.google.android.play.core.assetpacks.versionCode"
+143-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:17:18-84
+144                android:value="11000" />
+144-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:17:85-106
+145        </service>
+146        <service
+146-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:19:5-147
+147            android:name="com.google.android.play.core.assetpacks.ExtractionForegroundService"
+147-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:19:14-96
+148            android:enabled="false"
+148-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:19:97-120
+149            android:exported="false" />
+149-->[com.google.android.play:core:1.10.0] /Users/jihopark/.gradle/caches/transforms-2/files-2.1/095cb4afb683aeff41a87e801e576d30/jetified-core-1.10.0/AndroidManifest.xml:19:121-145
+150    </application>
+151
+152</manifest>

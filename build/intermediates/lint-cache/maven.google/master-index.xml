@@ -71,6 +71,7 @@
   <androidx.percentlayout/>
   <androidx.preference/>
   <androidx.print/>
+  <androidx.profileinstaller/>
   <androidx.recommendation/>
   <androidx.recyclerview/>
   <androidx.remotecallback/>
@@ -163,6 +164,7 @@
   <com.google.android.instantapps.thirdpartycompat/>
   <com.google.android.libraries.car/>
   <com.google.android.libraries.maps/>
+  <com.google.android.libraries.mapsplatform.secrets-gradle-plugin/>
   <com.google.android.libraries.places/>
   <com.google.android.material/>
   <com.google.android.mediahome/>
