@@ -2,8 +2,8 @@
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.jihopark.mlkit.vision.demo"
 4    android:installLocation="auto"
-5    android:versionCode="6"
-6    android:versionName="1.0" >
+5    android:versionCode="10"
+6    android:versionName="1.1" >
 7    <!--
 8 CameraX libraries require minSdkVersion 21, while this quickstart app
 9    supports low to 16. Needs to use overrideLibrary to make the merger tool
